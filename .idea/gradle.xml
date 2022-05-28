@@ -10,7 +10,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/SmartHomeControllerT3" />
+            <option value="$PROJECT_DIR$/HomeCTRL" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "SmartHomeController"
-include ':SmartHomeControllerT3'
+include ':HomeCTRL'
