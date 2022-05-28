@@ -11,5 +11,9 @@ Nkeiru Johnson-Achilike                      0NA
     <string name="menu_title2">Mouvement</string>
     <string name="menu_title3">Fumée</string>
     <string name="menu_title4">RFID</string>
+    <string name="alert_title">Exiting the app!</string>
+    <string name="alert_msg">Click Yes to confirm or No to cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 
 </resources>

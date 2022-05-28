@@ -6,8 +6,10 @@ Nkeiru Johnson-Achilike        0NA
 */
 package ca.T3.fab4.it.smart.home.controller;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -54,5 +56,26 @@ public class T3MainActivity extends AppCompatActivity {
 
         });
      }
+
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.alert_title)
+                .setMessage(R.string.alert_msg)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                })
+                .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                }).setIcon(R.drawable.exit_icon)
+                .show();
+    }
+
+
     }
 
