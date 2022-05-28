@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/MENU1"
+        android:title="@string/menu_title1"
+        android:enabled="true"
+        android:icon="@drawable/ic_temp"/>
+    <item
+        android:id="@+id/MENU2"
+        android:title="@string/menu_title2"
+        android:enabled="true"
+        android:icon="@drawable/ic_motion"/>
+
+    <item
+        android:id="@+id/MENU3"
+        android:title="@string/menu_title3"
+        android:enabled="true"
+        android:icon="@drawable/ic_smoke"/>
+    <item
+        android:id="@+id/MENU4"
+        android:title="@string/menu_title4"
+        android:enabled="true"
+        android:icon="@drawable/ic_finger"/>
+</menu>
