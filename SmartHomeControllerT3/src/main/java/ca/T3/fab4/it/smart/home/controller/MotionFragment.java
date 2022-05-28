@@ -1,4 +1,12 @@
+/*
+Abdulrhman Ragab    n01440938    0NA
+Tanushree Ray    n01440938    0NA
+Safwan Shaib        0NA
+Nkeiru Johnson-Achilike        0NA
+*/
+
 package ca.T3.fab4.it.smart.home.controller;
+
 
 import android.os.Bundle;
 
