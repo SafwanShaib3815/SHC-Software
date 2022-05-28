@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+Abdulrhman Ragab    n01440938    0NA
+Tanushree Ray    n01440938    0NA
+Safwan Shaib        0NA
+Nkeiru Johnson-Achilike        0NA
+-->
 <resources>
     <string name="app_name">SmartHomeController</string>
     <string name="menu_title1">Temperature</string>
