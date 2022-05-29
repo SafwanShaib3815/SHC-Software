@@ -6,7 +6,7 @@ Nkeiru Johnson-Achilike                      0NA
 -->
 
 <resources>
-    <string name="app_name">HomeCTRL</string>
+    <string name="app_name">Smart Home Controller</string>
     <string name="menu_title1">température</string>
     <string name="menu_title2">Mouvement</string>
     <string name="menu_title3">Fumée</string>
