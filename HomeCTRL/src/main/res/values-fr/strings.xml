@@ -11,4 +11,8 @@ Nkeiru Johnson-Achilike        0NA
     <string name="menu_title2">Motion</string>
     <string name="menu_title3">Smoke</string>
     <string name="menu_title4">RFID</string>
+    <string name="alert_title">Quitter l\'application!</string>
+    <string name="alert_msg">Cliquez sur Oui pour confirmer ou sur Non pour annuler</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
 </resources>
