@@ -1,5 +1,4 @@
-# Smart Home Controller
-## By T3
+# Smart Home Controller by T3
 ## Team Members
 ### Abdulrhman Ragab    n01440938    0NA
 ### Tanushree Ray    n01440938    0NA
