@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Abdulrhman Ragab    n01440938    0NA
-Tanushree Ray    n01440938    0NA
-Safwan Shaib        0NA
-Nkeiru Johnson-Achilike        0NA
+Abdulrhman Ragab        n01440938    0NA
+Tanushree Ray           n01440938    0NA
+Safwan Shaib            n01343815    0NA
+Nkeiru Johnson-Achilike n01411707    0NA
 -->
 <resources>
     <string name="app_name">SmartHomeController</string>
-    <string name="menu_title1">Temperature</string>
-    <string name="menu_title2">Motion</string>
-    <string name="menu_title3">Smoke</string>
+    <string name="menu_title1">température</string>
+    <string name="menu_title2">Mouvement</string>
+    <string name="menu_title3">Fumée</string>
     <string name="menu_title4">RFID</string>
     <string name="alert_title">Quitter l\'application!</string>
     <string name="alert_msg">Cliquez sur Oui pour confirmer ou sur Non pour annuler</string>
