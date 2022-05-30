@@ -1,0 +1,72 @@
+CENG 322 Software Project - Deliverable 1
+Project Name: Smart Home Controller
+Team Name: Fabulous 4 (T3)
+Student’s names and IDs
+Student Name
+Student Id
+Safwan Shaib
+N01343815
+Nkeiru Johnson-Achilike
+N01411707
+Abdalrahman Ragab
+N01440938
+Tanushree Ray
+N01330428
+Contents
+Link GitHub Repo ....................................................................................................................................... 3
+Screenshot of GitHub invitation ................................................................................................................. 3
+Project Background and Description......................................................................................................... 4
+Project goals and final vision .................................................................................................................. 4
+Software and hardware description ....................................................................................................... 4
+Project Screen flow .................................................................................................................................. 5
+Incorporating feedback provided through the interview..................................................................... 5
+Read/write from DB, hosted on cloud .................................................................................................... 5
+Project Scope ............................................................................................................................................ 6
+Theme, Epic and Stories.......................................................................................................................... 6
+Epic 1: Smart Home Sensors .............................................................................................................. 6
+Epic 2: Smart Home Controller ......................................................................................................... 6
+Students Signature
+Link GitHub Repo https://github.com/AbdulrhmanRagab0938/SmartHomeController
+Screenshot of GitHub invitation
+Student Name
+Signature
+Safwan Shaib
+SS
+Nkeiru Johnson-Achilike
+NJA
+Abdalrahman Ragab
+AR
+Tanushree Ray
+TR
+Project Background and Description
+Project goals and final vision
+The main objective this project is to develop a mobile application that would be used to control the functions of the sensors connected in the Smart Home Controller (Hardware project).
+The final vision is to be able to wirelessly control the hardware remotely using the mobile application.
+Software and hardware description
+The Smart Home Controller will have 4 sensors: temperature, motion, smoke and RFID sensors. A raspberry Pi will be used as the processor which will enable our device to be used as an IOT. The four sensors will be soldered (through hole) on a PCB which will then be mounted on the GPIO of the pi.
+The motion sensor detects the presence of a human and turns an outside light on, illuminating an otherwise dark area and enabling the user to use the RFID sensor to unlock the door. The temperature sensor is situated in the house and helps to measure and regulate the room temperature to a favorable condition.
+The smoke sensor is an extra security feature that measures the amount of gas (smoke) in the air and notifies the user of any issues through an alert on the mobile app and through an alarm too.
+The mobile app, through the motion sensor, notifies the user of the presence of a human and enable light to be turned. The code generated from the key/fob is ran through a database to establish a match or not and enable the door to open or alert the user of another person trying to gain access to the door.
+Data from the temp sensor is continuously fed into the app and used to control the heater or ac for temperature regulation. And finally, data from the smoke detector is used by the app to check if any threshold are passed or not.
+Project Screen flow
+We will use bottom navigation to describe the flow of each screen. Each screen will receive their corresponding data and perform different tasks accordingly. For an example temperature screen will only receive data related to temperature and decide whether the heater or AC should be turned on or not. Similarly, motion sensor will receive data related to motion only and turn the light on if any motion is detected. Smoke sensor will ring an alarm if any smoke is detected. RFID sensor will be used to identify a user and unlock the door if user is identified, adding an additional layer of security and convenience to the smart home.
+Incorporating feedback provided through the interview
+We will acquire feedback from our professor in case we get stuck at some point of the development process and try to improve the areas based on his feedback. As a team we will try to meet at least once in a week to receive each other’s feedback to deliver a productive end result and to understand the flow of other people’s screen so that we can have a good knowledge of the whole product. Also, we will help each other in case we face any technical difficulties.
+Read/write from DB, hosted on cloud
+We are planning to store all the data we receive from the sensors to the Firebase. Android Studio allows us to enable the firebase feature so that we can efficiently read / write from data base hosted in the cloud.
+Project Scope
+At the early stage of our project all the sensors will first be connected to the raspberry pi using cables, to ensure every sensor reading can be obtained after programming. A test run will be done to simulate real-time conditions. We would go with the first option mentioned in the lecture notes that is to use SEEED Studio to build the PCB board and solder the components by ourselves and solder the components by ourselves.
+The estimated time for our capstone project is 6-8 months. However, we plan on finishing the hardware and software part within 4 months. Each team member will work on their own sensors. However, all the team members are ready to absorb addition workload if required. Components can be reassigned to meet the deadline requirements. Team will inform the professor in case any fall back happens and may ask for addition reference material to successfully complete the entire project.
+Theme, Epic and Stories
+Epic 1: Smart Home Sensors
+Stories:
+• Temperature Sensor
+• Motion Sensor
+• Smoke Sensor
+• RFID Sensor
+Epic 2: Smart Home Controller
+Stories:
+• Temperature Controller (Turn heater/AC On/Off)
+• Turn on the light if motion is detected
+• Ring an alarm if smoke is detected
+• Open the door is fingerprint matches to the database.

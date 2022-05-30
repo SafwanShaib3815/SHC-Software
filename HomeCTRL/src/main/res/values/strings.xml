@@ -6,7 +6,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
 -->
 
 <resources>
-    <string name="app_name">SmartHomeController</string>
+    <string name="app_name">Smart Home Controller</string>
     <string name="menu_title1">Temperature</string>
     <string name="menu_title2">Motion</string>
     <string name="menu_title3">Smoke</string>
