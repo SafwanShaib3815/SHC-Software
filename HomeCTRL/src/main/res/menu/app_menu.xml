@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <item
         android:id="@+id/T3_menu_help"
         android:title="@string/help"
@@ -17,7 +16,9 @@
     <item
         android:id="@+id/T3_menu_website"
         android:title="@string/website"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/website_icon"
+        />
     <item
         android:id="@+id/T3_menu_support"
         android:title="@string/support"
