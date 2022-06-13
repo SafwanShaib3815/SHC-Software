@@ -11,8 +11,13 @@
     android:layout_height="match_parent"
     tools:context=".T3MainActivity">
 
-
-
-
-
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="307dp"
+        android:layout_height="259dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@mipmap/r_f_i_d_foreground" />
 </androidx.constraintlayout.widget.ConstraintLayout>
