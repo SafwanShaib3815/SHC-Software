@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Desktop/School/Sem7/Software Project - CENG-322-0NA/Mobile_App/HomeCTRL/src/main/res/layout/activity_about.xml" value="0.264" />
+        <entry key="..\:/Desktop/School/Sem7/Software Project - CENG-322-0NA/Mobile_App/HomeCTRL/src/main/res/layout/activity_help.xml" value="0.19322916666666667" />
+        <entry key="..\:/Desktop/School/Sem7/Software Project - CENG-322-0NA/Mobile_App/HomeCTRL/src/main/res/layout/app_menu.xml" value="0.12552083333333333" />
         <entry key="..\:/Desktop/School/Sem7/Software Project - CENG-322-0NA/Mobile_App/HomeCTRL/src/main/res/layout/fragment_r_f_i_d.xml" value="0.12552083333333333" />
+        <entry key="..\:/Desktop/School/Sem7/Software Project - CENG-322-0NA/Mobile_App/HomeCTRL/src/main/res/menu/app_menu.xml" value="0.12552083333333333" />
+        <entry key="..\:/Desktop/School/Sem7/Software Project - CENG-322-0NA/Mobile_App/HomeCTRL/src/main/res/menu/bottom_nav_menu.xml" value="0.12552083333333333" />
         <entry key="..\:/Desktop/School/Sem7/Software Project - CENG-322-0NA/Mobile_App/SmartHomeControllerT3/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.144" />
         <entry key="..\:/Desktop/School/Sem7/Software Project - CENG-322-0NA/Mobile_App/SmartHomeControllerT3/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.144" />
         <entry key="..\:/Users/RAY/Downloads/SmartHomeController/SmartHomeControllerT3/src/main/res/layout/fragment_motion.xml" value="0.25" />
@@ -17,16 +22,10 @@
         <entry key="..\:/Users/Ragab/AndroidStudioProjects/SmartHomeController/SmartHomeControllerT3/src/main/res/layout/fragment_r_f_i_d.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/Ragab/AndroidStudioProjects/SmartHomeController/SmartHomeControllerT3/src/main/res/layout/fragment_smoke.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/Ragab/AndroidStudioProjects/SmartHomeController/SmartHomeControllerT3/src/main/res/layout/fragment_temperature.xml" value="0.17708333333333334" />
-        <entry key="..\:/Users/nkeir/Documents/SmartHomeController/HomeCTRL/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/nkeir/Documents/SmartHomeController/HomeCTRL/src/main/res/layout/fragment_motion.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/nkeir/Documents/SmartHomeController/HomeCTRL/src/main/res/layout/fragment_r_f_i_d.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/nkeir/Documents/SmartHomeController/HomeCTRL/src/main/res/layout/fragment_smoke.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/nkeir/Documents/SmartHomeController/HomeCTRL/src/main/res/layout/fragment_temperature.xml" value="0.11302083333333333" />
-        <entry key="..\:/Users/nkeir/Documents/SmartHomeController/HomeCTRL/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

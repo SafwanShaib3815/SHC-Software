@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartHomeController">
         <activity
+            android:name=".HelpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
             android:name=".T3MainActivity"
             android:exported="true">
             <intent-filter>

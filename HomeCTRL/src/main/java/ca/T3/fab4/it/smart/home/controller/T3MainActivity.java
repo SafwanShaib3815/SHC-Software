@@ -6,11 +6,17 @@ Nkeiru Johnson-Achilike   n01411707 0NA
 */
 package ca.T3.fab4.it.smart.home.controller;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -76,6 +82,35 @@ public class T3MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.app_menu, menu);
+        return super.onCreateOptionsMenu(menu);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent = null;
+        switch (item.getItemId()) {
+            case R.id.T3_menu_about:
+                intent = new Intent(this,AboutActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.T3_menu_help:
+                intent = new Intent(this,HelpActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.T3_menu_support:
+                intent = new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.support_number)));
+                startActivity(intent);
+                break;
+            case R.id.T3_menu_website:
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.website_link)));
+                startActivity(intent);
+                break;
+        }
+        return true;
+    }
     }
 
