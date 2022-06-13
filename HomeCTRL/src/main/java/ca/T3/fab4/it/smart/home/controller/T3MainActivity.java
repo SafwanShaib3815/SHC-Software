@@ -94,20 +94,20 @@ public class T3MainActivity extends AppCompatActivity {
         Intent intent = null;
         switch (item.getItemId()) {
             case R.id.T3_menu_about:
-                intent = new Intent(this,AboutActivity.class);
-                startActivity(intent);
+                //intent = new Intent(this,AboutActivity.class);
+                //startActivity(intent);
                 break;
             case R.id.T3_menu_help:
-                intent = new Intent(this,HelpActivity.class);
-                startActivity(intent);
+                //intent = new Intent(this,HelpActivity.class);
+                //startActivity(intent);
                 break;
             case R.id.T3_menu_support:
-                intent = new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.support_number)));
-                startActivity(intent);
+                //intent = new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.support_number)));
+                //startActivity(intent);
                 break;
             case R.id.T3_menu_website:
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.website_link)));
-                startActivity(intent);
+                //intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.website_link)));
+                //startActivity(intent);
                 break;
         }
         return true;
