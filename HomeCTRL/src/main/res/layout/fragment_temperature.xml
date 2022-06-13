@@ -14,21 +14,12 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="178dp"
-        android:layout_height="247dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="492dp"
+        android:layout_width="321dp"
+        android:layout_height="246dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="468dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/dessert_foreground" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="166dp"
-        android:layout_height="181dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="516dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@mipmap/snow_foreground" />
 </androidx.constraintlayout.widget.ConstraintLayout>
