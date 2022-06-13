@@ -9,4 +9,15 @@
     style="@style/background_fragment4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".T3MainActivity"/>
+    tools:context=".T3MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="277dp"
+        android:layout_height="245dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@mipmap/r_f_i_d" />
+</androidx.constraintlayout.widget.ConstraintLayout>
