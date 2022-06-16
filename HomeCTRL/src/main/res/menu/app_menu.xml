@@ -11,13 +11,13 @@
         android:id="@+id/T3_menu_about"
         android:title="@string/about"
         app:showAsAction="always"
-        android:icon="@drawable/about_icon"
+        android:icon="@drawable/ic_calls"
         />
     <item
         android:id="@+id/T3_menu_website"
         android:title="@string/website"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/website_icon"
+        android:icon="@drawable/ic_settings"
         />
     <item
         android:id="@+id/T3_menu_support"
