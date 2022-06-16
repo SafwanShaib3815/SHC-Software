@@ -111,7 +111,7 @@ public class T3MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent = null;
         switch (item.getItemId()) {
-            case R.id.T3_menu_about:
+            case R.id.T3_menu_calls:
                 if (ContextCompat.checkSelfPermission(T3MainActivity.this,
                         Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     requestPermissions(new String[]{Manifest.permission.CALL_PHONE},
@@ -125,7 +125,10 @@ public class T3MainActivity extends AppCompatActivity {
             case R.id.T3_menu_support:
 
                 break;
-            case R.id.T3_menu_website:
+            case R.id.T3_menu_settings:
+                Intent intent1 = new Intent(T3MainActivity.this,
+                        SettingsActivity.class);
+                startActivity(intent1);
                 break;
         }
         return super.onOptionsItemSelected(item);

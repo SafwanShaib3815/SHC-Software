@@ -19,8 +19,8 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="support_number">tel:(437)388-2002</string>
     <string name="help_tv">This help screen is to be implemented</string>
     <string name="help">Help</string>
-    <string name="about">About</string>
-    <string name="website">Website</string>
+    <string name="about">Calls</string>
+    <string name="website">Settings</string>
     <string name="support">Support</string>
     <string name="about_tv">This screen shows general info about the app yet to be implemented</string>
     <string name="snackbar_allow">Phone call permission allowed</string>

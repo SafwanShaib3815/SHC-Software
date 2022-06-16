@@ -29,5 +29,10 @@
             @color/light_grey
         </item>
     </style>
+    <style name="background_settings">
+        <item name="android:background">
+            @color/light_orange
+        </item>
+    </style>
 
 </resources>
