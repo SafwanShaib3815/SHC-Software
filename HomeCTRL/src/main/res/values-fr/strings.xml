@@ -23,4 +23,7 @@ Nkeiru Johnson-Achilike n01411707    0NA
     <string name="website">Site Internet</string>
     <string name="support">Soutien</string>
     <string name="about_tv">Cet écran affiche des informations générales sur l\'application qui n\'a pas encore été implémentée</string>
+    <string name="snackbar_allow">Phone call permission allowed</string>
+    <string name="snackbar_deny">Phone call permission Denied</string>
+    <string name="phone_number">tel:(416)999-0000</string>
 </resources>

@@ -9,9 +9,12 @@ package ca.T3.fab4.it.smart.home.controller;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,6 +22,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class T3MainActivity extends AppCompatActivity {
 
@@ -27,6 +31,7 @@ public class T3MainActivity extends AppCompatActivity {
     private MotionFragment motionFragment;
     private SmokeFragment smokeFragment;
     private RFIDFragment rfidFragment;
+    final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +46,7 @@ public class T3MainActivity extends AppCompatActivity {
         rfidFragment = new RFIDFragment();
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch(item.getItemId()){
+            switch (item.getItemId()) {
                 case R.id.MENU2:
                     getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT, motionFragment).commit();
                     return true;
@@ -55,13 +60,13 @@ public class T3MainActivity extends AppCompatActivity {
                     return true;
 
                 default:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT,temperatureFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT, temperatureFragment).commit();
                     return true;
 
             }
 
         });
-     }
+    }
 
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -94,23 +99,55 @@ public class T3MainActivity extends AppCompatActivity {
         Intent intent = null;
         switch (item.getItemId()) {
             case R.id.T3_menu_about:
-                //intent = new Intent(this,AboutActivity.class);
-                //startActivity(intent);
+                if (ContextCompat.checkSelfPermission(T3MainActivity.this,
+                        Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE},
+                            REQUEST_CODE_ASK_PERMISSIONS);
+
+                }
+                makePhoneCall();
                 break;
             case R.id.T3_menu_help:
-                //intent = new Intent(this,HelpActivity.class);
-                //startActivity(intent);
                 break;
             case R.id.T3_menu_support:
-                //intent = new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.support_number)));
-                //startActivity(intent);
+
                 break;
             case R.id.T3_menu_website:
-                //intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.website_link)));
-                //startActivity(intent);
                 break;
         }
-        return true;
-    }
+        return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_CODE_ASK_PERMISSIONS:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // Permission Granted
+                    Snackbar.make(findViewById(android.R.id.content), R.string.snackbar_allow, Snackbar.LENGTH_LONG)
+                            .show();
+                    makePhoneCall();
+                } else {
+                    // Permission Denied
+                    Snackbar.make(findViewById(android.R.id.content), R.string.snackbar_deny, Snackbar.LENGTH_LONG)
+                            .show();
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
+
+    private void makePhoneCall() {
+        try {
+            Intent intent = new Intent(Intent.ACTION_CALL);
+
+            intent.setData(Uri.parse(getString(R.string.phone_number)));
+
+            startActivity(intent);
+        }catch (Exception e) {
+
+            e.printStackTrace();
+        }
+    }
+}
