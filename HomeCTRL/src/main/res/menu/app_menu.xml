@@ -8,16 +8,16 @@
         android:title="@string/help"
         app:showAsAction="never" />
     <item
-        android:id="@+id/T3_menu_about"
+        android:id="@+id/T3_menu_calls"
         android:title="@string/about"
         app:showAsAction="always"
-        android:icon="@drawable/about_icon"
+        android:icon="@drawable/ic_calls"
         />
     <item
-        android:id="@+id/T3_menu_website"
+        android:id="@+id/T3_menu_settings"
         android:title="@string/website"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/website_icon"
+        android:icon="@drawable/ic_settings"
         />
     <item
         android:id="@+id/T3_menu_support"

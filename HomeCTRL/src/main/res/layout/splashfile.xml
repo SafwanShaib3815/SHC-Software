@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-Abdulrhman Ragab    n01440938    0NA
-Tanushree Ray    n01440938    0NA
-Safwan Shaib    n01343815    0NA
-Nkeiru Johnson-Achilike   n01411707 0NA
--->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/purple_200"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutActivity">
+    tools:context=".SplashActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="334dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="72dp"
-        android:text="@string/about_tv"
+    <ProgressBar
+        android:id="@+id/PB"
+        android:layout_width="138dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="270dp"
+        android:minWidth="50dp"
+        android:minHeight="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

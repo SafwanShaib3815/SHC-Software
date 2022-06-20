@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ca.T3.fab4.it.smart.home.controller">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,13 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartHomeController">
         <activity
-            android:name=".HelpActivity"
+            android:name=".SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".AboutActivity"
-            android:exported="false" />
-        <activity
-            android:name=".T3MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".T3MainActivity" />
     </application>
 
 </manifest>

@@ -13,21 +13,11 @@
 
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="239dp"
-        android:layout_height="178dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="488dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/nosomke_foreground" />
-
-    <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="200dp"
-        android:layout_height="217dp"
-        android:layout_marginStart="192dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="319dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginBottom="484dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/smokedetector_foreground" />
