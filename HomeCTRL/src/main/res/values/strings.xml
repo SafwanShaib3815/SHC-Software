@@ -23,6 +23,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="website">Website</string>
     <string name="support">Support</string>
     <string name="about_tv">This screen shows general info about the app yet to be implemented</string>
+    <string name="settings">Settings</string>
 
 
 </resources>
