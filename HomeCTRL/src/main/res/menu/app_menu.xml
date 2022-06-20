@@ -14,21 +14,15 @@
         android:icon="@drawable/ic_calls"
         />
     <item
-        android:id="@+id/T3_menu_website"
-        android:title="@string/website"
+        android:id="@+id/T3_menu_settings"
+        android:title="@string/settings"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/website_icon"
+        android:icon="@drawable/ic_settings"
         />
     <item
         android:id="@+id/T3_menu_support"
         android:title="@string/support"
         app:showAsAction="never"
         android:icon="@drawable/about_icon"
-        />
-    <item
-        android:id="@+id/T3_menu_settings"
-        android:title= "@string/settings"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_settings"
         />
 </menu>
