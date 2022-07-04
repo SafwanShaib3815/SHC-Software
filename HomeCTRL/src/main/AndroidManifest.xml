@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ca.T3.fab4.it.smart.home.controller">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -13,7 +14,9 @@
         android:theme="@style/Theme.SmartHomeController">
         <activity
             android:name=".SettingsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".SplashActivity"
             android:exported="true">

@@ -125,7 +125,7 @@ public class T3MainActivity extends AppCompatActivity {
             case R.id.T3_menu_support:
 
                 break;
-            case R.id.T3_menu_website:
+            case R.id.T3_menu_settings:
                 Intent intent1 = new Intent(T3MainActivity.this,
                         SettingsActivity.class);
                 startActivity(intent1);
