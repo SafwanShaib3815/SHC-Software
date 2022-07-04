@@ -14,7 +14,7 @@
         android:icon="@drawable/ic_calls"
         />
     <item
-        android:id="@+id/T3_menu_website"
+        android:id="@+id/T3_menu_settings"
         android:title="@string/settings"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_settings"
