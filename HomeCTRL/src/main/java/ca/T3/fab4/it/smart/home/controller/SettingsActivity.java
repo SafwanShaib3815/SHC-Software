@@ -34,15 +34,14 @@ public class SettingsActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         //Store some data into SharedPreferences
-        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.shared_pref_filename), Context.MODE_PRIVATE);
+        //SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.shared_pref_filename), Context.MODE_PRIVATE);
 
         //Save the configuration list in an adapter
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.configuration_list,getResources().getStringArray(R.array.configlist));
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,getResources().getStringArray(R.array.configlist));
 
         ListView listView = (ListView) findViewById(R.id.configlist);
         //setAdapter on the ListView object
         listView.setAdapter(adapter);
-
 
     }
 

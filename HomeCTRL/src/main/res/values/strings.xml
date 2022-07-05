@@ -26,15 +26,11 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="snackbar_allow">Phone call permission allowed</string>
     <string name="snackbar_deny">Phone call permission Denied</string>
     <string name="phone_number">tel:(416)999-0000</string>
-    <string name="shared_pref_filename">configuration file</string>
     <string-array
         name="configlist">
-        <item>London</item>
-        <item>Amsterdam</item>
-        <item>Budapest</item>
-        <item>Copenhagen</item>
-        <item>Doha</item>
+        <item>Display Settings</item>
+        <item>User Information</item>
+        <item>System Settings</item>
+        <item>About Device</item>
     </string-array>
-
-
 </resources>
