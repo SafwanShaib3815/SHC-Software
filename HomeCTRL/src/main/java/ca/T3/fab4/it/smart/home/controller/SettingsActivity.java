@@ -33,15 +33,19 @@ public class SettingsActivity extends AppCompatActivity {
         // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        //Store some data into SharedPreferences
-        //SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.shared_pref_filename), Context.MODE_PRIVATE);
-
         //Save the configuration list in an adapter
         ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,getResources().getStringArray(R.array.configlist));
 
         ListView listView = (ListView) findViewById(R.id.configlist);
         //setAdapter on the ListView object
         listView.setAdapter(adapter);
+
+        //Create a SharedPreference file
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.sharedpref_filename), Context.MODE_PRIVATE);
+
+        // Creating an Editor object to edit(write to the file)
+        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
 
     }
 
