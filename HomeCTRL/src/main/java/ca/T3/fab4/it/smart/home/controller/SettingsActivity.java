@@ -10,6 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -35,7 +36,13 @@ public class SettingsActivity extends AppCompatActivity {
         //Store some data into SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.shared_pref_filename), Context.MODE_PRIVATE);
 
+        //Save the configuration list in an adapter
         ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.configuration_list,getResources().getStringArray(R.array.configlist));
+
+        ListView listView = (ListView) findViewById(R.id.configlist);
+        //setAdapter on the ListView object
+        listView.setAdapter(adapter);
+
 
     }
 
