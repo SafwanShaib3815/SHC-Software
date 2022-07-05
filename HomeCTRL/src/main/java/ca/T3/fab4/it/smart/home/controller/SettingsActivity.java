@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -28,6 +30,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        //Store some data into SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.shared_pref_filename), Context.MODE_PRIVATE);
+
     }
 
     @Override
