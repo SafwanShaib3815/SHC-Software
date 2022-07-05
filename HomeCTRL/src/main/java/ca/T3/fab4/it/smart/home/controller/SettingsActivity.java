@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -33,6 +34,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         //Store some data into SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.shared_pref_filename), Context.MODE_PRIVATE);
+
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.configuration_list,getResources().getStringArray(R.array.configlist));
 
     }
 
