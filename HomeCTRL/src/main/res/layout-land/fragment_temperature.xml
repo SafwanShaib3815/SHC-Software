@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--    Abdulrhman Ragab    n01440938    0NA-->
+<!--    Tanushree Ray    n01440938    0NA-->
+<!--    Safwan Shaib    n01343815    0NA-->
+<!--    Nkeiru Johnson-Achilike  n01411707 0NA-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/background_fragment1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".T3MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="321dp"
+        android:layout_height="246dp"
+        android:layout_marginStart="484dp"
+        android:layout_marginBottom="68dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/dessert_foreground" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
