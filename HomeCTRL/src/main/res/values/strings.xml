@@ -31,6 +31,10 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="smokescreen">smoke screen</string>
     <string name="rfidscreen">rfid screen</string>
     <string name="temperaturescreen">temperature screen</string>
+    <string name="permissionaceppt">permission accepted</string>
+    <string name="permissionisgiven">permission was given by the user</string>
+    <string name="title">title</string>
+    <string name="notification">notification</string>
     <string-array
         name="configlist">
         <item>Display Settings</item>
