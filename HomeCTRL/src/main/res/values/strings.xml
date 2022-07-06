@@ -27,6 +27,10 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="snackbar_deny">Phone call permission Denied</string>
     <string name="phone_number">tel:(416)999-0000</string>
     <string name="sharedpref_filename">HomeCTRL_file</string>
+    <string name="motionscreen">motion screen</string>
+    <string name="smokescreen">smoke screen</string>
+    <string name="rfidscreen">rfid screen</string>
+    <string name="temperaturescreen">temperature screen</string>
     <string-array
         name="configlist">
         <item>Display Settings</item>
