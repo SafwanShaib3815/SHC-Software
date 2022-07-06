@@ -6,18 +6,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/background_fragment4"
+    style="@style/background_fragment3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".T3MainActivity">
 
+
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="307dp"
-        android:layout_height="259dp"
-        android:layout_marginStart="488dp"
-        android:layout_marginTop="4dp"
+        android:id="@+id/imageView3"
+        android:layout_width="319dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="500dp"
+        android:layout_marginBottom="76dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/r_f_i_d_foreground" />
+        app:srcCompat="@mipmap/smokedetector_foreground" />
 </androidx.constraintlayout.widget.ConstraintLayout>
