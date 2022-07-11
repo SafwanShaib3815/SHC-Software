@@ -16,7 +16,6 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="website_link">https://www.hackster.io/</string>
-    <string name="support_number">tel:(437)388-2002</string>
     <string name="help_tv">This help screen is to be implemented</string>
     <string name="help">Help</string>
     <string name="about">About</string>
@@ -41,5 +40,6 @@ Nkeiru Johnson-Achilike         n01411707    0NA
         <item>User Information</item>
         <item>System Settings</item>
         <item>About Device</item>
+        <item>Test me saf</item>
     </string-array>
 </resources>
