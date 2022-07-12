@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -62,14 +63,15 @@ public class SettingsActivity extends AppCompatActivity {
                             //do something
                             break;
                         case 2:  // "System Settings" option
-                            //do something
+                            Intent intent = new Intent(android.provider.Settings.ACTION_SETTINGS);
+                            startActivity(intent); //open system settings
                             break;
                         case 3:  // "About Device" option
                             //do something
                             break;
                     }
 
-                //Toast.makeText(getApplicationContext(), String.valueOf ((int) settingsOption), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Item id: "+ String.valueOf ((int) settingsOption), Toast.LENGTH_SHORT).show();
             }
         });
         //Create a SharedPreference file
