@@ -18,7 +18,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="website_link">https://www.hackster.io/</string>
     <string name="help_tv">This help screen is to be implemented</string>
     <string name="help">Help</string>
-    <string name="about">About</string>
+    <string name="call">Call</string>
     <string name="settings">Settings</string>
     <string name="support">Support</string>
     <string name="about_tv">This screen shows general info about the app yet to be implemented</string>
@@ -34,11 +34,11 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="permissionisgiven">permission was given by the user</string>
     <string name="title">title</string>
     <string name="notification">notification</string>
-    <string-array
-        name="configlist">
-        <item>Display Settings</item>
-        <item>User Information</item>
+    <string name="app_settings_tv">Select the screen you\'d like to configure</string>
+    <string-array name="configlist">
+        <item>App Settings</item>
         <item>System Settings</item>
+        <item>User Information</item>
         <item>About Device</item>
     </string-array>
 </resources>

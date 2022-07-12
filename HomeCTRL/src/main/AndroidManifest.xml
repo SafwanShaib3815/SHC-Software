@@ -13,10 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartHomeController">
         <activity
+            android:name=".AppSettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">

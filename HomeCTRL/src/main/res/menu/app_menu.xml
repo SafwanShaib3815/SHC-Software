@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".T3MainActivity">
     <item
         android:id="@+id/T3_menu_help"
         android:title="@string/help"
         app:showAsAction="never" />
     <item
         android:id="@+id/T3_menu_calls"
-        android:title="@string/about"
+        android:title="@string/call"
         app:showAsAction="always"
         android:icon="@drawable/ic_calls"
         />

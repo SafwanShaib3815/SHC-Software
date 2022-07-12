@@ -31,7 +31,7 @@
     </style>
     <style name="background_settings">
         <item name="android:background">
-            @color/light_orange
+            @color/dark_grey
         </item>
     </style>
 

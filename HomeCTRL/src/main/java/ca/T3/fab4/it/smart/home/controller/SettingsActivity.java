@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -17,7 +18,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity {
-
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,19 +30,15 @@ public class SettingsActivity extends AppCompatActivity {
         // Define ColorDrawable object and parse color
         // using parseColor method
         // with color hash code as its parameter
-        ColorDrawable colorDrawable
-                = new ColorDrawable(getColor(R.color.brown));
+        ColorDrawable colorDrawable = new ColorDrawable(getColor(R.color.brown));
         // Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
 
         // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        //Save the array-list from xml into a string array
-        String [] configOptions = getResources().getStringArray(R.array.configlist);
-
         //Save the configuration list in an adapter
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,configOptions);
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,getResources().getStringArray(R.array.configlist));
 
         ListView listView = (ListView) findViewById(R.id.configlist);
         //setAdapter on the ListView object
@@ -56,15 +53,16 @@ public class SettingsActivity extends AppCompatActivity {
 
                     //Decide actions based on the item selected
                     switch ((int) settingsOption){
-                        case 0:  // "Display Settings" option
-                            //do something
+                        case 0:  // "App Settings" option
+                            intent = new Intent(getApplicationContext(),AppSettingsActivity.class);
+                            startActivity(intent);
                             break;
-                        case 1:  // "User Information" option
-                            //do something
-                            break;
-                        case 2:  // "System Settings" option
-                            Intent intent = new Intent(android.provider.Settings.ACTION_SETTINGS);
+                        case 1:  // "System Settings" option
+                            intent = new Intent(android.provider.Settings.ACTION_SETTINGS);
                             startActivity(intent); //open system settings
+                            break;
+                        case 2:  // "User Information" option
+                            //do something
                             break;
                         case 3:  // "About Device" option
                             //do something
@@ -84,6 +82,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
+    //On action bar back arrow pressed
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
