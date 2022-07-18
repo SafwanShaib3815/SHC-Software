@@ -6,4 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <EditText
+        android:id="@+id/login_username"
+        android:layout_width="194dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="81dp"
+        android:hint="@string/login_username_hint"
+        android:importantForAutofill="no"
+        android:inputType="textWebEmailAddress"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="201dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="327dp"
+        android:layout_marginEnd="74dp"
+        android:hint="@string/login_password_hint"
+        android:inputType="textPassword"
+        android:textColorHint="#757575"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
