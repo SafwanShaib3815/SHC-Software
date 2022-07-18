@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartHomeController">
         <activity
-            android:name=".LoginActivity"
+            android:name=".SplashActivity"
             android:exported="false" />
         <activity
             android:name=".AppSettingsActivity"
@@ -24,7 +24,7 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
