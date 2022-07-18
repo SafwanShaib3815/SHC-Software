@@ -38,6 +38,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="app_settings_tv">Select the screen you\'d like to configure</string>
     <string name="login_username_hint">username</string>
     <string name="login_password_hint">password</string>
+    <string name="loginBtn">Login</string>
     <string-array name="configlist">
         <item>App Settings</item>
         <item>System Settings</item>
