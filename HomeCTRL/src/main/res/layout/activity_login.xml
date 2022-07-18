@@ -9,30 +9,45 @@
 
     <EditText
         android:id="@+id/login_username"
-        android:layout_width="194dp"
-        android:layout_height="63dp"
+        android:layout_width="338dp"
+        android:layout_height="54dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="248dp"
         android:layout_marginEnd="81dp"
+        android:backgroundTint="#FBF7F7"
         android:hint="@string/login_username_hint"
         android:importantForAutofill="no"
         android:inputType="textWebEmailAddress"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="201dp"
-        android:layout_height="67dp"
+        android:layout_width="333dp"
+        android:layout_height="68dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="327dp"
+        android:layout_marginTop="328dp"
         android:layout_marginEnd="74dp"
+        android:backgroundTint="#FBFBFB"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="279dp"
+        android:layout_height="187dp"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="41dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

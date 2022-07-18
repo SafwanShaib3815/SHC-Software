@@ -36,9 +36,8 @@ Nkeiru Johnson-Achilike n01411707    0NA
     <string name="title">Titre</string>
     <string name="notification">notification</string>
     <string name="app_settings_tv">Sélectionnez l\'écran que vous souhaitez configurer </string>
-    <string name="login_username">username</string>
     <string name="login_username_hint">username</string>
-    <string name="login_password_hint">loginpassword</string>
+    <string name="login_password_hint">password</string>
     <string-array
         name="configlist">
         <item>Paramètres d\'affichage</item>
