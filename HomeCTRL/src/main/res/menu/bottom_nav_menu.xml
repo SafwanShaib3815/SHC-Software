@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/MENU5"
+        android:title="@string/menu_title5"
+        android:enabled="true"
+        android:icon="@drawable/ic_login"/>
+
+    <item
         android:id="@+id/MENU1"
         android:title="@string/menu_title1"
         android:enabled="true"
@@ -22,4 +28,5 @@
         android:title="@string/menu_title4"
         android:enabled="true"
         android:icon="@drawable/ic_finger"/>
+
 </menu>

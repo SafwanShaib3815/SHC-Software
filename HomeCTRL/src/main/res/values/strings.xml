@@ -11,6 +11,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="menu_title2">Motion</string>
     <string name="menu_title3">Smoke</string>
     <string name="menu_title4">RFID</string>
+    <string name="menu_title5">Login</string>
     <string name="alert_title">Exiting the app!</string>
     <string name="alert_msg">Click Yes to confirm or No to cancel</string>
     <string name="yes">Yes</string>
@@ -30,6 +31,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="motionscreen">motion screen</string>
     <string name="smokescreen">smoke screen</string>
     <string name="rfidscreen">rfid screen</string>
+    <string name="loginScreen">login screen</string>
     <string name="temperaturescreen">temperature screen</string>
     <string name="permissionaceppt">permission accepted</string>
     <string name="permissionisgiven">permission was given by the user</string>
@@ -45,4 +47,5 @@ Nkeiru Johnson-Achilike         n01411707    0NA
         <item>User Information</item>
         <item>About Device</item>
     </string-array>
+
 </resources>
