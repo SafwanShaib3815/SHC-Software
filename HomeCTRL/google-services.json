@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "412880478728",
+    "project_id": "smarthomecontroller-a7978",
+    "storage_bucket": "smarthomecontroller-a7978.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412880478728:android:3438b8ccf61858944227bd",
+        "android_client_info": {
+          "package_name": "ca.T3.fab4.it.smart.home.controller"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412880478728-orfeklkdfpbeivfnnk237ld8s5grkh35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSi0GAMC8quBMtVfXZ-elPTCkQ6S7jGeM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412880478728-orfeklkdfpbeivfnnk237ld8s5grkh35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
