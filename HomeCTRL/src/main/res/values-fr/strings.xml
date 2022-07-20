@@ -30,6 +30,7 @@ Nkeiru Johnson-Achilike n01411707    0NA
     <string name="motionscreen">écran de mouvement</string>
     <string name="smokescreen">écran de fumée</string>
     <string name="rfidscreen">écran RFID</string>
+    <string name="loginScreen">login screen</string>
     <string name="temperaturescreen">écran de température</string>
     <string name="permissionaceppt">autorisation acceptée</string>
     <string name="permissionisgiven">l\'autorisation a été donnée par l\'utilisateur</string>
@@ -39,6 +40,7 @@ Nkeiru Johnson-Achilike n01411707    0NA
     <string name="login_username_hint">username</string>
     <string name="login_password_hint">password</string>
     <string name="loginBtn">Login</string>
+    <string name="menu_title5">Login</string>
     <string-array
         name="configlist">
         <item>Paramètres d\'affichage</item>

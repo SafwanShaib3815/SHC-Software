@@ -55,8 +55,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="252dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="240dp"
         android:text="@string/loginBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
