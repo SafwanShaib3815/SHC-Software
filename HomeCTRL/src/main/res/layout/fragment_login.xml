@@ -62,7 +62,8 @@
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:layout_width="146dp"
+        style="@style/text_field_style3"
+        android:layout_width="162dp"
         android:layout_height="48dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="428dp"
