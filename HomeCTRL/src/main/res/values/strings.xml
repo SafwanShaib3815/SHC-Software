@@ -49,5 +49,13 @@ Nkeiru Johnson-Achilike         n01411707    0NA
         <item>About Device</item>
     </string-array>
     <string name="send_love">Send Love</string>
+    <string name="submit_review">Submit</string>
+    <string name="comment_review">Your comment</string>
+    <string name="email_review">Email</string>
+    <string name="phone_review">Phone Number</string>
+    <string name="name_review">Your Name</string>
+    <string name="model_review">Your device\'s model:</string>
+    <string name="user_saved">user has been saved</string>
+    <string name="save_failed">\"Fail to add data \"</string>
 
 </resources>

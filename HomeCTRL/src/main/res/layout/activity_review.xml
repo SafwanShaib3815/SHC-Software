@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="126dp"
         android:layout_marginTop="40dp"
-        android:text="@string/send_love"
         android:fontFamily="@font/chela_one"
+        android:text="@string/send_love"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,40 +28,44 @@
 
         <EditText
             android:id="@+id/review_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autofillHints="name"
             android:ems="10"
-            android:hint="Your Name"
+            android:hint="@string/name_review"
             android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/review_phone"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autofillHints="phone"
             android:ems="10"
-            android:hint="Phone Number"
+            android:hint="@string/phone_review"
             android:inputType="phone" />
 
         <EditText
             android:id="@+id/review_email"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/email_review"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/review_comment"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Your comment"
+            android:hint="@string/comment_review"
+            android:importantForAutofill="no"
             android:inputType="text" />
 
         <Button
             android:id="@+id/review_submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/submit_review" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
