@@ -41,6 +41,8 @@ Nkeiru Johnson-Achilike n01411707    0NA
     <string name="login_password_hint">password</string>
     <string name="loginBtn">Login</string>
     <string name="menu_title5">Login</string>
+    <string name="chkbox_label">Remember Me</string>
+    <string name="tv_label">OR</string>
     <string-array
         name="configlist">
         <item>Paramètres d\'affichage</item>

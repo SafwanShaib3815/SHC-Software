@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4D969F"
@@ -12,7 +19,7 @@
         android:layout_width="338dp"
         android:layout_height="54dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="164dp"
         android:layout_marginEnd="81dp"
         android:backgroundTint="#FBF7F7"
         android:hint="@string/login_username_hint"
@@ -20,7 +27,7 @@
         android:inputType="textWebEmailAddress"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,23 +36,23 @@
         android:layout_width="333dp"
         android:layout_height="68dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginTop="236dp"
         android:layout_marginEnd="74dp"
         android:backgroundTint="#FBFBFB"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="279dp"
-        android:layout_height="187dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="41dp"
+        android:layout_width="185dp"
+        android:layout_height="138dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher" />
@@ -54,43 +61,13 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="204dp"
+
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="132dp"
         android:text="@string/loginBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        style="@style/text_field_style3"
-        android:layout_width="162dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="396dp"
-        android:text="@string/chkbox_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        style="@style/text_field_style3"
-        android:layout_width="50dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="524dp"
-        android:text="@string/tv_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="564dp"
-        android:src="@drawable/google_image1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

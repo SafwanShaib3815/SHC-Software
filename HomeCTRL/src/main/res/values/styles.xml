@@ -34,5 +34,10 @@
             @color/dark_grey
         </item>
     </style>
+    <style name="text_field_style3">
+        <item name="android:textSize">18sp</item>
+        <item name = "android:textStyle">bold</item>
+
+    </style>
 
 </resources>
