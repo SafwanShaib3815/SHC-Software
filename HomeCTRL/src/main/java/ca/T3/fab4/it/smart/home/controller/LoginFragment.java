@@ -100,11 +100,11 @@ public class LoginFragment extends Fragment {
                 }
 
                 if (password.isEmpty()) {
-                    editTextPassword.setError("Password field can not be blank");
+                    editTextPassword.setError(getString(R.string.pass_validation1));
                 }
                 else if (password.length() < 5 ) {
 
-                    editTextPassword.setError("Password should contain at least 5 digits");
+                    editTextPassword.setError(getString(R.string.pass_validation2));
 
                 }
 
