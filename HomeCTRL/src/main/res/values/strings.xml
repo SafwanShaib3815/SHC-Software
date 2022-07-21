@@ -65,5 +65,6 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="model_review">Your device\'s model:</string>
     <string name="user_saved">user has been saved</string>
     <string name="save_failed">\"Fail to add data \"</string>
+    <string name="check_numeric">.*\\d.*</string>
 
 </resources>
