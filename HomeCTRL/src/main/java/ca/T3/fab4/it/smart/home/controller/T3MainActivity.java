@@ -163,7 +163,11 @@ public class T3MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(T3MainActivity.this,
                         SettingsActivity.class);
                 startActivity(intent1);
-
+                break;
+            case R.id.T3_menu_review:
+                Intent intent2 = new Intent(T3MainActivity.this,
+                        ReviewActivity.class);
+                startActivity(intent2);
                 break;
         }
         return super.onOptionsItemSelected(item);

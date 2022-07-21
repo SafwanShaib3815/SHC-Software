@@ -27,4 +27,10 @@
         app:showAsAction="never"
         android:icon="@drawable/about_icon"
         />
+     <item
+        android:id="@+id/T3_menu_review"
+        android:title="@string/review"
+        app:showAsAction="never"
+        />
+
 </menu>
