@@ -3,6 +3,7 @@ package ca.T3.fab4.it.smart.home.controller;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,8 @@ public class ReviewActivity extends AppCompatActivity {
 
     Button submit;  //variable to hold the button object
     TextView modelTv; //variable to hold the "user phone model" text view object
+    String model = Build.MODEL; //returns the user's device Model
+
     FirebaseDatabase firebaseDatabase; //firebase database object
 
     DatabaseReference databaseReference;//firebase database reference
@@ -45,6 +48,10 @@ public class ReviewActivity extends AppCompatActivity {
         submit = findViewById(R.id.review_submit); //initializing the submit variable to the xml button
         modelTv = findViewById(R.id.review_model_TV); //initializing the modelTv variable to the xml textview
 
+        //concatenating the text model view value with the device model as a string
+        String concat = getResources().getString(R.string.model_review)+" " +model;
+        //setting the model textview valu with the resultant string (this way allows for multiple languages)
+        modelTv.setText(concat);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

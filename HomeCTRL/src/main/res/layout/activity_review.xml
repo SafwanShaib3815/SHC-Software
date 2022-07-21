@@ -68,4 +68,15 @@
             android:layout_height="wrap_content"
             android:text="@string/submit_review" />
     </LinearLayout>
+    <TextView
+        android:id="@+id/review_model_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="47dp"
+        android:text="@string/model_review"
+        android:textAlignment="center"
+        android:fontFamily="@font/fff_tusj"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
