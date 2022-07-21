@@ -67,5 +67,9 @@ Nkeiru Johnson-Achilike n01411707    0NA
     <string name="save_failed">\"Fail to add data \"</string>
     <string name="check_numeric">.*\\d.*</string>
     <string name="review">Review</string>
+    <string name="ET_Validation1">User name field Can\'t be blank</string>
+    <string name="ET_Validation2">User name should have minimum 3 charecters</string>
+    <string name="ET_validation3">User name should not contain any numeric charecter</string>
+
 
 </resources>

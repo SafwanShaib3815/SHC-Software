@@ -86,16 +86,16 @@ public class LoginFragment extends Fragment {
                 password = editTextPassword.getText().toString();
 
                 if (userName.isEmpty()) {
-                    editTextUserName.setError("User name field Can't be blank");
+                    editTextUserName.setError(getString(R.string.ET_Validation1));
                 }
                 else if (userName.length() < 3) {
 
-                    editTextUserName.setError("User name should have minimum 3 charecters");
+                    editTextUserName.setError(getString(R.string.ET_Validation2));
 
                 }
 
                 else if(userName.matches(getString(R.string.check_numeric))){
-                    editTextUserName.setError("User name should not contain any numeric charecter");
+                    editTextUserName.setError(getString(R.string.ET_validation3));
 
                 }
 
