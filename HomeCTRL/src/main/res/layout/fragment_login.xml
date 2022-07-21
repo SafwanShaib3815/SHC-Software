@@ -29,14 +29,14 @@
         android:layout_width="333dp"
         android:layout_height="68dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginTop="312dp"
         android:layout_marginEnd="74dp"
         android:backgroundTint="#FBFBFB"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.757"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,8 +54,8 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="216dp"
         android:text="@string/loginBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -65,9 +65,20 @@
         style="@style/text_field_style3"
         android:layout_width="162dp"
         android:layout_height="48dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="428dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="396dp"
         android:text="@string/chkbox_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/text_field_style3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="512dp"
+        android:text="@string/tv_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
