@@ -71,5 +71,9 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="ET_validation3">User name should not contain any numeric charecter</string>
     <string name="pass_validation1">Password field can not be blank</string>
     <string name="pass_validation2">Password should contain at least 5 digits</string>
+    <string name="userreview_added_to_db">Submitted successfully</string>
+    <string name="error_submitting_review">Error submitting review</string>
+    <string name="user_exists">User Exists</string>
+    <string name="db_error">Database error</string>
 
 </resources>
