@@ -43,6 +43,12 @@ Nkeiru Johnson-Achilike n01411707    0NA
     <string name="menu_title5">Login</string>
     <string name="chkbox_label">Remember Me</string>
     <string name="tv_label">OR</string>
+    <string name="pref_label">UserPref</string>
+    <string name="u_name">Username</string>
+    <string name="pass">Password</string>
+    <string name="check">checked</string>
+    <string name="blank1" />
+    <string name="blank2" />
     <string-array
         name="configlist">
         <item>Paramètres d\'affichage</item>
@@ -50,5 +56,22 @@ Nkeiru Johnson-Achilike n01411707    0NA
         <item>Les paramètres du système</item>
         <item>A propos de l\'appareil</item>
     </string-array>
+    <string name="send_love">Send Love</string>
+    <string name="submit_review">Submit</string>
+    <string name="comment_review">Your comment</string>
+    <string name="email_review">Email</string>
+    <string name="phone_review">Phone Number</string>
+    <string name="name_review">Your Name</string>
+    <string name="model_review">Your device\'s model:</string>
+    <string name="user_saved">user has been saved</string>
+    <string name="save_failed">\"Fail to add data \"</string>
+    <string name="check_numeric">.*\\d.*</string>
+    <string name="review">Review</string>
+    <string name="ET_Validation1">User name field Can\'t be blank</string>
+    <string name="ET_Validation2">User name should have minimum 3 charecters</string>
+    <string name="ET_validation3">User name should not contain any numeric charecter</string>
+    <string name="pass_validation1">Password field can not be blank</string>
+    <string name="pass_validation2">Password should contain at least 5 digits</string>
+
 
 </resources>

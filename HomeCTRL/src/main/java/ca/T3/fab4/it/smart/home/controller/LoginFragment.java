@@ -1,12 +1,18 @@
 package ca.T3.fab4.it.smart.home.controller;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +65,62 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(getString(R.string.pref_label), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        EditText editTextUserName = view.findViewById(R.id.login_username);
+        EditText editTextPassword = view.findViewById(R.id.editText2);
+
+
+        Button btn = view.findViewById(R.id.button1);
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String userName = null, password = null;
+
+                userName = editTextUserName.getText().toString();
+                password = editTextPassword.getText().toString();
+
+                if (userName.isEmpty()) {
+                    editTextUserName.setError(getString(R.string.ET_Validation1));
+                }
+                else if (userName.length() < 3) {
+
+                    editTextUserName.setError(getString(R.string.ET_Validation2));
+
+                }
+
+                else if(userName.matches(getString(R.string.check_numeric))){
+                    editTextUserName.setError(getString(R.string.ET_validation3));
+
+                }
+
+                if (password.isEmpty()) {
+                    editTextPassword.setError(getString(R.string.pass_validation1));
+                }
+                else if (password.length() < 5 ) {
+
+                    editTextPassword.setError(getString(R.string.pass_validation2));
+
+                }
+
+                editor.putString(getString(R.string.u_name), userName);
+                editor.putString(getString(R.string.pass), password);
+
+                editor.commit();
+
+            }
+        });
+
+
+        CheckBox chk = view.findViewById(R.id.checkBox);
+        chk.setChecked(sharedPreferences.getBoolean(getString(R.string.check), true));
+        editTextUserName.setText(sharedPreferences.getString(getString(R.string.u_name), getString(R.string.blank1)));
+        editTextPassword.setText(sharedPreferences.getString(getString(R.string.pass), getString(R.string.blank2)));
+        return view;
     }
 }
