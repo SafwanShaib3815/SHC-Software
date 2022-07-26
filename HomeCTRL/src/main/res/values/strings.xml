@@ -71,5 +71,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="pass_validation1">Password field can not be blank</string>
     <string name="pass_validation2">Password should contain at least 5 digits</string>
     <string name="register">Register</string>
+    <string name="smokelevel">Current Smoke Level:</string>
+    <string name="normallevel">"Normal Smoke Level: "</string>
 
 </resources>

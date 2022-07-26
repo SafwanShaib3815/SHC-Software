@@ -13,9 +13,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class SmokeFragment extends Fragment {
 
+    private View view;
+    int img= 1;
+    int[] images = {R.mipmap.smokeclear_foreground, R.mipmap.smokedetected_foreground};
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -49,6 +56,18 @@ public class SmokeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_smoke, container, false);
+        view = inflater.inflate(R.layout.fragment_smoke,container,false);
+        ImageView imageView=view.findViewById(R.id.smokeiv1);
+        Button button = view.findViewById(R.id.smokebutton2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageView.setImageResource(images[img]);
+                img++;
+                if(img==2)
+                    img=0;
+            }
+        });
+        return view;
     }
 }
