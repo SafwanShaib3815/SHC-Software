@@ -52,31 +52,34 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="268dp"
+        android:layout_width="183dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="188dp"
+        android:layout_marginBottom="276dp"
         android:text="@string/loginBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="268dp"
-        android:layout_marginBottom="268dp"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="462dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="218dp"
+        android:backgroundTint="@android:color/transparent"
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/checkBox"
         style="@style/text_field_style3"
-        android:layout_width="162dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="480dp"
+        android:layout_width="157dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="424dp"
         android:text="@string/chkbox_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -102,5 +105,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="140dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="462dp"
+        android:layout_marginBottom="227dp"
+        android:text="No account?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
