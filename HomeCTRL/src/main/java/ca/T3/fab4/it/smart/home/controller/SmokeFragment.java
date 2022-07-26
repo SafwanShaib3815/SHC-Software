@@ -6,6 +6,7 @@ Nkeiru Johnson-Achilike   n01411707 0NA
 */
 package ca.T3.fab4.it.smart.home.controller;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -19,6 +20,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class SmokeFragment extends Fragment {
+
 
     private View view;
     int img= 1;
@@ -59,11 +61,16 @@ public class SmokeFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_smoke,container,false);
         ImageView imageView=view.findViewById(R.id.smokeiv1);
         Button button = view.findViewById(R.id.smokebutton2);
+        final MediaPlayer mediaPlayer= MediaPlayer.create(getActivity(), R.raw.alarm);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayer.start();
+                mediaPlayer.setLooping(true);
                 imageView.setImageResource(images[img]);
                 img++;
+                if(img==1)
+                    mediaPlayer.setLooping(false);
                 if(img==2)
                     img=0;
             }
