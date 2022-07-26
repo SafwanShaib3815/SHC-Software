@@ -11,7 +11,6 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="menu_title2">Motion</string>
     <string name="menu_title3">Smoke</string>
     <string name="menu_title4">RFID</string>
-    <string name="menu_title5">Login</string>
     <string name="alert_title">Exiting the app!</string>
     <string name="alert_msg">Click Yes to confirm or No to cancel</string>
     <string name="yes">Yes</string>
@@ -71,5 +70,6 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="ET_validation3">User name should not contain any numeric charecter</string>
     <string name="pass_validation1">Password field can not be blank</string>
     <string name="pass_validation2">Password should contain at least 5 digits</string>
+    <string name="register">Register</string>
 
 </resources>

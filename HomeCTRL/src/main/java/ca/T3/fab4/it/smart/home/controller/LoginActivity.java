@@ -1,7 +1,9 @@
 package ca.T3.fab4.it.smart.home.controller;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -62,4 +64,5 @@ public class LoginActivity extends AppCompatActivity {
 //            }
 //        });
     }
+
 }
