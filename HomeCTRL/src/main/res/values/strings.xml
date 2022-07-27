@@ -73,5 +73,9 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="register">Register</string>
     <string name="smokelevel">Current Smoke Level:</string>
     <string name="normallevel">"Normal Smoke Level: "</string>
+    <string name="userreview_added_to_db">Submitted successfully</string>
+    <string name="error_submitting_review">Error submitting review</string>
+    <string name="user_exists">User Exists</string>
+    <string name="db_error">Database error</string>
 
 </resources>
