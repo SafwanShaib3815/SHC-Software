@@ -3,9 +3,12 @@ package ca.T3.fab4.it.smart.home.controller;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import androidx.appcompat.app.ActionBar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,6 +57,20 @@ public class ReviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
 
+        //********* Action Bar *********
+        // Define ActionBar object
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+        // Define ColorDrawable object and parse color
+        // using parseColor method
+        // with color hash code as its parameter
+        ColorDrawable colorDrawable = new ColorDrawable(getColor(R.color.brown));
+        // Set BackgroundDrawable
+        actionBar.setBackgroundDrawable(colorDrawable);
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        //********* Action Bar *********
+
         //initializing user info variables to the edit text values
         name = findViewById(R.id.review_name);
         phone = findViewById(R.id.review_phone);
@@ -77,8 +94,13 @@ public class ReviewActivity extends AppCompatActivity {
                 commentStr = comment.getText().toString();
                 rating = ratingBar.getRating(); //assigning the rating float value to the rating variable
 
-                //writing user info to the database
-                sendToDb(nameStr, phoneStr, emailStr, commentStr, rating);
+                if(nameStr.length()==0 || phoneStr.length()==0 || emailStr.length()==0 || commentStr.length()==0 || rating == 0.0 ) {
+                Toast.makeText(getApplicationContext(), "Please fill all fields above", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    //writing user info to the database
+                    sendToDb(nameStr, phoneStr, emailStr, commentStr, rating);
+                }
 
             }
         });
@@ -144,5 +166,17 @@ public class ReviewActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+
+    //On action bar back arrow pressed
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
