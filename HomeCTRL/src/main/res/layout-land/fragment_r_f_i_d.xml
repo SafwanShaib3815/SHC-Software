@@ -21,34 +21,53 @@
         android:layout_marginBottom="117dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.098"
         app:srcCompat="@mipmap/r_f_i_d_foreground" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="180dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="364dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="302dp"
-        android:text="@string/open_door"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="180dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="624dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="42dp"
+        android:id="@+id/activity_log"
+        android:layout_width="112dp"
+        android:layout_height="51dp"
+        android:backgroundTint="@color/brown"
         android:text="@string/activity_log"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.604"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071" />
+
+    <ImageButton
+        android:id="@+id/T3_open_door_button"
+        android:layout_width="72dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="321dp"
+        android:layout_marginEnd="4dp"
+        android:background="@drawable/open_door_background"
+        android:src="@mipmap/open_door"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="@string/open_door_tv"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

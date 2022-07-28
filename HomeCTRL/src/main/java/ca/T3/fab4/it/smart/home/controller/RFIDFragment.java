@@ -13,8 +13,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class RFIDFragment extends Fragment {
+    View view;
+    ImageButton openDoor;
+    Button activityLog;
+
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -49,6 +56,16 @@ public class RFIDFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_r_f_i_d, container, false);
+        view = inflater.inflate(R.layout.fragment_r_f_i_d, container, false);
+        openDoor = view.findViewById(R.id.T3_open_door_button);
+        openDoor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(),"Door is open",Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+        return view;
     }
 }

@@ -21,14 +21,14 @@
         android:layout_marginBottom="345dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.012"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/r_f_i_d_foreground" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/activity_log"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/brown"
@@ -41,7 +41,7 @@
         app:layout_constraintVertical_bias="0.251" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/T3_open_door_button"
         android:layout_width="72dp"
         android:layout_height="57dp"
         android:layout_marginStart="321dp"
@@ -64,12 +64,12 @@
         android:fontFamily="cursive"
         android:text="@string/open_door_tv"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintHorizontal_bias="0.766"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.038" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
