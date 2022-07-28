@@ -13,6 +13,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class MotionFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
@@ -48,6 +52,42 @@ public class MotionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_motion, container, false);
+        View view = inflater.inflate(R.layout.fragment_motion, container, false);
+        RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.radiogroup1);
+
+        TextView stateOnOff;
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+
+                switch(checkedId) {
+                    case R.id.radioButton1:
+                        // switch to fragment 1
+                        break;
+                    case R.id.radioButton2:
+                        // Fragment 2
+                        break;
+                    case R.id.radioButton3:
+                        // Fragment 2
+                        break;
+                }
+            }
+        });
+        ToggleButton toggleButton = (ToggleButton) view.findViewById(R.id.toggleButton1);
+        stateOnOff=(TextView) view.findViewById(R.id.tvstate);
+        stateOnOff.setText("OFF");
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                if(isChecked){
+                    stateOnOff.setText("On");
+                }else{
+                    stateOnOff.setText("Off");
+                }
+            }
+        });
+        return view;
     }
 }
