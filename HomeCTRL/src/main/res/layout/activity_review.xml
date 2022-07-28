@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_pink"
+    android:background="@color/pink"
     tools:context=".ReviewActivity">
 
     <TextView
@@ -63,7 +63,14 @@
             android:hint="@string/comment_review"
             android:importantForAutofill="no"
             android:inputType="text" />
-
+        <RatingBar
+            android:id="@+id/T3_ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="1.0"
+            tools:layout_editor_absoluteX="73dp"
+            tools:layout_editor_absoluteY="358dp" />
     </LinearLayout>
 
     <TextView
@@ -71,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="340dp"
+        android:layout_marginBottom="196dp"
         android:fontFamily="@font/fff_tusj"
         android:text="@string/model_review"
         android:textAlignment="center"
@@ -99,4 +106,6 @@
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,12 +13,44 @@
 
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/smokeiv1"
         android:layout_width="319dp"
         android:layout_height="230dp"
-        android:layout_marginStart="500dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginStart="496dp"
+        android:layout_marginBottom="108dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/smokedetector_foreground" />
+        app:srcCompat="@mipmap/smokeclear_foreground" />
+
+    <Button
+        android:id="@+id/smokebutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="188dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/smoketv2"
+        style="@style/smokecreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/normallevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/smoketv1"
+        style="@style/smokecreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="140dp"
+        android:text="@string/smokelevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

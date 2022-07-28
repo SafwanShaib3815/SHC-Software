@@ -10,13 +10,13 @@
         android:id="@+id/MENU2"
         android:title="@string/menu_title2"
         android:enabled="true"
-        android:icon="@drawable/ic_motion"/>
+        android:icon="@drawable/ic_motion" />
 
     <item
         android:id="@+id/MENU3"
         android:title="@string/menu_title3"
         android:enabled="true"
-        android:icon="@drawable/ic_smoke"/>
+        android:icon="@drawable/ic_smoke" />
     <item
         android:id="@+id/MENU4"
         android:title="@string/menu_title4"

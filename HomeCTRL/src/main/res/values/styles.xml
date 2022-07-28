@@ -25,9 +25,7 @@
         </item>
     </style>
     <style name="background_fragment4">
-        <item name="android:background">
-            @color/light_grey
-        </item>
+        <item name="android:background">@drawable/r_f_i_d_background</item>
     </style>
     <style name="background_settings">
         <item name="android:background">
@@ -45,4 +43,10 @@
 
     </style>
 
+    <style name="smokecreen">
+        <item name="android:textSize">18sp</item>
+        <item name = "android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
 </resources>
