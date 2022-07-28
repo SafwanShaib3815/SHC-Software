@@ -6,6 +6,7 @@ Nkeiru Johnson-Achilike   n01411707 0NA
 */
 package ca.T3.fab4.it.smart.home.controller;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 public class RFIDFragment extends Fragment {
 
@@ -49,6 +51,15 @@ public class RFIDFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_r_f_i_d, container, false);
+        View view = inflater.inflate(R.layout.fragment_r_f_i_d, container, false);
+        Button addBtn = view.findViewById(R.id.button);
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
 }

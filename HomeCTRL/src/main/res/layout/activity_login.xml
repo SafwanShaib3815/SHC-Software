@@ -5,7 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4D969F"
-    tools:context=".T3MainActivity">
+    tools:context=".LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="182dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/login_image" />
 
     <EditText
         android:id="@+id/login_username"
@@ -18,7 +29,6 @@
         android:hint="@string/login_username_hint"
         android:importantForAutofill="no"
         android:inputType="textWebEmailAddress"
-        android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,29 +36,20 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="333dp"
-        android:layout_height="68dp"
+        android:layout_width="325dp"
+        android:layout_height="60dp"
         android:layout_marginStart="136dp"
         android:layout_marginTop="312dp"
         android:layout_marginEnd="74dp"
         android:backgroundTint="#FBFBFB"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
-        android:textColorHint="#757575"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.757"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="279dp"
-        android:layout_height="187dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="41dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
 
     <Button
         android:id="@+id/button1"
@@ -82,15 +83,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="564dp"
-        android:src="@drawable/google_image1"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="168dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="568dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,32 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".T3MainActivity">
+
     <item
-        android:id="@+id/T3_menu_help"
-        android:title="@string/help"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/T3_menu_calls"
-        android:title="@string/call"
+        android:id="@+id/T3_menu_home"
+        android:title="@string/home"
         app:showAsAction="always"
-        android:icon="@drawable/ic_calls"
+        android:icon="@drawable/ic_home"
         />
     <item
         android:id="@+id/T3_menu_settings"
         android:title="@string/settings"
-        app:showAsAction="ifRoom"
+        app:showAsAction="always"
         android:icon="@drawable/ic_settings"
-        />
-    <item
-        android:id="@+id/T3_menu_support"
-        android:title="@string/support"
-        app:showAsAction="never"
-        android:icon="@drawable/about_icon"
         />
      <item
         android:id="@+id/T3_menu_review"
         android:title="@string/review"
         app:showAsAction="never"
         />
+
+    <item
+        android:id="@+id/T3_menu_notification"
+        android:title="@string/notification_txt"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_notification"
+        />
+    <item
+        android:id="@+id/T3_menu_help"
+        android:title="@string/help"
+        app:showAsAction="never" />
 
 </menu>
