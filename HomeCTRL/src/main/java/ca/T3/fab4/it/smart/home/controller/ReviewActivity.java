@@ -44,7 +44,7 @@ public class ReviewActivity extends AppCompatActivity {
 
     Button submit;  //variable to hold the button object
     TextView modelTv; //variable to hold the "user phone model" text view object
-    String model = Build.MODEL; //returns the user's device Model
+    String model = Build.MODEL; //gets the user's device Model
 
     //firebase database objects
     FirebaseDatabase fbDatabase;
@@ -123,6 +123,7 @@ public class ReviewActivity extends AppCompatActivity {
         user.put("Email", email);
         user.put("Comment", comment);
         user.put("Rating", rating);
+        user.put("Device model", model);
 
 
         //Search database for the user's phone number
