@@ -77,5 +77,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="error_submitting_review">Error submitting review</string>
     <string name="user_exists">User Exists</string>
     <string name="db_error">Database error</string>
+    <string name="open_door">Open Door</string>
+    <string name="activity_log">Activity Log</string>
 
 </resources>

@@ -73,25 +73,25 @@ public class T3MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
 
                 case R.id.MENU1:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT, motionFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT, temperatureFragment).commit();
                     Toast toast = Toast.makeText(getApplicationContext(), R.string.motionscreen, Toast.LENGTH_SHORT); // initiate the Toast with context, message and duration for the Toast
                     toast.show();
                     return true;
 
                 case R.id.MENU2:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT, smokeFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT, motionFragment).commit();
                     Toast toast1 = Toast.makeText(getApplicationContext(), R.string.smokescreen, Toast.LENGTH_SHORT); // initiate the Toast with context, message and duration for the Toast
                     toast1.show();
                     return true;
 
                 case R.id.MENU3:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT, rfidFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT, smokeFragment).commit();
                     Toast toast2 = Toast.makeText(getApplicationContext(), R.string.rfidscreen, Toast.LENGTH_SHORT); // initiate the Toast with context, message and duration for the Toast
                     toast2.show();
                     return true;
 
                 default:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT, temperatureFragment).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.FRAGMENT, rfidFragment).commit();
                     Toast toast4 = Toast.makeText(getApplicationContext(), R.string.temperaturescreen, Toast.LENGTH_SHORT); // initiate the Toast with context, message and duration for the Toast
                     toast4.show();
                     return true;
