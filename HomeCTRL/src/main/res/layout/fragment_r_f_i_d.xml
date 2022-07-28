@@ -14,42 +14,62 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="410dp"
-        android:layout_height="384dp"
+        android:layout_width="225dp"
+        android:layout_height="223dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="345dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.012"
         app:srcCompat="@mipmap/r_f_i_d_foreground" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="180dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="215dp"
-        android:layout_marginBottom="270dp"
-        android:text="@string/open_door"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-    <Button
         android:id="@+id/button2"
-        android:layout_width="180dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="215dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="270dp"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/brown"
         android:text="@string/activity_log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="72dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="321dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="648dp"
+        android:background="@drawable/open_door_background"
+        android:src="@mipmap/open_door"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="@string/open_door_tv"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.754"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

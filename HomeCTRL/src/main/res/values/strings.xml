@@ -28,11 +28,11 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="snackbar_deny">Phone call permission Denied</string>
     <string name="phone_number">tel:(416)999-0000</string>
     <string name="sharedpref_filename">HomeCTRL_file</string>
-    <string name="motionscreen">motion screen</string>
-    <string name="smokescreen">smoke screen</string>
-    <string name="rfidscreen">rfid screen</string>
+    <string name="motionscreen">Motion Screen</string>
+    <string name="smokescreen">Smoke Screen</string>
+    <string name="rfidscreen">RFID Screen</string>
     <string name="loginScreen">login screen</string>
-    <string name="temperaturescreen">temperature screen</string>
+    <string name="temperaturescreen">Temperature Screen</string>
     <string name="permissionaceppt">permission accepted</string>
     <string name="permissionisgiven">permission was given by the user</string>
     <string name="title">title</string>
@@ -79,5 +79,6 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="db_error">Database error</string>
     <string name="open_door">Open Door</string>
     <string name="activity_log">Activity Log</string>
+    <string name="open_door_tv">Open Door</string>
 
 </resources>
