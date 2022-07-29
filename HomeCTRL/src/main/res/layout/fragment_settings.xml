@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
+            <RadioButton
             android:id="@+id/radioButton3"
             style="@style/radiobutton_text_style"
             android:layout_width="161dp"

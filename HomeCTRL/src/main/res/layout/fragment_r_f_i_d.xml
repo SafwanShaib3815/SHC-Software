@@ -13,10 +13,9 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="307dp"
-        android:layout_height="259dp"
+        android:layout_width="252dp"
+        android:layout_height="256dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginBottom="444dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -24,18 +23,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/r_f_i_d_foreground" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="244dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="536dp"
-        android:text="@string/tv2"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/activity_log"
@@ -45,28 +32,24 @@
         android:text="@string/activity_log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintHorizontal_bias="0.992"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintVertical_bias="0.283" />
 
     <ImageButton
         android:id="@+id/T3_open_door_button"
         android:layout_width="72dp"
         android:layout_height="57dp"
-        android:layout_marginStart="321dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="648dp"
         android:background="@drawable/open_door_closed_bckgnd"
         android:contentDescription="@string/open_door_tv"
         android:src="@mipmap/ic_door_closed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <TextView
         android:id="@+id/open_door_tv"
@@ -78,10 +61,10 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.739"
+        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <TextView
         android:id="@+id/activity_log_tv"
@@ -92,9 +75,9 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.352"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.829" />
+        app:layout_constraintVertical_bias="0.775" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

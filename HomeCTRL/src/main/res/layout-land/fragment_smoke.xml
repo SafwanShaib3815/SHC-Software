@@ -9,25 +9,40 @@
     style="@style/background_fragment3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".T3MainActivity">
+    tools:context=".T3MainActivity"
+    tools:layout_editor_absoluteX="4dp"
+    tools:layout_editor_absoluteY="-64dp">
 
 
     <ImageView
         android:id="@+id/smokeiv1"
-        android:layout_width="319dp"
-        android:layout_height="230dp"
-        android:layout_marginStart="496dp"
-        android:layout_marginBottom="108dp"
+        android:layout_width="393dp"
+        android:layout_height="391dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/smokeclear_foreground" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.008"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
 
     <Button
         android:id="@+id/smokebutton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="124dp"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,8 +52,8 @@
         style="@style/smokecreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
         android:text="@string/normallevel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,8 +63,8 @@
         style="@style/smokecreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="64dp"
         android:text="@string/smokelevel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

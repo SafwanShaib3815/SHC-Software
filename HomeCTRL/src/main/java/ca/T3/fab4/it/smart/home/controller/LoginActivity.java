@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
 //        gsc = GoogleSignIn.getClient(this, gso);
 //        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         EditText editTextUserName = findViewById(R.id.login_username);
-        EditText editTextPassword = findViewById(R.id.editText2);
+        EditText editTextPassword = findViewById(R.id.login_password);
 
         Button btn = findViewById(R.id.button1);
         btn.setOnClickListener(new View.OnClickListener() {
