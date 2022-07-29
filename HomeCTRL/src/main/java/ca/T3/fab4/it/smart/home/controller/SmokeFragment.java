@@ -6,25 +6,26 @@ Nkeiru Johnson-Achilike   n01411707 0NA
 */
 package ca.T3.fab4.it.smart.home.controller;
 
-import android.media.MediaPlayer;
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.RatingBar;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class SmokeFragment extends Fragment {
 
-    private View view;
-    int img= 1;
-    int[] images = {R.mipmap.smokeclear_foreground, R.mipmap.smokedetected_foreground};
+    final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -58,23 +59,59 @@ public class SmokeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_smoke,container,false);
-        ImageView imageView=view.findViewById(R.id.smokeiv1);
-        Button button = view.findViewById(R.id.smokebutton2);
-        final MediaPlayer mediaPlayer= MediaPlayer.create(getActivity(), R.raw.alarm);
-        button.setOnClickListener(new View.OnClickListener() {
+        View view = inflater.inflate(R.layout.fragment_smoke, container, false);
+        Button btn = view.findViewById(R.id.button2);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                mediaPlayer.start();
-                mediaPlayer.setLooping(true);
-                imageView.setImageResource(images[img]);
-                img++;
-                if(img==1)
-                    mediaPlayer.setLooping(false);
-                if(img==2)
-                    img=0;
+            public void onClick(View view) {
+
+                if (ContextCompat.checkSelfPermission(getContext(),
+                        Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE},
+                            REQUEST_CODE_ASK_PERMISSIONS);
+
+                }
+                makePhoneCall();
+
             }
         });
         return view;
     }
+
+
+        @Override
+        public void onRequestPermissionsResult ( int requestCode, String[] permissions,
+        int[] grantResults){
+            switch (requestCode) {
+                case REQUEST_CODE_ASK_PERMISSIONS:
+                    if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                        // Permission Granted
+                        Snackbar.make(getActivity().findViewById(android.R.id.content), R.string.snackbar_allow, Snackbar.LENGTH_LONG)
+                                .show();
+                        makePhoneCall();
+                    } else {
+                        // Permission Denied
+                        Snackbar.make(getActivity().findViewById(android.R.id.content), R.string.snackbar_deny, Snackbar.LENGTH_LONG)
+                                .show();
+                    }
+                    break;
+                default:
+                    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+            }
+        }
+
+        private void makePhoneCall () {
+            try {
+                Intent intent = new Intent(Intent.ACTION_CALL);
+
+                intent.setData(Uri.parse(getString(R.string.phone_number)));
+
+                startActivity(intent);
+            } catch (Exception e) {
+
+                e.printStackTrace();
+            }
+
+        }
+
 }

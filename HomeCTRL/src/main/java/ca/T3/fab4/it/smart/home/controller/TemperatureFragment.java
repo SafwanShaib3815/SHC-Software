@@ -6,21 +6,38 @@ Nkeiru Johnson-Achilike   n01411707 0NA
 */
 package ca.T3.fab4.it.smart.home.controller;
 
+import static android.content.ContentValues.TAG;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Switch;
+import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link TemperatureFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TemperatureFragment extends Fragment {
+public class TemperatureFragment extends Fragment implements Animation.AnimationListener{
 
+    String value = "";
+    ImageView imageView;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -65,6 +82,82 @@ public class TemperatureFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_temperature, container, false);
+        View view =  inflater.inflate(R.layout.fragment_temperature, container, false);
+        Switch readData = view.findViewById(R.id.switch1);
+
+        // Write a message to the database
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference temp = ref.child("Dummy Sensors").child("Temp").child("Temp2");
+        TextView txtMessage = (TextView) view.findViewById(R.id.textView10);
+        imageView = view.findViewById(R.id.imageView4);
+        Button onButton = view.findViewById(R.id.button4);
+        Button offButton = view.findViewById(R.id.button5);
+        Animation an = AnimationUtils.loadAnimation(getContext(), R.anim.rotate);
+        an.setAnimationListener(this);
+
+
+        onButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imageView.startAnimation(an);
+            }
+        });
+
+        offButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                imageView.clearAnimation();
+            }
+        });
+
+        temp.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                value = dataSnapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        readData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (readData.isChecked()) {
+
+                    txtMessage.setText("Temp is: " + value);
+                }else
+                {
+                    txtMessage.setText(" ");
+                }
+
+
+            }
+        });
+
+        return view;
+
+    }
+
+
+
+    @Override
+    public void onAnimationStart(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationEnd(Animation animation) {
+
+    }
+
+    @Override
+    public void onAnimationRepeat(Animation animation) {
+
     }
 }

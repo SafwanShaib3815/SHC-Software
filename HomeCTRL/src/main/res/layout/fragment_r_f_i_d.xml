@@ -11,14 +11,12 @@
     android:layout_height="match_parent"
     tools:context=".T3MainActivity">
 
-
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="225dp"
-        android:layout_height="223dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="345dp"
+        android:layout_width="307dp"
+        android:layout_height="259dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="444dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -26,6 +24,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/r_f_i_d_foreground" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="244dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="536dp"
+        android:text="@string/tv2"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/activity_log"
