@@ -137,6 +137,7 @@
     <string name="on">ON</string>
     <string name="off">OFF</string>
     <string name="logout">Logout</string>
+    <string name="smokesensed">smoke is sensed!</string>
 
 
 </resources>
