@@ -76,7 +76,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="blnk5" />
     <string name="blnk1" />
     <string name="blnk" />
-    <string name="btn3_label">Set Notification</string>
+    <string name="btn3_label">Configure Now</string>
     <string-array name="item_contacts">
         <item>Safwan Shaib </item>
         <item>Abdalrahman Ragab</item>

@@ -26,7 +26,7 @@ public class NotificationActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         TextView notificationLabel = findViewById(R.id.textView7);
-        notificationLabel.setText("Missing Anything Important!!!!");
+        notificationLabel.setText("Don't Miss the Notification!!!");
 
         Button btn = findViewById(R.id.button3);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){

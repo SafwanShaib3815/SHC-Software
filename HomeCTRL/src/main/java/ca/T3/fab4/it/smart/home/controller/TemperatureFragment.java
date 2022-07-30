@@ -8,6 +8,8 @@ package ca.T3.fab4.it.smart.home.controller;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -84,6 +86,7 @@ public class TemperatureFragment extends Fragment implements Animation.Animation
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_temperature, container, false);
         Switch readData = view.findViewById(R.id.switch1);
+        SharedPreferences sharedPref = getActivity().getSharedPreferences("SettingsPref", Context.MODE_PRIVATE);
 
         // Write a message to the database
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
@@ -128,17 +131,26 @@ public class TemperatureFragment extends Fragment implements Animation.Animation
         readData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (readData.isChecked()) {
+                float fahrenheit;
+                if (readData.isChecked() && sharedPref.getString("Temperature", "").equalsIgnoreCase("Celsius")) {
 
                     txtMessage.setText("Temp is: " + value);
-                }else
+                }
+
+                else if (readData.isChecked() && sharedPref.getString("Temperature", "").equalsIgnoreCase("Fahrenheit")) {
+                    fahrenheit = (Float.valueOf(value).floatValue() * 9 / 5 ) + 32 ;
+                    txtMessage.setText("Temp is: " + fahrenheit);
+                }
+                else
                 {
                     txtMessage.setText(" ");
                 }
 
-
             }
         });
+
+
+
 
         return view;
 
