@@ -13,14 +13,14 @@
 
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/smokeiv1"
         android:layout_width="319dp"
         android:layout_height="230dp"
         android:layout_marginStart="44dp"
         android:layout_marginBottom="484dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/smokedetector_foreground" />
+        app:srcCompat="@mipmap/smokeclear_foreground" />
 
     <Button
         android:id="@+id/button2"
