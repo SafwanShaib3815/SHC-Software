@@ -6,6 +6,7 @@ Nkeiru Johnson-Achilike   n01411707 0NA
 */
 package ca.T3.fab4.it.smart.home.controller;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -90,7 +91,14 @@ public class RFIDFragment extends Fragment {
             }
         });
 
-
+        Button notificationSend = view.findViewById(R.id.button10);
+        notificationSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), NotificationActivity.class);
+                startActivity(i);
+            }
+        });
         return view;
     }
 

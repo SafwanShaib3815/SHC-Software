@@ -208,9 +208,9 @@ public class T3MainActivity extends AppCompatActivity {
                 startActivity(intent1);
                 break;
             case R.id.T3_menu_notification:
-                Intent intent4 = new Intent(T3MainActivity.this,
+                Intent intent2 = new Intent(T3MainActivity.this,
                         NotificationActivity.class);
-                startActivity(intent4);
+                startActivity(intent2);
                 break;
             case R.id.T3_menu_settings:
                 Snackbar.make(findViewById(android.R.id.content), R.string.str1, Snackbar.LENGTH_LONG)
@@ -221,6 +221,15 @@ public class T3MainActivity extends AppCompatActivity {
                 Intent intent3 = new Intent(T3MainActivity.this,
                         ReviewActivity.class);
                 startActivity(intent3);
+                break;
+
+            case R.id.T3_menu_logout:
+                Snackbar.make(findViewById(android.R.id.content), "Logging Out!!!", Snackbar.LENGTH_LONG)
+                        .show();
+                Intent intent4 = new Intent(T3MainActivity.this,
+                        LoginActivity.class);
+                startActivity(intent4);
+
                 break;
         }
         return super.onOptionsItemSelected(item);

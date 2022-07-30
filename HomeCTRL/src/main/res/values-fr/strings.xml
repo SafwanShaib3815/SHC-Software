@@ -21,7 +21,7 @@
     <string name="about_tv">Cet écran affiche des informations générales sur l\'application qui n\'a pas encore été implémentée</string>
     <string name="snackbar_allow">Autorisation d\'appel téléphonique autorisée</string>
     <string name="snackbar_deny">Autorisation d\'appel téléphonique refusée</string>
-    <string name="phone_number">tél:(416)999-0000</string>
+    <string name="phone_number">tél:999</string>
     <string name="sharedpref_filename">AccueilCTRL_file</string>
     <string name="motionscreen">Écran de mouvement</string>
     <string name="smokescreen">Écran de fumée</string>
@@ -136,6 +136,7 @@
     <string name="profile_picture">Image de Profil</string>
     <string name="on">ON</string>
     <string name="off">OFF</string>
+    <string name="logout">Logout</string>
 
 
 </resources>

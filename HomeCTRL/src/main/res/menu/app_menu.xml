@@ -7,15 +7,21 @@
     tools:context=".T3MainActivity">
 
     <item
-        android:id="@+id/T3_menu_home"
-        android:title="@string/home"
+    android:id="@+id/T3_menu_home"
+    android:title="@string/home"
+    app:showAsAction="always"
+    android:icon="@drawable/ic_home"
+    />
+    <item
+        android:id="@+id/T3_menu_logout"
+        android:title="@string/logout"
         app:showAsAction="always"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_logout"
         />
     <item
         android:id="@+id/T3_menu_settings"
         android:title="@string/settings"
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:icon="@drawable/ic_settings"
         />
      <item
