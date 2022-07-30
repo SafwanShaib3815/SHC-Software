@@ -26,8 +26,8 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="552dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="508dp"
         android:text="@string/btn2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
