@@ -28,6 +28,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 public class SmokeFragment extends Fragment {
@@ -70,9 +71,10 @@ public class SmokeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_smoke, container, false);
-        Button btn = view.findViewById(R.id.button2);
+
         ImageView imageView=view.findViewById(R.id.smokeiv1);
         Button button = view.findViewById(R.id.smokebutton2);
+        FloatingActionButton floatingActionButton=view.findViewById(R.id.button2);
         final MediaPlayer mediaPlayer= MediaPlayer.create(getActivity(), R.raw.alarm);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("aa", "aa",NotificationManager.IMPORTANCE_DEFAULT);
@@ -103,7 +105,7 @@ public class SmokeFragment extends Fragment {
 
             }
         });
-        btn.setOnClickListener(new View.OnClickListener() {
+       floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
