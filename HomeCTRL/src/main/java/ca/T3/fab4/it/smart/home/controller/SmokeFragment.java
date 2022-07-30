@@ -7,12 +7,18 @@ Nkeiru Johnson-Achilike   n01411707 0NA
 package ca.T3.fab4.it.smart.home.controller;
 
 import android.Manifest;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -68,17 +74,33 @@ public class SmokeFragment extends Fragment {
         ImageView imageView=view.findViewById(R.id.smokeiv1);
         Button button = view.findViewById(R.id.smokebutton2);
         final MediaPlayer mediaPlayer= MediaPlayer.create(getActivity(), R.raw.alarm);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("aa", "aa",NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = (NotificationManager) getActivity().getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(),"aa");
+                builder.setContentTitle(getString(R.string.smokesensed));
+                builder.setContentText("there is a smoke in the house please follow the safety measures and clear the situation");
+                builder.setAutoCancel(true);
+                builder.setSmallIcon(R.drawable.ic_smoke);
+
+                NotificationManagerCompat managerCompat= NotificationManagerCompat.from(getActivity());
+
+
                 mediaPlayer.start();
                 mediaPlayer.setLooping(true);
                 imageView.setImageResource(images[img]);
                 img++;
+                managerCompat.notify(1,builder.build());
                 if(img==1)
                     mediaPlayer.setLooping(false);
                 if(img==2)
                     img=0;
+
             }
         });
         btn.setOnClickListener(new View.OnClickListener() {

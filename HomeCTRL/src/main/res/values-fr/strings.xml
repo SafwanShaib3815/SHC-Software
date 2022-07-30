@@ -136,6 +136,7 @@
     <string name="profile_picture">Image de Profil</string>
     <string name="on">ON</string>
     <string name="off">OFF</string>
+    <string name="smokesensed">smoke is sensed!</string>
 
 
 </resources>
