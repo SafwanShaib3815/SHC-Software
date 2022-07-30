@@ -6,6 +6,8 @@ Nkeiru Johnson-Achilike   n01411707 0NA
 */
 package ca.T3.fab4.it.smart.home.controller;
 
+import static android.content.ContentValues.TAG;
+
 import android.Manifest;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -17,22 +19,33 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SmokeFragment extends Fragment {
 
+    String valuee = "";
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
     private View view;
     int img= 1;
@@ -72,6 +85,9 @@ public class SmokeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_smoke, container, false);
 
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference smoke = ref.child("Dummy Sensors").child("Smoke").child("smoke2");
+        TextView txtmessage = (TextView) view.findViewById(R.id.smokeretrive);
         ImageView imageView=view.findViewById(R.id.smokeiv1);
         Button button = view.findViewById(R.id.smokebutton2);
         FloatingActionButton floatingActionButton=view.findViewById(R.id.button2);
@@ -81,6 +97,19 @@ public class SmokeFragment extends Fragment {
             NotificationManager manager = (NotificationManager) getActivity().getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
         }
+        smoke.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                valuee = dataSnapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +121,19 @@ public class SmokeFragment extends Fragment {
 
                 NotificationManagerCompat managerCompat= NotificationManagerCompat.from(getActivity());
 
-
+                txtmessage.setText(" " + valuee);
+//                int number = Integer.parseInt(valuee);
+//                if(number <= 30){
+//                    mediaPlayer.setLooping(false);
+//                    img=R.mipmap.smokeclear_foreground;
+//                }
+//                else if (number >=31){
+//                    mediaPlayer.start();
+//                    mediaPlayer.setLooping(true);
+//                    imageView.setImageResource(images[img]);
+//                    img = R.mipmap.smokedetector_foreground;
+//                    managerCompat.notify(1,builder.build());
+//                }
                 mediaPlayer.start();
                 mediaPlayer.setLooping(true);
                 imageView.setImageResource(images[img]);
@@ -121,6 +162,7 @@ public class SmokeFragment extends Fragment {
         });
         return view;
     }
+
 
 
         @Override

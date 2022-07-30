@@ -138,6 +138,7 @@
     <string name="off">OFF</string>
     <string name="logout">Logout</string>
     <string name="smokesensed">smoke is sensed!</string>
+    <string name="space">" "</string>
 
 
 </resources>
