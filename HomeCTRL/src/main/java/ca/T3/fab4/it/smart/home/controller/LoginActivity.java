@@ -1,5 +1,7 @@
 package ca.T3.fab4.it.smart.home.controller;
 
+import static java.lang.System.exit;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -62,41 +64,75 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String userName = null, password = null;
-
+                Boolean validate=true;
+                //String PASSWORD_PATTERN = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})";
+                String PASSWORD_PATTERN2 = "(.*[0-9].*)(.*[A-Z].*)^(?=.*[_.()$&@]).*$";
                 userName = editTextUserName.getText().toString();
                 password = editTextPassword.getText().toString();
 
                 if (userName.isEmpty()) {
                     editTextUserName.setError(getString(R.string.ET_Validation1));
-                } else if (userName.length() < 3) {
-
-                    editTextUserName.setError(getString(R.string.ET_Validation2));
-
-                } else if (userName.matches(getString(R.string.check_numeric))) {
-                    editTextUserName.setError(getString(R.string.ET_validation3));
-
+                    validate=false;
+                } else if (!userName.matches("tanushree@humber.ca") && !userName.matches("safwan@humber.ca")
+                           && !userName.matches("abdul@humber.ca") && !userName.matches("nkeiru@humber.ca"))
+                {
+                    editTextUserName.setError("Invalid Username!!!");
+                    validate=false;
                 }
 
                 if (password.isEmpty()) {
                     editTextPassword.setError(getString(R.string.pass_validation1));
-                } else if (password.length() < 5) {
+                    validate=false;
+                } else if (!password.matches("(.*[0-9].*)")) {
 
-                    editTextPassword.setError(getString(R.string.pass_validation2));
+                    editTextPassword.setError("Include at least one digit!!");
+                    validate=false;
 
+                }else if (!password.matches("(.*[A-Z].*)")) {
+                    editTextPassword.setError("Include at least one upper case letter!!");
+                    validate=false;
+                }else if (!password.matches("^(?=.*[_.()$&@]).*$")) {
+                    editTextPassword.setError("Should include at least one special char!!");
+                    validate=false;
+                }else if(password.length() < 8){
+                    editTextPassword.setError("Password should be at least 8 in length!!");
+                    validate=false;
                 }
+
+                if (validate)
+                {
+                    Log.d("Tag", "Inside");
+                    Intent intent = new Intent(LoginActivity.this, T3MainActivity.class);
+                    startActivity(intent);
+                }
+
 
                 editor.putString(getString(R.string.u_name), userName);
                 editor.putString(getString(R.string.pass), password);
                 editor.commit();
-
-                Intent intent = new Intent(LoginActivity.this, T3MainActivity.class);
-                startActivity(intent);
 
             }
         });
 
 
         CheckBox chk = findViewById(R.id.checkBox);
+        chk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean checked = ((CheckBox) view).isChecked();
+
+                if(!checked){
+                    editTextUserName.setText("");
+                    editTextPassword.setText("");
+                    editor.putBoolean("bool1", false);
+                }
+                else{
+                    editor.putBoolean("bool1", true);
+                    editTextUserName.setText(sharedPreferences.getString(getString(R.string.u_name), getString(R.string.blank1)));
+                    editTextPassword.setText(sharedPreferences.getString(getString(R.string.pass), getString(R.string.blank2)));
+               }
+            }
+        });
         chk.setChecked(sharedPreferences.getBoolean(getString(R.string.check), true));
         editTextUserName.setText(sharedPreferences.getString(getString(R.string.u_name), getString(R.string.blank1)));
         editTextPassword.setText(sharedPreferences.getString(getString(R.string.pass), getString(R.string.blank2)));
