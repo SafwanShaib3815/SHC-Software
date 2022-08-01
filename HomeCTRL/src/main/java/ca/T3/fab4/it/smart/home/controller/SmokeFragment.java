@@ -49,7 +49,7 @@ public class SmokeFragment extends Fragment {
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
     private View view;
     int img= 1;
-    int[] images = {R.mipmap.smokeclear_foreground, R.mipmap.smokedetected_foreground};
+    int[] images = {R.mipmap.smokedetected_foreground,R.mipmap.smokeclear_foreground};
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -109,18 +109,19 @@ public class SmokeFragment extends Fragment {
 
                 NotificationManagerCompat managerCompat= NotificationManagerCompat.from(getActivity());
                 imageView.setImageResource(images[img]);
+
                 txtmessage.setText(" " + valuee);
                 int number = Integer.parseInt(valuee);
-                if (number >=31){
+                if(number <= 30) {
+                    mediaPlayer.setLooping(false);
+                    img = 0;
+                }
+                else if (number >=31){
                     mediaPlayer.start();
                     mediaPlayer.setLooping(true);
-                    img = 0;
+                    img = 1;
                     managerCompat.notify(1,builder.build());
 
-                }
-                else if(number <= 30) {
-                    mediaPlayer.setLooping(false);
-                    img = 1;
                 }
 
                 }
