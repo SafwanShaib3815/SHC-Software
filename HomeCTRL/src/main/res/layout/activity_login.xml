@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4D969F"
+    android:background="@drawable/background"
     tools:context=".LoginActivity">
 
 
@@ -12,8 +12,8 @@
         android:id="@+id/imageView9"
         android:layout_width="172dp"
         android:layout_height="170dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/profile_picture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,7 +26,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="248dp"
         android:layout_marginEnd="81dp"
-        android:backgroundTint="#FBF7F7"
+        android:backgroundTint="@color/black"
         android:hint="@string/login_username_hint"
         android:importantForAutofill="no"
         android:inputType="textWebEmailAddress"
@@ -44,7 +44,7 @@
         android:layout_marginTop="312dp"
         android:layout_marginEnd="74dp"
         android:autofillHints="password"
-        android:backgroundTint="#FBFBFB"
+        android:backgroundTint="@color/black"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
         android:minHeight="48dp"
