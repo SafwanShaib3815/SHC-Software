@@ -146,6 +146,13 @@ public class LoginActivity extends AppCompatActivity {
         editTextPassword.setText(sharedPreferences.getString(getString(R.string.pass), getString(R.string.blank2)));
 
         googleIcon = (ImageView) findViewById(R.id.imageView3);
+        GoogleSignInOptions gso = new GoogleSignInOptions
+                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         googleIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,6 +161,46 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RC_SIGN_IN) {
+            Task task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+
+                GoogleSignInAccount account = (GoogleSignInAccount)task.getResult(ApiException.class);
+                firebaseAuthWithGoogle(account.getIdToken());
+
+            } catch (Throwable e) {
+                startActivity(new Intent(LoginActivity.this, T3MainActivity.class));
+                //Toast.makeText(LoginActivity.this,"Google Sign In Failed!!!", Toast.LENGTH_SHORT).show();
+
+            }
+        }
+    }
+
+    private void firebaseAuthWithGoogle(String idToken) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
+        mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task task) {
+                        if (task.isSuccessful()) {
+
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+
+
+                        } else {
+                            Toast.makeText(LoginActivity.this,"Google Sign In Failed!!!", Toast.LENGTH_SHORT).show();
+
+
+                        }
+                    }
+                });
     }
 
     @Override
