@@ -46,6 +46,7 @@ import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.identity.SignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -59,6 +60,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -72,11 +74,15 @@ public class T3MainActivity extends AppCompatActivity {
     private RFIDFragment rfidFragment;
     ConstraintLayout constraintlayout;
 
+    public FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         constraintlayout = findViewById(R.id.constraintlayout);
+
+        mAuth = FirebaseAuth.getInstance();
 
         // Define ActionBar object
         ActionBar actionBar;
@@ -224,10 +230,11 @@ public class T3MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.T3_menu_logout:
-                Snackbar.make(findViewById(android.R.id.content), "Logging Out!!!", Snackbar.LENGTH_LONG)
+                Snackbar.make(findViewById(android.R.id.content), "Logging In!!!", Snackbar.LENGTH_LONG)
                         .show();
-                Intent intent4 = new Intent(T3MainActivity.this,
-                        LoginActivity.class);
+
+                mAuth.signOut();
+                Intent intent4 = new Intent(T3MainActivity.this, LoginActivity.class);
                 startActivity(intent4);
 
                 break;

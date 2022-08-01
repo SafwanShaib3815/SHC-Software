@@ -14,10 +14,10 @@
         android:layout_height="170dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="36dp"
+        android:contentDescription="@string/profile_picture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/login_image"
-        android:contentDescription="@string/profile_picture" />
+        app:srcCompat="@drawable/login_image" />
 
     <EditText
         android:id="@+id/login_username"
@@ -43,9 +43,9 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="312dp"
         android:layout_marginEnd="74dp"
+        android:autofillHints="password"
         android:backgroundTint="#FBFBFB"
         android:hint="@string/login_password_hint"
-        android:autofillHints="password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,11 +57,14 @@
         android:id="@+id/button1"
         android:layout_width="91dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="280dp"
+        android:layout_marginTop="453dp"
+        android:layout_marginEnd="284dp"
         android:layout_marginBottom="224dp"
         android:text="@string/loginBtn"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -79,19 +82,10 @@
         style="@style/text_field_style3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="172dp"
-        android:layout_marginTop="452dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="460dp"
         android:text="@string/tv_label"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="232dp"
-        android:layout_marginTop="440dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -116,5 +110,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="206dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="440dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/google_image1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

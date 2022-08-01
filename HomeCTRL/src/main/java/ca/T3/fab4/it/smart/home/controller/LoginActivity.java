@@ -1,46 +1,54 @@
 package ca.T3.fab4.it.smart.home.controller;
 
-import static java.lang.System.exit;
+import static android.content.ContentValues.TAG;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.identity.SignInCredential;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
+
+import java.util.regex.Pattern;
 
 
 public class LoginActivity extends AppCompatActivity {
 
-    GoogleSignInClient gsc;
-    GoogleSignInClient mGoogleSignInClient;
-    private static int RC_SIGN_IN = 100;
-
+    public FirebaseAuth mAuth;
+    private ImageView googleIcon;
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile("^" +
+            "(?=.*[0-9])" +
+            "(?=.*[A-Z])" +
+            "(?=.*[a-zA-Z])" +
+            "(?=.*[@#$%^&=])" +
+            ".{8,20}" +
+            "$");
+    private GoogleSignInClient mGoogleSignInClient;
+    private final static int RC_SIGN_IN = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,67 +57,65 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.pref_label), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-//        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//                .requestEmail()
-//                .build();// Build a GoogleSignInClient with the options specified by gso.
-//
-//        gsc = GoogleSignIn.getClient(this, gso);
-//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         EditText editTextUserName = findViewById(R.id.login_username);
         EditText editTextPassword = findViewById(R.id.login_password);
+        mAuth = FirebaseAuth.getInstance();
 
         Button btn = findViewById(R.id.button1);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String userName = null, password = null;
-                Boolean validate=true;
-                //String PASSWORD_PATTERN = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,20})";
-                String PASSWORD_PATTERN2 = "(.*[0-9].*)(.*[A-Z].*)^(?=.*[_.()$&@]).*$";
-                userName = editTextUserName.getText().toString();
+                String email = null, password = null;
+                Boolean validate = true;
+                email = editTextUserName.getText().toString();
                 password = editTextPassword.getText().toString();
 
-                if (userName.isEmpty()) {
-                    editTextUserName.setError(getString(R.string.ET_Validation1));
-                    validate=false;
-                } else if (!userName.matches("tanushree@humber.ca") && !userName.matches("safwan@humber.ca")
-                           && !userName.matches("abdul@humber.ca") && !userName.matches("nkeiru@humber.ca"))
-                {
-                    editTextUserName.setError("Invalid Username!!!");
-                    validate=false;
+                if (email.isEmpty()) {
+                    editTextUserName.setError("User Name Field Can't be Empty !!");
+                    editTextUserName.requestFocus();
+                    validate = false;
+                    return;
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    editTextUserName.setError("A valid user name is required!!");
+                    editTextUserName.requestFocus();
+                    validate = false;
+                    return;
                 }
 
                 if (password.isEmpty()) {
-                    editTextPassword.setError(getString(R.string.pass_validation1));
-                    validate=false;
-                } else if (!password.matches("(.*[0-9].*)")) {
-
-                    editTextPassword.setError("Include at least one digit!!");
-                    validate=false;
-
-                }else if (!password.matches("(.*[A-Z].*)")) {
-                    editTextPassword.setError("Include at least one upper case letter!!");
-                    validate=false;
-                }else if (!password.matches("^(?=.*[_.()$&@]).*$")) {
-                    editTextPassword.setError("Should include at least one special char!!");
-                    validate=false;
-                }else if(password.length() < 8){
-                    editTextPassword.setError("Password should be at least 8 in length!!");
-                    validate=false;
+                    editTextPassword.setError("Password Field Can't be Empty!!");
+                    validate = false;
+                    editTextPassword.requestFocus();
+                    return;
+                } else if (!PASSWORD_PATTERN.matcher(password).matches()) {
+                    editTextPassword.setError("Too Week Password!!");
+                    editTextPassword.requestFocus();
+                    validate = false;
+                    return;
+                } else {
+                    editTextPassword.setError(null);
                 }
 
-                if (validate)
-                {
-                    Log.d("Tag", "Inside");
-                    Intent intent = new Intent(LoginActivity.this, T3MainActivity.class);
-                    startActivity(intent);
-                }
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d(TAG, "signInWithEmail:success");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    updateUI(user);
 
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                    Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
 
-                editor.putString(getString(R.string.u_name), userName);
-                editor.putString(getString(R.string.pass), password);
-                editor.commit();
+                                }
+                            }
+                        });
 
             }
         });
@@ -121,98 +127,51 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 boolean checked = ((CheckBox) view).isChecked();
 
-                if(!checked){
+                if (!checked) {
                     editTextUserName.setText("");
                     editTextPassword.setText("");
                     editor.putBoolean("bool1", false);
-                }
-                else{
+                } else {
                     editor.putBoolean("bool1", true);
-                    editTextUserName.setText(sharedPreferences.getString(getString(R.string.u_name), getString(R.string.blank1)));
-                    editTextPassword.setText(sharedPreferences.getString(getString(R.string.pass), getString(R.string.blank2)));
-               }
+                    editor.putString(getString(R.string.u_name), editTextUserName.getText().toString());
+                    editor.putString(getString(R.string.pass), editTextPassword.getText().toString());
+                    editor.commit();
+
+                }
             }
         });
+
         chk.setChecked(sharedPreferences.getBoolean(getString(R.string.check), true));
         editTextUserName.setText(sharedPreferences.getString(getString(R.string.u_name), getString(R.string.blank1)));
         editTextPassword.setText(sharedPreferences.getString(getString(R.string.pass), getString(R.string.blank2)));
 
-        // Configure sign-in to request the user's ID, email address, and basic
-        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-
-        // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        // Check for existing Google Sign In account, if the user is already signed in
-// the GoogleSignInAccount will be non-null.
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        // Set the dimensions of the sign-in button.
-        SignInButton signInButton = findViewById(R.id.sign_in_button);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
-
-        signInButton.setOnClickListener(new View.OnClickListener() {
-
+        googleIcon = (ImageView) findViewById(R.id.imageView3);
+        googleIcon.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(getApplicationContext()) == ConnectionResult.SUCCESS) {
-                    Log.d("Message", "availabale******************");
-                } else {
-                    Log.d("Message","unavailabale******************");
-                }
-                signIn();
+            public void onClick(View v) {
+                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+                startActivityForResult(signInIntent, RC_SIGN_IN);
             }
         });
 
     }
 
-    private void signIn() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
-
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
-        if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            handleSignInResult(task);
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            updateUI(currentUser);
         }
+    }
+    public void updateUI(FirebaseUser currentUser){
+
+        Intent profileIntent = new Intent(LoginActivity.this, T3MainActivity.class);
+        profileIntent.putExtra("email",currentUser.getEmail());
+        startActivity(profileIntent);
 
     }
 
-        private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
-            try {
-                GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
-                GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-                if (acct != null) {
-                    String personName = acct.getDisplayName();
-                    String personGivenName = acct.getGivenName();
-                    String personFamilyName = acct.getFamilyName();
-                    String personEmail = acct.getEmail();
-                    String personId = acct.getId();
-                    Uri personPhoto = acct.getPhotoUrl();
-
-                    Toast.makeText(this,"User email : " +personEmail, Toast.LENGTH_LONG).show();
-                }
-                startActivity(new Intent(LoginActivity.this, T3MainActivity.class));
-
-            } catch (ApiException e) {
-                // The ApiException status code indicates the detailed failure reason.
-                // Please refer to the GoogleSignInStatusCodes class reference for more information.
-                //Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
-                Log.d("Message", e.toString());
-              }
-
-            }
-        }
-
-
-
+}
