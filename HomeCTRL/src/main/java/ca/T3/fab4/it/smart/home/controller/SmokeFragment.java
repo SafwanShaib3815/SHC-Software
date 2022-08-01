@@ -101,7 +101,29 @@ public class SmokeFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 valuee = dataSnapshot.getValue(String.class);
-            }
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(),"aa");
+                builder.setContentTitle(getString(R.string.smokesensed));
+                builder.setContentText("there is a smoke in the house please follow the safety measures and clear the situation");
+                builder.setAutoCancel(true);
+                builder.setSmallIcon(R.drawable.ic_smoke);
+
+                NotificationManagerCompat managerCompat= NotificationManagerCompat.from(getActivity());
+                imageView.setImageResource(images[img]);
+                txtmessage.setText(" " + valuee);
+                int number = Integer.parseInt(valuee);
+                if (number >=31){
+                    mediaPlayer.start();
+                    mediaPlayer.setLooping(true);
+                    img = 0;
+                    managerCompat.notify(1,builder.build());
+
+                }
+                else if(number <= 30) {
+                    mediaPlayer.setLooping(false);
+                    img = 1;
+                }
+
+                }
 
             @Override
             public void onCancelled(DatabaseError error) {
@@ -110,42 +132,42 @@ public class SmokeFragment extends Fragment {
         });
 
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(),"aa");
-                builder.setContentTitle(getString(R.string.smokesensed));
-                builder.setContentText("there is a smoke in the house please follow the safety measures and clear the situation");
-                builder.setAutoCancel(true);
-                builder.setSmallIcon(R.drawable.ic_smoke);
-
-                NotificationManagerCompat managerCompat= NotificationManagerCompat.from(getActivity());
-
-                txtmessage.setText(" " + valuee);
-//                int number = Integer.parseInt(valuee);
-//                if(number <= 30){
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(),"aa");
+//                builder.setContentTitle(getString(R.string.smokesensed));
+//                builder.setContentText("there is a smoke in the house please follow the safety measures and clear the situation");
+//                builder.setAutoCancel(true);
+//                builder.setSmallIcon(R.drawable.ic_smoke);
+//
+//                NotificationManagerCompat managerCompat= NotificationManagerCompat.from(getActivity());
+//
+//                txtmessage.setText(" " + valuee);
+////                int number = Integer.parseInt(valuee);
+////                if(number <= 30){
+////                    mediaPlayer.setLooping(false);
+////                    img=R.mipmap.smokeclear_foreground;
+////                }
+////                else if (number >=31){
+////                    mediaPlayer.start();
+////                    mediaPlayer.setLooping(true);
+////                    imageView.setImageResource(images[img]);
+////                    img = R.mipmap.smokedetector_foreground;
+////                    managerCompat.notify(1,builder.build());
+////                }
+//                mediaPlayer.start();
+//                mediaPlayer.setLooping(true);
+//                imageView.setImageResource(images[img]);
+//                img++;
+//                managerCompat.notify(1,builder.build());
+//                if(img==1)
 //                    mediaPlayer.setLooping(false);
-//                    img=R.mipmap.smokeclear_foreground;
-//                }
-//                else if (number >=31){
-//                    mediaPlayer.start();
-//                    mediaPlayer.setLooping(true);
-//                    imageView.setImageResource(images[img]);
-//                    img = R.mipmap.smokedetector_foreground;
-//                    managerCompat.notify(1,builder.build());
-//                }
-                mediaPlayer.start();
-                mediaPlayer.setLooping(true);
-                imageView.setImageResource(images[img]);
-                img++;
-                managerCompat.notify(1,builder.build());
-                if(img==1)
-                    mediaPlayer.setLooping(false);
-                if(img==2)
-                    img=0;
-
-            }
-        });
+//                if(img==2)
+//                    img=0;
+//
+//            }
+//        });
        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
