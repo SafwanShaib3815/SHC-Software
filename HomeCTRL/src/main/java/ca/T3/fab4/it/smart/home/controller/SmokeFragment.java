@@ -77,6 +77,7 @@ public class SmokeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -89,7 +90,6 @@ public class SmokeFragment extends Fragment {
         DatabaseReference smoke = ref.child("Dummy Sensors").child("Smoke").child("smoke2");
         TextView txtmessage = (TextView) view.findViewById(R.id.smokeretrive);
         ImageView imageView=view.findViewById(R.id.smokeiv1);
-        Button button = view.findViewById(R.id.smokebutton2);
         FloatingActionButton floatingActionButton=view.findViewById(R.id.button2);
         final MediaPlayer mediaPlayer= MediaPlayer.create(getActivity(), R.raw.alarm);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
@@ -133,42 +133,6 @@ public class SmokeFragment extends Fragment {
         });
 
 
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(),"aa");
-//                builder.setContentTitle(getString(R.string.smokesensed));
-//                builder.setContentText("there is a smoke in the house please follow the safety measures and clear the situation");
-//                builder.setAutoCancel(true);
-//                builder.setSmallIcon(R.drawable.ic_smoke);
-//
-//                NotificationManagerCompat managerCompat= NotificationManagerCompat.from(getActivity());
-//
-//                txtmessage.setText(" " + valuee);
-////                int number = Integer.parseInt(valuee);
-////                if(number <= 30){
-////                    mediaPlayer.setLooping(false);
-////                    img=R.mipmap.smokeclear_foreground;
-////                }
-////                else if (number >=31){
-////                    mediaPlayer.start();
-////                    mediaPlayer.setLooping(true);
-////                    imageView.setImageResource(images[img]);
-////                    img = R.mipmap.smokedetector_foreground;
-////                    managerCompat.notify(1,builder.build());
-////                }
-//                mediaPlayer.start();
-//                mediaPlayer.setLooping(true);
-//                imageView.setImageResource(images[img]);
-//                img++;
-//                managerCompat.notify(1,builder.build());
-//                if(img==1)
-//                    mediaPlayer.setLooping(false);
-//                if(img==2)
-//                    img=0;
-//
-//            }
-//        });
        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
