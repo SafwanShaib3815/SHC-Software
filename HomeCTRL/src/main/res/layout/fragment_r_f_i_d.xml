@@ -11,14 +11,11 @@
     android:layout_height="match_parent"
     tools:context=".T3MainActivity">
 
-
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="225dp"
-        android:layout_height="223dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="345dp"
+        android:layout_width="252dp"
+        android:layout_height="256dp"
+        android:layout_marginEnd="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -35,28 +32,24 @@
         android:text="@string/activity_log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23" />
+        app:layout_constraintVertical_bias="0.296" />
 
     <ImageButton
         android:id="@+id/T3_open_door_button"
-        android:layout_width="72dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="321dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="648dp"
+        android:layout_width="152dp"
+        android:layout_height="113dp"
         android:background="@drawable/open_door_closed_bckgnd"
         android:contentDescription="@string/open_door_tv"
         android:src="@mipmap/ic_door_closed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.877"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.525" />
 
     <TextView
         android:id="@+id/open_door_tv"
@@ -68,23 +61,44 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.739"
+        app:layout_constraintHorizontal_bias="0.797"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintVertical_bias="0.664" />
 
     <TextView
         android:id="@+id/activity_log_tv"
-        android:layout_width="371dp"
-        android:layout_height="393dp"
+        android:layout_width="187dp"
+        android:layout_height="118dp"
         android:layout_marginEnd="5dp"
         android:fontFamily="@font/maiden_orange"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.829" />
+        app:layout_constraintVertical_bias="0.527" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="548dp"
+        android:text="Unauthorised Activity Detected?"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="178dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="524dp"
+        android:text="Send Notification"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

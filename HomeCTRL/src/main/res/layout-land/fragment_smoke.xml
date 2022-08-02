@@ -9,16 +9,77 @@
     style="@style/background_fragment3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".T3MainActivity">
+    tools:context=".T3MainActivity"
+    tools:layout_editor_absoluteX="4dp"
+    tools:layout_editor_absoluteY="-64dp">
 
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="319dp"
-        android:layout_height="230dp"
-        android:layout_marginStart="500dp"
-        android:layout_marginBottom="76dp"
+        android:id="@+id/smokeiv1"
+        android:layout_width="308dp"
+        android:layout_height="272dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/smokedetector_foreground" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.115"
+        app:srcCompat="@mipmap/smokeclear_foreground" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="176dp"
+        android:backgroundTint="@color/Red"
+        android:src="@drawable/call"
+        app:fabSize="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/smokecreenfab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="232dp"
+        android:text="@string/btn2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/smokeretrive"
+        style="@style/smokecreen"
+        android:layout_width="61dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="248dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/smoketv2"
+        style="@style/smokecreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/normallevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/smoketv1"
+        style="@style/smokecreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/smokelevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

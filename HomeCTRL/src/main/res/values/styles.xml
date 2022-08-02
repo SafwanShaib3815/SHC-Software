@@ -37,12 +37,21 @@
         <item name = "android:textStyle">bold</item>
 
     </style>
+    <style name="radiobutton_text_style">
+        <item name="android:textSize">18sp</item>
+        <item name = "android:textStyle">bold</item>
+
+    </style>
 
     <style name="smokecreen">
         <item name="android:textSize">18sp</item>
         <item name = "android:textStyle">bold</item>
         <item name="android:textColor">@color/black</item>
-
+    </style>
+    <style name="smokecreenfab">
+        <item name="android:textSize">14sp</item>
+        <item name = "android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
     </style>
     <style name="review_ET">
         <item name= "android:ems">11</item>

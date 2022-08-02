@@ -12,17 +12,6 @@
     tools:context=".T3MainActivity">
 
 
-    <TextView
-        android:id="@+id/smoketv1"
-        style="@style/smokecreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="392dp"
-        android:text="@string/smokelevel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/smokeiv1"
         android:layout_width="319dp"
@@ -33,26 +22,64 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/smokeclear_foreground" />
 
+
+
+    <TextView
+        android:id="@+id/smoketv1"
+        style="@style/smokecreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="368dp"
+        android:text="@string/smokelevel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/smoketv2"
         style="@style/smokecreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="343dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="316dp"
         android:text="@string/normallevel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/smokebutton2"
+    <TextView
+        android:id="@+id/smokeretrive"
+        style="@style/smokecreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="149dp"
-        android:layout_marginTop="544dp"
-        android:text="Button"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="368dp"
+        android:text="@string/space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/smokecreenfab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="596dp"
+        android:text="@string/btn2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="540dp"
+        android:backgroundTint="@color/Red"
+        android:src="@drawable/call"
+        app:fabSize="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

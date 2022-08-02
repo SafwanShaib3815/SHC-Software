@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4D969F"
-    tools:context=".LoginFragment">
+    tools:context=".LoginActivity">
 
     <EditText
         android:id="@+id/login_username"
         android:layout_width="338dp"
         android:layout_height="54dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="81dp"
         android:backgroundTint="#FBF7F7"
         android:hint="@string/login_username_hint"
@@ -20,77 +20,102 @@
         android:inputType="textWebEmailAddress"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/login_password"
         android:layout_width="333dp"
         android:layout_height="68dp"
         android:layout_marginStart="136dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="74dp"
         android:backgroundTint="#FBFBFB"
         android:hint="@string/login_password_hint"
         android:inputType="textPassword"
         android:textColorHint="#757575"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="279dp"
-        android:layout_height="187dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="41dp"
+        android:id="@+id/imageView3"
+        android:layout_width="246dp"
+        android:layout_height="243dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="204dp"
+        android:layout_width="152dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="264dp"
         android:text="@string/loginBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/checkBox"
         style="@style/text_field_style3"
-        android:layout_width="162dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="396dp"
+        android:layout_width="157dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="492dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginBottom="217dp"
         android:text="@string/chkbox_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         style="@style/text_field_style3"
-        android:layout_width="50dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="524dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="488dp"
+        android:layout_marginTop="240dp"
         android:text="@string/tv_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton5"
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="564dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="80dp"
         android:src="@drawable/google_image1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="140dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="296dp"
+        android:layout_marginEnd="588dp"
+        android:text="@string/no_account"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="131dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="452dp"
+        android:backgroundTint="@android:color/transparent"
+        android:text="@string/register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

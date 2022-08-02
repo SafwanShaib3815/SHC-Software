@@ -9,17 +9,64 @@
     style="@style/background_fragment1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".T3MainActivity">
+    tools:context=".TemperatureFragment">
 
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="321dp"
-        android:layout_height="246dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="468dp"
+        android:layout_width="308dp"
+        android:layout_height="235dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="260dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/dessert_foreground" />
+        app:srcCompat="@drawable/fan_image" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="540dp"
+        android:text="@string/turn_on"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="52dp"
+        android:text="@string/turn_off"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="237dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="64dp"
+        android:minHeight="48dp"
+        android:text="Get Temp Reading"
+        android:textSize="25dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

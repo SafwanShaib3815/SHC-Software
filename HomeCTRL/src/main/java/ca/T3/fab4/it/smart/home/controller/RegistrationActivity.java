@@ -4,29 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class AppSettingsActivity extends AppCompatActivity {
+public class RegistrationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app_settings);
-
-        //Define action bar object
+        setContentView(R.layout.activity_registration);
         ActionBar actionBar = getSupportActionBar();
-
-        // Define ColorDrawable object and parse color
-        ColorDrawable colorDrawable = new ColorDrawable(getColor(R.color.brown));
-
-        //set actionbar background color to dark_grey
-        actionBar.setBackgroundDrawable(colorDrawable);
-
-        // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
-
 
     }
 
