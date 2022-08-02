@@ -11,15 +11,61 @@
     android:layout_height="match_parent"
     tools:context=".T3MainActivity">
 
-
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="321dp"
-        android:layout_height="246dp"
-        android:layout_marginStart="484dp"
-        android:layout_marginBottom="68dp"
+        android:layout_width="308dp"
+        android:layout_height="235dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="84dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/dessert_foreground" />
+        app:srcCompat="@drawable/fan_image" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="296dp"
+        android:text="@string/turn_on"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="292dp"
+        android:text="@string/turn_off"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="237dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="464dp"
+        android:layout_marginTop="64dp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="464dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:text="Get Temp Reading"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

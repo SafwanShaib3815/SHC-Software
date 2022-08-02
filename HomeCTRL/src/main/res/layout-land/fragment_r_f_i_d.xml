@@ -84,4 +84,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.857" />
 
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="178dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="128dp"
+        android:text="Send Notification"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
