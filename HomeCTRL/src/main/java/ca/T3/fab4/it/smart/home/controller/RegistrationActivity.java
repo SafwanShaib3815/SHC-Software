@@ -88,7 +88,41 @@ public class RegistrationActivity extends AppCompatActivity {
                     pass_word.requestFocus();
                     return;
                 }
+                mAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
 
+                                if (task.isSuccessful()) {
+                                    //if user is registered successfully
+                                    T3UserInfoDatabase user = new T3UserInfoDatabase(username,email,phoneNumber);
+                                    FirebaseDatabase.getInstance().getReference("Users")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()){
+                                                        Toast.makeText(RegistrationActivity.this, "user has been registered successfully", Toast.LENGTH_LONG).show();
+                                                        Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                                                        startActivity(intent);
+                                                        //finish();
+                                                    }else {
+                                                        Toast.makeText(RegistrationActivity.this, "user was not registered", Toast.LENGTH_LONG).show();
+                                                    }
+                                                }
+                                            });
+
+                                } else {
+                                    // If registration fails, display a message to the user.
+                                    Toast.makeText(RegistrationActivity.this, "Registration Failed.",
+                                            Toast.LENGTH_LONG).show();
+
+                                }
+
+                            }
+
+
+                        });
             }
         });
     }
