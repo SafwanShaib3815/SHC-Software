@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "716253804928",
-    "firebase_url": "https://smarthomecontroller-f526c-default-rtdb.firebaseio.com",
-    "project_id": "smarthomecontroller-f526c",
-    "storage_bucket": "smarthomecontroller-f526c.appspot.com"
+    "project_number": "412880478728",
+    "firebase_url": "https://smarthomecontroller-a7978-default-rtdb.firebaseio.com",
+    "project_id": "smarthomecontroller-a7978",
+    "storage_bucket": "smarthomecontroller-a7978.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:716253804928:android:99d936062791e06d186965",
+        "mobilesdk_app_id": "1:412880478728:android:3438b8ccf61858944227bd",
         "android_client_info": {
           "package_name": "ca.T3.fab4.it.smart.home.controller"
         }
       },
       "oauth_client": [
         {
-          "client_id": "716253804928-11ifila89mgh8hg0lcal1oke2q8iovtm.apps.googleusercontent.com",
+          "client_id": "412880478728-orfeklkdfpbeivfnnk237ld8s5grkh35.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBHyjWSI-4yycYIuF77d3q7D5Pjsf1JQIc"
+          "current_key": "AIzaSyBSi0GAMC8quBMtVfXZ-elPTCkQ6S7jGeM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "716253804928-11ifila89mgh8hg0lcal1oke2q8iovtm.apps.googleusercontent.com",
+              "client_id": "412880478728-orfeklkdfpbeivfnnk237ld8s5grkh35.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

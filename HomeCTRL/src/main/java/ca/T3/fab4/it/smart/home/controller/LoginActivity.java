@@ -41,12 +41,13 @@ public class LoginActivity extends AppCompatActivity {
     public FirebaseAuth mAuth;
     private ImageView googleIcon;
     private static final Pattern PASSWORD_PATTERN = Pattern.compile("^" +
-            "(?=.*[0-9])" +
-            "(?=.*[A-Z])" +
-            "(?=.*[a-zA-Z])" +
-            "(?=.*[@#$%^&=])" +
-            ".{8,20}" +
-            "$");
+            "(?=.*[0-9])"
+                    //+"(?=.*[A-Z])"
+//            "(?=.*[a-zA-Z])" +
+//            "(?=.*[@#$%^&=])" +
+//            ".{8,20}" +
+//            "$"
+            );
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
 

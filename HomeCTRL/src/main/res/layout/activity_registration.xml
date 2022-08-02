@@ -10,7 +10,7 @@
     tools:context=".RegistrationActivity">
 
     <Button
-        android:id="@+id/sign"
+        android:id="@+id/signup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/username"
         android:layout_width="388dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/emailAddress"
         android:layout_width="392dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
@@ -47,10 +47,10 @@
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+         />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/password"
         android:layout_width="389dp"
         android:layout_height="59dp"
         android:layout_marginTop="392dp"
@@ -61,10 +61,10 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+         />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/confirm_password"
         android:layout_width="391dp"
         android:layout_height="66dp"
         android:layout_marginTop="464dp"
@@ -75,10 +75,10 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+         />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/phoneNumber"
         android:layout_width="391dp"
         android:layout_height="56dp"
         android:layout_marginTop="544dp"
@@ -89,7 +89,7 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+         />
 
     <TextView
         android:id="@+id/textView9"
