@@ -66,11 +66,11 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="save_failed">\"Fail to add data \"</string>
     <string name="check_numeric">.*\\d.*</string>
     <string name="ET_Validation1">User name field Can\'t be blank</string>
-    <string name="ET_Validation2">User name should have minimum 3 charecters</string>
-    <string name="ET_validation3">User name should not contain any numeric charecter</string>
+    <string name="ET_Validation2">User name should have minimum 3 characters</string>
+    <string name="ET_validation3">User name should not contain any numeric character</string>
     <string name="pass_validation1">Password field can not be blank</string>
     <string name="pass_validation2">Password should contain at least 8 digits</string>
-    <string name="Welcome_msg">Welcome To Smart Home Controller</string>
+    <string name="welcome_msg"> Smart Home Controller </string>
     <string name="sign_out">Sign Out</string>
     <string name="discontinue">Don\'t Want To Continue!!!</string>
     <string name="blnk5" />
