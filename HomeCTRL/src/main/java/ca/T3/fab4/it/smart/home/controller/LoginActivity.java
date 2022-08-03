@@ -75,13 +75,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String email = null, password = null;
+                String email, password;
                 Boolean validate = true;
                 email = editTextUserName.getText().toString();
                 password = editTextPassword.getText().toString();
 
                 if (email.isEmpty()) {
-                    editTextUserName.setError("User Name Field Can't be Empty !!");
+                    editTextUserName.setError("User Name Field cannot be Empty !!");
                     editTextUserName.requestFocus();
                     validate = false;
                     return;
@@ -97,12 +97,15 @@ public class LoginActivity extends AppCompatActivity {
                     validate = false;
                     editTextPassword.requestFocus();
                     return;
-                } else if (!PASSWORD_PATTERN.matcher(password).matches()) {
+                }
+               /* else if (!PASSWORD_PATTERN.matcher(password).matches()) {
                     editTextPassword.setError("Too Week Password!!");
                     editTextPassword.requestFocus();
                     validate = false;
                     return;
-                } else {
+
+
+                } */else {
                     editTextPassword.setError(null);
                 }
 
