@@ -10,7 +10,7 @@
     tools:context=".RegistrationActivity">
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/sign"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
@@ -47,7 +47,7 @@
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-         />
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/password"

@@ -100,6 +100,11 @@ public class ReviewActivity extends AppCompatActivity {
                 else {
                     //writing user info to the database
                     sendToDb(nameStr, phoneStr, emailStr, commentStr, rating);
+                    name.setText("");
+                    phone.setText("");
+                    email.setText("");
+                    comment.setText("");
+                    ratingBar.setRating(0.0f);
                 }
 
             }
