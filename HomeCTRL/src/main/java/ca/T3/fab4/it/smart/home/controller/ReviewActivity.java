@@ -3,7 +3,9 @@ package ca.T3.fab4.it.smart.home.controller;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +37,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ReviewActivity extends AppCompatActivity {
 
@@ -49,6 +54,8 @@ public class ReviewActivity extends AppCompatActivity {
     //firebase database objects
     FirebaseDatabase fbDatabase;
     FirebaseFirestore fbFireStore;
+    ProgressBar progressBar;
+    int count = 0;
 
     DatabaseReference databaseReference;//firebase database reference
 
@@ -70,7 +77,8 @@ public class ReviewActivity extends AppCompatActivity {
         // showing the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
         //********* Action Bar *********
-
+        progressBar = findViewById(R.id.t3PB);
+        progressBar.setVisibility(View.INVISIBLE);
         //initializing user info variables to the edit text values
         name = findViewById(R.id.review_name);
         phone = findViewById(R.id.review_phone);
@@ -94,10 +102,12 @@ public class ReviewActivity extends AppCompatActivity {
                 commentStr = comment.getText().toString();
                 rating = ratingBar.getRating(); //assigning the rating float value to the rating variable
 
+
                 if(nameStr.length()==0 || phoneStr.length()==0 || emailStr.length()==0 || commentStr.length()==0 || rating == 0.0 ) {
                 Toast.makeText(getApplicationContext(), "Please fill all fields above", Toast.LENGTH_LONG).show();
                 }
                 else {
+                    new AsyncTaskExample().execute();
                     //writing user info to the database
                     sendToDb(nameStr, phoneStr, emailStr, commentStr, rating);
                     name.setText("");
@@ -174,7 +184,42 @@ public class ReviewActivity extends AppCompatActivity {
                 });
     }
 
+    class AsyncTaskExample extends AsyncTask<Void, Integer, Integer> {
 
+        @Override
+        protected Integer doInBackground(Void... arg0) {
+
+            for(int i =0; i<100; i++){
+                publishProgress(i);
+                try{
+                    Thread.sleep(100);
+                }catch(InterruptedException e){
+                  e.printStackTrace();
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressBar.setMax(100);
+            progressBar.setVisibility(View.VISIBLE);
+
+        }
+        @Override
+        protected void onPostExecute(Integer result) {
+            super.onPostExecute(result);
+            progressBar.setVisibility(View.INVISIBLE);
+
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+            progressBar.setProgress(values[0]);
+        }
+    }
     //On action bar back arrow pressed
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
