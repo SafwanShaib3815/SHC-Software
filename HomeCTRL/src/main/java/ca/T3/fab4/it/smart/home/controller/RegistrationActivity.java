@@ -53,8 +53,9 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email = email_id.getText().toString();
-                String password = confirmPassword.getText().toString().trim();
+                String email = email_id.getText().toString().trim();
+                String password = pass_word.getText().toString().trim();
+                String conPassword = confirmPassword.getText().toString().trim();
                 String username = user_name.getText().toString().trim();
                 String phoneNumber = phone_number.getText().toString().trim();
 
@@ -87,6 +88,9 @@ public class RegistrationActivity extends AppCompatActivity {
                     pass_word.setError("Min password length should be more than 6 characters!");
                     pass_word.requestFocus();
                     return;
+                }
+                if(!password.equals(conPassword)){
+                    Toast.makeText(RegistrationActivity.this, "Passwords do not match", Toast.LENGTH_LONG).show();
                 }
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
