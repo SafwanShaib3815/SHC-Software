@@ -29,102 +29,102 @@ import org.junit.runner.RunWith;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class RegistrationEspresso {
+public class ReviewEspresso {
 
     @Rule
-    public ActivityTestRule<RegistrationActivity> mActivityTestRule = new ActivityTestRule<>(RegistrationActivity.class);
+    public ActivityTestRule<ReviewActivity> mActivityTestRule = new ActivityTestRule<>(ReviewActivity.class);
 
     @Test
-    public void registration_Espresso() {
+    public void review_Espresso() {
 
         ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.name),
+                allOf(withId(R.id.review_name),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
                                 1),
                         isDisplayed()));
-        appCompatEditText.perform(replaceText("John"), closeSoftKeyboard());
+        appCompatEditText.perform(replaceText("Hari"), closeSoftKeyboard());
 
 
         ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.phone),
-                       childAtPosition(
-                               childAtPosition(
+                allOf(withId(R.id.review_phone),
+                      childAtPosition(
+                              childAtPosition(
                                         withId(android.R.id.content),
-                                       0),
-                               5),
+                                      0),
+                              2),
                         isDisplayed()));
         appCompatEditText3.perform(replaceText("5195782584"), closeSoftKeyboard());
 
-        ViewInteraction appCompatEditText4 = onView(
-               allOf(withId(R.id.email),
+       ViewInteraction appCompatEditText4 = onView(
+               allOf(withId(R.id.review_email),
                        childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                        0),
-                               2),
+                               3),
                        isDisplayed()));
-       appCompatEditText4.perform(replaceText("john.smith@gmail.com"), closeSoftKeyboard());
+       appCompatEditText4.perform(replaceText("hari.taylor@gmail.com"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText5 = onView(
-                allOf(withId(R.id.email), withText("john.smith@gmail.com"),
-                       childAtPosition(
+                allOf(withId(R.id.review_email), withText("hari.taylor@gmail.com"),
+                      childAtPosition(
                                childAtPosition(
                                         withId(android.R.id.content),
-                                        0),
-                                2),
+                                       0),
+                                3),
                         isDisplayed()));
-        appCompatEditText5.perform(pressImeActionButton());
+       appCompatEditText5.perform(pressImeActionButton());
 
        ViewInteraction appCompatEditText6 = onView(
-               allOf(withId(R.id.password),
+               allOf(withId(R.id.review_comment),
                         childAtPosition(
                                 childAtPosition(
-                                       withId(android.R.id.content),
+                                      withId(android.R.id.content),
                                         0),
-                               3),
-                       isDisplayed()));
-       appCompatEditText6.perform(replaceText("Abc@1234"), closeSoftKeyboard());
+                              4),
+                      isDisplayed()));
+       appCompatEditText6.perform(replaceText("Satisfied"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText7 = onView(
-                allOf(withId(R.id.password), withText("Abc@1234"),
+                allOf(withId(R.id.review_comment), withText("Satisfied"),
                        childAtPosition(
-                               childAtPosition(
+                              childAtPosition(
                                        withId(android.R.id.content),
                                       0),
-                               3),
+                               4),
                         isDisplayed()));
         appCompatEditText7.perform(pressImeActionButton());
 
-       ViewInteraction appCompatEditText8 = onView(
-               allOf(withId(R.id.password2),
-                        childAtPosition(
-                               childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                4),
-                        isDisplayed()));
-        appCompatEditText8.perform(replaceText("Abc@1234"), closeSoftKeyboard());
-
-       ViewInteraction appCompatEditText9 = onView(
-                allOf(withId(R.id.password2), withText("Abc@1234"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                               4),
-                        isDisplayed()));
-        appCompatEditText9.perform(pressImeActionButton());
-
+//       ViewInteraction appCompatEditText8 = onView(
+//               allOf(withId(R.id.password2),
+//                        childAtPosition(
+//                               childAtPosition(
+//                                        withId(android.R.id.content),
+//                                        0),
+//                                4),
+//                        isDisplayed()));
+//        appCompatEditText8.perform(replaceText("Abc@1234"), closeSoftKeyboard());
+//
+//       ViewInteraction appCompatEditText9 = onView(
+//                allOf(withId(R.id.password2), withText("Abc@1234"),
+//                        childAtPosition(
+//                                childAtPosition(
+//                                        withId(android.R.id.content),
+//                                        0),
+//                               4),
+//                        isDisplayed()));
+//        appCompatEditText9.perform(pressImeActionButton());
+//
         ViewInteraction materialButton2 = onView(
-               allOf(withId(R.id.sign), withText("Create New Account"),
+               allOf(withId(R.id.review_submit), withText("Submit"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                        0),
-                                0),
+                                7),
                        isDisplayed()));
         materialButton2.perform(click());
   }

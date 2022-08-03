@@ -35,7 +35,7 @@ public class LoginEspresso {
     public ActivityTestRule<LoginActivity> mActivityTestRule = new ActivityTestRule<>(LoginActivity.class);
 
     @Test
-    public void login_Page_Espresso() {
+    public void login_Espresso() {
 
        ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.login_username),
