@@ -1,25 +1,24 @@
 package ca.T3.fab4.it.smart.home.controller;
-import static android.content.ContentValues.TAG;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.auth.User;
+
+
 public class RegistrationActivity extends AppCompatActivity {
     public FirebaseAuth mAuth;
     private EditText email_id;
@@ -27,23 +26,30 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText pass_word;
     private EditText confirmPassword;
     private EditText phone_number;
-    private Button signup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
         email_id = (EditText) findViewById(R.id.emailAddress);
         user_name =  (EditText) findViewById(R.id.username);
         pass_word = (EditText) findViewById(R.id.password);
         confirmPassword = (EditText) findViewById(R.id.confirm_password);
         phone_number = (EditText) findViewById(R.id.phoneNumber);
-        signup = (Button) findViewById(R.id.signup);
+        Button signup = (Button) findViewById(R.id.signup);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        if(mAuth.getCurrentUser() != null){
+            startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
+        }
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View view) {
                 String email = email_id.getText().toString().trim();
                 String password = pass_word.getText().toString().trim();
                 String conPassword = confirmPassword.getText().toString().trim();
@@ -85,34 +91,18 @@ public class RegistrationActivity extends AppCompatActivity {
                     pass_word.requestFocus();
                     return;
                 }
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    //if user is registered successfully
-                                    T3UserInfoDatabase user = new T3UserInfoDatabase(username,email,phoneNumber);
-                                    FirebaseDatabase.getInstance().getReference("Users")
-                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
-                                                    if(task.isSuccessful()){
-                                                        Toast.makeText(RegistrationActivity.this, "user has been registered successfully", Toast.LENGTH_LONG).show();
-                                                        Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                                                        startActivity(intent);
-                                                    }else {
-                                                        Toast.makeText(RegistrationActivity.this, "user was not registered", Toast.LENGTH_LONG).show();
-                                                    }
-                                                }
-                                            });
-                                } else {
-                                    // If registration fails, display a message to the user.
-                                    Toast.makeText(RegistrationActivity.this, "Registration Failed",
-                                            Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        });
+
+                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(RegistrationActivity.this, "User Created!", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
+                        }else{
+                            Toast.makeText(RegistrationActivity.this, "User not created!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
             }
         });
     }
