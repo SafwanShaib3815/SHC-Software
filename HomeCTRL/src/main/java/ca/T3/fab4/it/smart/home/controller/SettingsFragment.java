@@ -1,5 +1,6 @@
 package ca.T3.fab4.it.smart.home.controller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -77,58 +78,51 @@ public class SettingsFragment extends Fragment {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         Button button = view.findViewById(R.id.button6);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                RadioButton radioButton = radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
-                RadioButton radioButton1 = radioGroup1.findViewById(radioGroup1.getCheckedRadioButtonId());
-                RadioButton radioButton2 = radioGroup2.findViewById(radioGroup2.getCheckedRadioButtonId());
+        button.setOnClickListener(view1 -> {
+            RadioButton radioButton = radioGroup.findViewById(radioGroup.getCheckedRadioButtonId());
+            RadioButton radioButton1 = radioGroup1.findViewById(radioGroup1.getCheckedRadioButtonId());
+            RadioButton radioButton2 = radioGroup2.findViewById(radioGroup2.getCheckedRadioButtonId());
 
-                String background = null,temperature = null,clock = null;
+            String background = null,temperature = null,clock = null;
 
-                if(radioGroup.getCheckedRadioButtonId() == -1 && (radioGroup1.getCheckedRadioButtonId() == -1 &&
-                        (radioGroup2.getCheckedRadioButtonId() == -1))){
-                    Toast.makeText(getActivity(), "Please Choose on option from the screen", Toast.LENGTH_SHORT).show();
-
-                }else if(radioGroup.getCheckedRadioButtonId() == -1){
-                    Toast.makeText(getActivity(),"Color selection can not be empty",Toast.LENGTH_SHORT).show();
-                }else if(radioGroup1.getCheckedRadioButtonId() == -1){
-                    Toast.makeText(getActivity(),"Time selection can not be empty",Toast.LENGTH_SHORT).show();
-                }else if(radioGroup2.getCheckedRadioButtonId() == -1){
-                    Toast.makeText(getActivity(),"Temperature selection can not be empty",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    background = radioButton.getText().toString();
-                    temperature = radioButton1.getText().toString();
-                    clock = radioButton2.getText().toString();
-
-                }
-
-                editor.putString("Color", background);
-                editor.putString("Temperature", temperature);
-                editor.putString("Time", clock);
-
-                editor.commit();
+            if(radioGroup.getCheckedRadioButtonId() == -1 && (radioGroup1.getCheckedRadioButtonId() == -1 &&
+                    (radioGroup2.getCheckedRadioButtonId() == -1))){
+                Toast.makeText(getActivity(), R.string.pref, Toast.LENGTH_SHORT).show();
+            }else if(radioGroup.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity(), R.string.pref_color,Toast.LENGTH_SHORT).show();
+            }else if(radioGroup1.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity(), R.string.pref_time,Toast.LENGTH_SHORT).show();
+            }else if(radioGroup2.getCheckedRadioButtonId() == -1){
+                Toast.makeText(getActivity(),"Temperature selection can not be empty",Toast.LENGTH_SHORT).show();
+            }
+            else{
+                background = radioButton.getText().toString();
+                temperature = radioButton1.getText().toString();
+                clock = radioButton2.getText().toString();
 
             }
+
+            editor.putString("Color", background);
+            editor.putString("Temperature", temperature);
+            editor.putString("Time", clock);
+
+            editor.apply();
+
         });
-         Switch lockScreen = view.findViewById(R.id.switch2);
-        lockScreen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String swValue;
-                if (lockScreen.isChecked()) {
+         @SuppressLint("UseSwitchCompatOrMaterialCode") Switch lockScreen = view.findViewById(R.id.switch2);
+        lockScreen.setOnClickListener(view12 -> {
+            String swValue;
+            if (lockScreen.isChecked()) {
 
-                    getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
-                    swValue = "true";
-                    editor.putString("Switch", swValue);
-                }
-                else{
-                    swValue = "false";
-                    editor.putString("Switch", swValue);
-                }
-                editor.commit();
+                getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+                swValue = "true";
+                editor.putString("Switch", swValue);
             }
+            else{
+                swValue = "false";
+                editor.putString("Switch", swValue);
+            }
+            editor.apply();
         });
 
 

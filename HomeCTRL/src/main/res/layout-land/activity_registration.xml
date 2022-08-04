@@ -14,26 +14,26 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
-        android:layout_marginTop="616dp"
+        android:layout_marginTop="300dp"
         android:layout_marginEnd="9dp"
-        android:text="Create New Account"
+        android:text="@string/create_new_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        style="@style/registration"
         android:id="@+id/editTextTextPersonName"
         android:layout_width="388dp"
         android:layout_height="60dp"
         android:layout_marginStart="320dp"
         android:layout_marginTop="4dp"
-        android:ems="10"
-        android:hint="Full Name"
+        android:hint="@string/full_name"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="name" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -41,13 +41,14 @@
         android:layout_height="60dp"
         android:layout_marginStart="320dp"
         android:layout_marginTop="64dp"
-        android:ems="10"
-        android:hint="Email Address"
+        style="@style/registration"
+        android:hint="@string/email_address"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="emailAddress" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -55,13 +56,13 @@
         android:layout_height="59dp"
         android:layout_marginStart="320dp"
         android:layout_marginTop="112dp"
-        android:ems="10"
-        android:hint="Password"
+        style="@style/registration"
+        android:hint="@string/password"
         android:inputType="textPassword"
-        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="password" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
@@ -69,13 +70,13 @@
         android:layout_height="66dp"
         android:layout_marginStart="320dp"
         android:layout_marginTop="168dp"
-        android:ems="10"
-        android:hint="Confirm Password"
+        style="@style/registration"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
-        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="password" />
 
     <EditText
         android:id="@+id/editTextPhone"
@@ -83,22 +84,22 @@
         android:layout_height="56dp"
         android:layout_marginStart="320dp"
         android:layout_marginTop="232dp"
-        android:ems="10"
-        android:hint="Phone"
+        style="@style/registration"
+        android:hint="@string/phone"
         android:inputType="phone"
-        android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="phone" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="289dp"
         android:layout_height="41dp"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:gravity="center"
-        android:text="Registration"
+        android:text="@string/create_new_account"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -107,13 +108,14 @@
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="278dp"
-        android:layout_height="170dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="307dp"
+        android:layout_height="183dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/smart_home_reg" />
+        app:srcCompat="@drawable/smart_home_reg"
+        android:contentDescription="@string/registration_screen_description"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
