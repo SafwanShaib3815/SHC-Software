@@ -210,6 +210,7 @@ public class ReviewActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Integer result) {
             super.onPostExecute(result);
+            Toast.makeText(getApplicationContext(),"Submission Finished!!!",Toast.LENGTH_LONG).show();
             progressBar.setVisibility(View.INVISIBLE);
 
         }

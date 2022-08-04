@@ -41,13 +41,12 @@ public class LoginActivity extends AppCompatActivity {
     public FirebaseAuth mAuth;
     private ImageView googleIcon;
     private static final Pattern PASSWORD_PATTERN = Pattern.compile("^" +
-            "(?=.*[0-9])"
-                    //+"(?=.*[A-Z])"
-//            "(?=.*[a-zA-Z])" +
-//            "(?=.*[@#$%^&=])" +
-//            ".{8,20}" +
-//            "$"
-            );
+            "(?=.*[0-9])" +
+            "(?=.*[A-Z])" +
+            "(?=.*[a-zA-Z])" +
+            "(?=.*[@#$%^&=])" +
+            ".{8,20}" +
+            "$");
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
 
@@ -75,13 +74,13 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String email, password;
+                String email = null, password = null;
                 Boolean validate = true;
                 email = editTextUserName.getText().toString();
                 password = editTextPassword.getText().toString();
 
                 if (email.isEmpty()) {
-                    editTextUserName.setError("User Name Field cannot be Empty !!");
+                    editTextUserName.setError("User Name Field Can't be Empty !!");
                     editTextUserName.requestFocus();
                     validate = false;
                     return;
@@ -97,15 +96,12 @@ public class LoginActivity extends AppCompatActivity {
                     validate = false;
                     editTextPassword.requestFocus();
                     return;
-                }
-               /* else if (!PASSWORD_PATTERN.matcher(password).matches()) {
+                } else if (!PASSWORD_PATTERN.matcher(password).matches()) {
                     editTextPassword.setError("Too Week Password!!");
                     editTextPassword.requestFocus();
                     validate = false;
                     return;
-
-
-                } */else {
+                } else {
                     editTextPassword.setError(null);
                 }
 
@@ -118,7 +114,6 @@ public class LoginActivity extends AppCompatActivity {
                                     Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     updateUI(user);
-                                    startActivity(new Intent(LoginActivity.this, T3MainActivity.class));
 
                                 } else {
                                     // If sign in fails, display a message to the user.

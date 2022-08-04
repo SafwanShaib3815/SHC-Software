@@ -65,7 +65,7 @@
     <string name="ET_validation3">Le nom d\'utilisateur ne doit contenir aucun caractère numérique</string>
     <string name="pass_validation1">Le champ du mot de passe ne peut pas être vide</string>
     <string name="pass_validation2">Le mot de passe doit contenir au moins 5 chiffres</string>
-    <string name="welcome_msg">Bienvenue dans le contrôleur de maison intelligente</string>
+    <string name="Welcome_msg">Bienvenue dans le contrôleur de maison intelligente</string>
     <string name="sign_out">Se déconnecter</string>
     <string name="discontinue">Je ne veux pas continuer !!!</string>
     <string name="blnk5"/>

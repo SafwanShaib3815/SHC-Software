@@ -96,11 +96,38 @@ public class T3MainActivity extends AppCompatActivity {
         // Set BackgroundDrawable
         actionBar.setBackgroundDrawable(colorDrawable);
 
-//        SharedPreferences sharedPref = this.getSharedPreferences("SettingsPref", Context.MODE_PRIVATE);
-//        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.pref_label), Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = this.getSharedPreferences("SettingsPref", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(getString(R.string.pref_label), Context.MODE_PRIVATE);
 
+        TextView dateDisplay= findViewById(R.id.textView15);
+        TextClock clock = findViewById(R.id.tanushreeTC);
+        TextView receive = findViewById(R.id.textView16);
+        receive.setText(getString(R.string.msg1) + getString(R.string.space1)
+                + sharedPreferences.getString(getString(R.string.u_name), getString(R.string.blank1))
+                + getString(R.string.space2) + getString(R.string.msg2));
+
+        String currentDateString = DateFormat.getDateInstance().format(new Date());
+       // textView is the TextView view that should display it
+       dateDisplay.setText(currentDateString);
+       if(sharedPref.getString("Time","").equalsIgnoreCase("12hrs"))
+        {
+           clock.setFormat12Hour("hh:mm:ss a");
+        } else {
+            CharSequence x = clock.getFormat24Hour();
+            clock.setFormat24Hour(x);
+       }
+
+        if (sharedPref.getString("Color", "").equalsIgnoreCase("Dark")) {
+
+            constraintlayout.setBackgroundColor(Color.BLUE);
+
+        } else {
+
+            constraintlayout.setBackgroundColor(Color.CYAN);
+        }
 
         bottomNavigationView = findViewById(R.id.BTMNAV);
+
         temperatureFragment = new TemperatureFragment();
         motionFragment = new MotionFragment();
         smokeFragment = new SmokeFragment();
@@ -147,8 +174,7 @@ public class T3MainActivity extends AppCompatActivity {
                 .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        finishAffinity();
-                        System.exit(0);
+                        finish();
                     }
                 })
                 .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {

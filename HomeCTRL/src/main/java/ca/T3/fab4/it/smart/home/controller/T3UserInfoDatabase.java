@@ -5,15 +5,8 @@ public class T3UserInfoDatabase {
     //Creating string variables to save user info
     private String userName,userEmail,userPhone,userComment;
 
-    public T3UserInfoDatabase(){
-
-    }
     //Class constructor
-    public T3UserInfoDatabase(String userName, String userEmail, String userPhone){
-    this.userName = userName;
-    this.userEmail = userEmail;
-    this.userPhone = userPhone;
-    }
+    public T3UserInfoDatabase(){}
 
     //User info getters and setters
     public String getUserName(){
