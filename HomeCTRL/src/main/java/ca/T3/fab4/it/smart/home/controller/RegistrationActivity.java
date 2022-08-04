@@ -1,145 +1,122 @@
 package ca.T3.fab4.it.smart.home.controller;
 
-import static android.content.ContentValues.TAG;
+import static java.util.regex.Pattern.compile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.auth.User;
+
+import java.util.regex.Pattern;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    public FirebaseAuth mAuth;
-    private EditText email_id;
-    private EditText user_name;
-    private EditText pass_word;
-    private EditText confirmPassword;
-    private EditText phone_number;
-    private Button signup;
+    private FirebaseAuth mAuth;
+    private EditText fullName, email, password, confirmPassword,phone;
+    private static final Pattern PASSWORD_PATTERN =
+            compile("^" +
+                    "(?=.*[0-9])" +
+                    "(?=.*[A-Z])" +
+                    "(?=.*[a-zA-Z])" +
+                    "(?=.*[@#$%^&=])" +
+                    ".{8,}" +
+                    "$");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        email_id = (EditText) findViewById(R.id.emailAddress);
-        user_name =  (EditText) findViewById(R.id.username);
-        pass_word = (EditText) findViewById(R.id.password);
-        confirmPassword = (EditText) findViewById(R.id.confirm_password);
-        phone_number = (EditText) findViewById(R.id.phoneNumber);
-        signup = (Button) findViewById(R.id.signup);
+        mAuth = FirebaseAuth.getInstance();
 
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        fullName = findViewById(R.id.name);
+        phone = findViewById(R.id.phone);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        confirmPassword = findViewById(R.id.password2);
 
-                String email = email_id.getText().toString().trim();
-                String password = pass_word.getText().toString().trim();
-                String conPassword = confirmPassword.getText().toString().trim();
-                String username = user_name.getText().toString().trim();
-                String phoneNumber = phone_number.getText().toString().trim();
+        Button register = findViewById(R.id.sign);
+        register.setOnClickListener(v -> {
+            String uName = fullName.getText().toString().trim();
+            String uPhone = phone.getText().toString().trim();
+            String uEmail = email.getText().toString().trim();
+            String uPassword = password.getText().toString().trim();
+            String cPassword = confirmPassword.getText().toString().trim();
 
-                if (username.isEmpty()){
-                user_name.setError("Full name is required");
-                user_name.requestFocus();
+            if (uName.isEmpty()) {
+                fullName.setError(getString(R.string.reg_name_error));
+                fullName.requestFocus();
                 return;
-                }
-                if (phoneNumber.isEmpty()){
-                    user_name.setError("Phone Number is required");
-                    user_name.requestFocus();
-                    return;
-                }
-                if (email.isEmpty()) {
-                    email_id.setError("Please provide a valid email");
-                    email_id.requestFocus();
-                    return;
-                }
-                if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                    email_id.setError("Please provide a valid email");
-                    email_id.requestFocus();
-                    return;
-                }
-                if (password.isEmpty()) {
-                    pass_word.setError("Enter a password");
-                    pass_word.requestFocus();
-                    return;
-                }
-                if (password.length() < 6){
-                    pass_word.setError("Min password length should be more than 6 characters!");
-                    pass_word.requestFocus();
-                    return;
-                }
-                if(!password.equals(conPassword)){
-                    Toast.makeText(RegistrationActivity.this, "Passwords do not match", Toast.LENGTH_LONG).show();
-                }
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                                if (task.isSuccessful()) {
-                                    //if user is registered successfully
-                                    T3UserInfoDatabase user = new T3UserInfoDatabase(username,email,phoneNumber);
-                                    FirebaseDatabase.getInstance().getReference("Users")
-                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
-                                                    if(task.isSuccessful()){
-                                                        Toast.makeText(RegistrationActivity.this, "user has been registered successfully", Toast.LENGTH_LONG).show();
-                                                        Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                                                        startActivity(intent);
-                                                        //finish();
-                                                    }else {
-                                                        Toast.makeText(RegistrationActivity.this, "user was not registered", Toast.LENGTH_LONG).show();
-                                                    }
-                                                }
-                                            });
-
-                                } else {
-                                    // If registration fails, display a message to the user.
-                                    Toast.makeText(RegistrationActivity.this, "Registration Failed.",
-                                            Toast.LENGTH_LONG).show();
-
-                                }
-
-                            }
-
-
-                        });
             }
+
+            if (uPhone.isEmpty()) {
+                phone.setError(getString(R.string.reg_phone_error));
+                phone.requestFocus();
+                return;
+
+
+            }
+            if (uEmail.isEmpty()) {
+                email.setError(getString(R.string.reg_email_error));
+                email.requestFocus();
+                return;
+            }
+            if (!Patterns.EMAIL_ADDRESS.matcher(uEmail).matches()) {
+                email.setError(getString(R.string.reg_email_error1));
+                email.requestFocus();
+                return;
+
+            }
+            if (uPassword.isEmpty()) {
+                password.setError(getString(R.string.reg_phone_error1));
+                password.requestFocus();
+                return;
+            }
+            else if (!PASSWORD_PATTERN.matcher(uPassword).matches()){
+                password.setError(getString(R.string.password_should_have) + "\n" +
+                        getString(R.string.at_least_one_digit) + "\n" + getString(R.string.one_upper_case) + "\n"
+                        + getString(R.string.one_special_char));
+                password.requestFocus();
+                return;
+
+            } else {
+                password.setError(null);
+
+
+            }
+            if (cPassword.isEmpty()) {
+                confirmPassword.setError(getString(R.string.reg_conf_pswd_error));
+                confirmPassword.requestFocus();
+                return;
+            }
+            if (!uPassword.equals(cPassword)) {
+                confirmPassword.setError(getString(R.string.reg_conf_pswd_error1));
+                confirmPassword.requestFocus();
+            }
+
         });
+
     }
 
     //On action bar back arrow pressed
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
+        if (item.getItemId() ==  android.R.id.home){
                 this.finish();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

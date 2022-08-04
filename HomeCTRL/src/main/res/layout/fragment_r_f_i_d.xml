@@ -39,17 +39,17 @@
 
     <ImageButton
         android:id="@+id/T3_open_door_button"
-        android:layout_width="152dp"
-        android:layout_height="113dp"
+        android:layout_width="72dp"
+        android:layout_height="57dp"
         android:background="@drawable/open_door_closed_bckgnd"
         android:contentDescription="@string/open_door_tv"
         android:src="@mipmap/ic_door_closed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525" />
+        app:layout_constraintVertical_bias="0.042" />
 
     <TextView
         android:id="@+id/open_door_tv"
@@ -61,10 +61,10 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintHorizontal_bias="0.948"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.664" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <TextView
         android:id="@+id/activity_log_tv"
