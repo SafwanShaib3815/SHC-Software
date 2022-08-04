@@ -44,7 +44,7 @@
         android:layout_marginTop="88dp"
         android:gravity="center"
         android:minHeight="48dp"
-        android:text="Read data from firebase"
+        android:text="@string/read_firebase"
         android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

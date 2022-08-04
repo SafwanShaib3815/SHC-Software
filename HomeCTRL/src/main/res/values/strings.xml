@@ -159,10 +159,11 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="password_should_have">\"Password should have : \"</string>
     <string name="at_least_one_digit">\"At least one digit \"</string>
     <string name="one_upper_case">\"At least one upper case letter \"</string>
-    <string name="one_special_char">\"At least one special charecter \"</string>
+    <string name="one_special_char">\"At least one special character \"</string>
     <string name="reg_conf_pswd_error">Confirm password can\'t be empty!</string>
     <string name="reg_conf_pswd_error1">Confirm password should match with the password field!!</string>
     <string name="registration_screen_description">Welcome to the registration screen</string>
     <string name="review_screen_description">Welcome to the review screen</string>
+    <string name="read_firebase">Read data from firebase</string>
 
 </resources>
