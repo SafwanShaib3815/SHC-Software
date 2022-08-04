@@ -6,22 +6,22 @@
     <string name="menu_title2">Mouvement</string>
     <string name="menu_title3">Fumée</string>
     <string name="menu_title4">RFID</string>
-    <string name="alert_title">Quitter l\'application !</string>
+    <string name="alert_title">Quitter l\'application!</string>
     <string name="alert_msg">Cliquez sur Oui pour confirmer ou sur Non pour annuler</string>
     <string name="yes">Oui</string>
     <string name="no">Non</string>
     <string name="website_link">https://www.hackster.io/</string>
     <string name="help_tv">Cet écran d\'aide doit être implémenté</string>
-    <string name="help">Aider</string>
+    <string name="help">Aide et soutien</string>
     <string name="call">Appel</string>
     <string name="about">À propos de</string>
     <string name="settings">Réglages</string>
     <string name="support">Soutien</string>
-    <string name="review">Examen</string>
+    <string name="review">Avis client</string>
     <string name="about_tv">Cet écran affiche des informations générales sur l\'application qui n\'a pas encore été implémentée</string>
     <string name="snackbar_allow">Autorisation d\'appel téléphonique autorisée</string>
     <string name="snackbar_deny">Autorisation d\'appel téléphonique refusée</string>
-    <string name="phone_number">tél:999</string>
+    <string name="phone_number">tél:912</string>
     <string name="sharedpref_filename">AccueilCTRL_file</string>
     <string name="motionscreen">Écran de mouvement</string>
     <string name="smokescreen">Écran de fumée</string>
@@ -36,7 +36,7 @@
     <string name="login_username_hint">Nom d\'utilisateur</string>
     <string name="login_password_hint">le mot de passe</string>
     <string name="loginBtn">Connexion</string>
-    <string name="chkbox_label">Souviens-toi de moi</string>
+    <string name="chkbox_label">Souviens_toi de moi</string>
     <string name="tv_label">OU</string>
     <string name="pref_label">Préférence utilisateur</string>
     <string name="u_name">Nom d\'utilisateur</string>
@@ -44,19 +44,19 @@
     <string name="check">vérifié</string>
     <string name="blank1"/>
     <string name="blank2"/>
-    <string-array name="configlist">
+    <string_array name="configlist">
         <item>Paramètres de l\'application</item>
         <item>Les paramètres du système</item>
         <item>informations de l\'utilisateur</item>
         <item>A propos de l\'appareil</item>
-    </string-array>
+    </string_array>
     <string name="send_love">Envoyer de l\'amour</string>
     <string name="submit_review">Soumettre</string>
     <string name="comment_review">Votre commentaire</string>
-    <string name="email_review">E-mail</string>
+    <string name="email_review">E_mail</string>
     <string name="phone_review">Numéro de téléphone</string>
     <string name="name_review">votre nom</string>
-    <string name="model_review">Modèle de votre appareil :</string>
+    <string name="model_review">Modèle de votre appareil:</string>
     <string name="user_saved">l\'utilisateur a été enregistré</string>
     <string name="save_failed">\"Échec de l\'ajout de données \"</string>
     <string name="check_numeric">.*\\ré.*</string>
@@ -64,23 +64,23 @@
     <string name="ET_Validation2">Le nom d\'utilisateur doit comporter au moins 3 caractères</string>
     <string name="ET_validation3">Le nom d\'utilisateur ne doit contenir aucun caractère numérique</string>
     <string name="pass_validation1">Le champ du mot de passe ne peut pas être vide</string>
-    <string name="pass_validation2">Le mot de passe doit contenir au moins 5 chiffres</string>
+    <string name="pass_validation2">Le mot de passe doit contenir au moins 8 chiffres</string>
     <string name="Welcome_msg">Bienvenue dans le contrôleur de maison intelligente</string>
     <string name="sign_out">Se déconnecter</string>
     <string name="discontinue">Je ne veux pas continuer !!!</string>
     <string name="blnk5"/>
     <string name="blnk1"/>
     <string name="blnk"/>
-    <string name="btn3_label">Définir les notifications</string>
-    <string-array name="item_contacts">
+    <string name="btn3_label">Configurer maintenant</string>
+    <string_array name="item_contacts">
         <item>Safwan Shaib</item>
         <item>Abdalrahman Ragab</item>
-        <item>Nkeiru Johnson-Achilike</item>
+        <item>Nkeiru Johnson_Achilike</item>
         <item>Raie Tanushree</item>
-    </string-array>
+    </string_array>
     <string name="radio_button1">Sombre</string>
     <string name="radio_button2">Lumière</string>
-    <string name="home_screen_background">Arrière-plan de l\'écran d\'accueil</string>
+    <string name="home_screen_background">Arrière_plan de l\'écran d\'accueil</string>
     <string name="radio_value1">Celsius</string>
     <string name="radio_value2">Fahrenheit</string>
     <string name="temperature_unit">Unité de température</string>
@@ -97,23 +97,23 @@
     <string name="email_id">safwan@humber.ca</string>
     <string name="spc1">\n</string>
     <string name="contact_label">\Numéro de contact : \</string>
-    <string name="ph_number">416-473-9600</string>
-    <string name="email_label">\E-mail : \</string>
-    <string name="email_label1">\E-mail : \</string>
+    <string name="ph_number">416_473_9600</string>
+    <string name="email_label">\E_mail : \</string>
+    <string name="email_label1">\E_mail : \</string>
     <string name="email_id1">abdalrahman@humber.ca</string>
     <string name="spc2">\n</string>
     <string name="contact_label1">\Numéro de contact : \</string>
-    <string name="ph_number1">647-963-2514</string>
-    <string name="email_label2">\E-mail : \</string>
+    <string name="ph_number1">647_963_2514</string>
+    <string name="email_label2">\E_mail : \</string>
     <string name="email_id2">nkeiru@humber.ca</string>
     <string name="spc3">\n</string>
     <string name="contact_label2">\Numéro de contact : \</string>
-    <string name="ph_number2">519-960-2856</string>
-    <string name="email_label3">\E-mail : \</string>
+    <string name="ph_number2">519_960_2856</string>
+    <string name="email_label3">\E_mail : \</string>
     <string name="email_id3">tanushree@humber.ca</string>
     <string name="spc4">\n</string>
     <string name="contact_label3">\Numéro de contact : \</string>
-    <string name="ph_number3">519-574-2815</string>
+    <string name="ph_number3">519_574_2815</string>
     <string name="general_label1">\Des questions ? \</string>
     <string name="spc5">\n</string>
     <string name="general_label2">\Heureux de pouvoir vous aider!!! \</string>
@@ -123,8 +123,8 @@
     <string name="msg2">\Pour vous inscrire\</string>
     <string name="str1">Atterrir sur l\'écran des paramètres</string>
     <string name="register">S\'inscrire</string>
-    <string name="smokelevel">Niveau de fumée actuel :</string>
-    <string name="normallevel">« Niveau de fumée normal : 0-30 »</string>
+    <string name="smokelevel">Niveau de fumée actuel:</string>
+    <string name="normallevel">Niveau de fumée normal: 0_30</string>
     <string name="userreview_added_to_db">Soumis avec succès</string>
     <string name="error_submitting_review">Erreur lors de l\'envoi de l\'avis</string>
     <string name="user_exists">L\'utilisateur existe</string>
@@ -133,12 +133,33 @@
     <string name="activity_log">Journal d\'activité</string>
     <string name="open_door_tv">Porte ouverte</string>
     <string name="no_account">Pas de compte?</string>
-    <string name="profile_picture">Image de Profil</string>
-    <string name="on">ON</string>
-    <string name="off">OFF</string>
-    <string name="logout">Logout</string>
-    <string name="smokesensed">smoke is sensed!</string>
+    <string name="profile_picture">Image de profil</string>
+    <string name="on">SUR</string>
+    <string name="off">À L\'ARRÊT</string>
+    <string name="logout">Se déconnecter</string>
+    <string name="smokesensed">la fumée est détectée !</string>
     <string name="space">" "</string>
+    <string name="create_new_account">Créer un nouveau compte</string>
+    <string name="full_name">Nom et prénom</string>
+    <string name="email_address">Adresse e_mail</string>
+    <string name="password">Mot de passe</string>
+    <string name="confirm_password">Confirmez le mot de passe</string>
+    <string name="phone">Téléphoner</string>
+    <string name="registration">Inscription</string>
+    <string name="reg_name_error">Champ de nom Ne peut pas être vide</string>
+    <string name="reg_phone_error">Le champ Téléphone ne peut pas être vide</string>
+    <string name="reg_email_error">Le champ e_mail ne peut pas être vide</string>
+    <string name="reg_email_error1">S\'il vous plaît, mettez une adresse email valide</string>
+    <string name="reg_phone_error1">Le champ Téléphone ne peut pas être vide</string>
+    <string name="password_should_have">\"Le mot de passe doit avoir : \"</string>
+    <string name="at_least_one_digit">\"Au moins un chiffre \"</string>
+    <string name="one_upper_case">\"Au moins une lettre majuscule \"</string>
+    <string name="one_special_char">\"Au moins un caractère spécial \"</string>
+    <string name="reg_conf_pswd_error">Confirmer le mot de passe ne peut pas être vide!</string>
+    <string name="reg_conf_pswd_error1">Confirmer le mot de passe doit correspondre au champ du mot de passe !!</string>
+    <string name="registration_screen_description">Bienvenue sur l\'écran d'inscription</string>
+    <string name="review_screen_description">Bienvenue sur l\'écran de révision</string>
 
-
+    <!-- Generated by Automatic String Resource Translation -->
+    <!--          https://asrt.gluege.boerde.de             -->
 </resources>

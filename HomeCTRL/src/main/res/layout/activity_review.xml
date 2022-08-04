@@ -114,27 +114,30 @@
     <Button
         android:id="@+id/review_submit"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/black"
+        android:layout_height="45dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="@color/brown"
         android:text="@string/submit_review"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="159dp"
         android:layout_height="152dp"
         android:layout_marginStart="240dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="204dp"
         android:layout_marginEnd="12dp"
         android:src="@drawable/review_img"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        android:contentDescription="@string/review_screen_description" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
