@@ -168,5 +168,6 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="pref_color">Color selection can not be empty</string>
     <string name="pref">Please select your preferences</string>
     <string name="welcome_to_the_login_screen">welcome to the login screen</string>
+    <string name="read_firebase">Read data from firebase</string>
 
 </resources>
