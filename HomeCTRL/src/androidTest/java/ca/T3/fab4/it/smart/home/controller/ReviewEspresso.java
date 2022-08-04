@@ -124,7 +124,7 @@ public class ReviewEspresso {
                                 childAtPosition(
                                         withId(android.R.id.content),
                                        0),
-                                7),
+                                8),
                        isDisplayed()));
         materialButton2.perform(click());
   }
