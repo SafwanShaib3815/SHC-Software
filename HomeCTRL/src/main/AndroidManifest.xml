@@ -13,8 +13,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.SmartHomeController">
+        android:theme="@style/Theme.SmartHomeController"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".NotificationActivity"
             android:exported="false" />

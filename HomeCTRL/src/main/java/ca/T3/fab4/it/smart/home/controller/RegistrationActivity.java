@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
@@ -24,6 +25,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.auth.User;
 
 import java.util.regex.Pattern;
 
@@ -94,8 +96,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     password.setError("Phone field can't be empty!!");
                     password.requestFocus();
                     return;
-                }
-                else if (!PASSWORD_PATTERN.matcher(uPassword).matches()){
+                } else if (!PASSWORD_PATTERN.matcher(uPassword).matches()) {
                     password.setError("Password should have : " + "\n" +
                             "At least one digit " + "\n" + "At least one upper case letter " + "\n"
                             + "At least one special charecter ");
@@ -118,9 +119,43 @@ public class RegistrationActivity extends AppCompatActivity {
                     return;
                 }
 
+                mAuth.createUserWithEmailAndPassword(uEmail, uPassword)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                if (task.isSuccessful()) {
+                                    //if user is registered successfully
+                                    T3UserInfoDatabase user = new T3UserInfoDatabase();
+                                    FirebaseDatabase.getInstance().getReference("Users")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Toast.makeText(RegistrationActivity.this, "user has been registered successfully", Toast.LENGTH_LONG).show();
+                                                        Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                                                        startActivity(intent);
+                                                        //finish();
+                                                    } else {
+                                                        Toast.makeText(RegistrationActivity.this, "user was not registered", Toast.LENGTH_LONG).show();
+                                                    }
+                                                }
+                                            });
+
+                                } else {
+                                    // If registration fails, display a message to the user.
+                                    Toast.makeText(RegistrationActivity.this, "Registration Failed",
+                                            Toast.LENGTH_LONG).show();
+
+                                }
+
+                            }
+
+
+                        });
             }
         });
-
     }
 
     //On action bar back arrow pressed
@@ -133,4 +168,8 @@ public class RegistrationActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
+
+
+
