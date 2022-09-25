@@ -50,7 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        mAuth = FirebaseAuth.getInstance();
+//        mAuth = FirebaseAuth.getInstance();
 
         fullName = (EditText) findViewById(R.id.name);
         phone = (EditText) findViewById(R.id.phone);

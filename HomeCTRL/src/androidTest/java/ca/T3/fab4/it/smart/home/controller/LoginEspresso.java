@@ -60,7 +60,7 @@ public class LoginEspresso {
         ViewInteraction appCompatEditText3 = onView(
                 allOf(withId(R.id.login_password),
                         childAtPosition(
-                                childAtPosition(
+                               childAtPosition(
                                         withId(android.R.id.content),
                                        0),
                                 2),
@@ -70,25 +70,25 @@ public class LoginEspresso {
         ViewInteraction appCompatEditText4 = onView(
                 allOf(withId(R.id.login_password), withText("Tanu@123"),
                        childAtPosition(
-                                childAtPosition(
+                               childAtPosition(
                                         withId(android.R.id.content),
                                         0),
                                 2),
                         isDisplayed()));
         appCompatEditText4.perform(pressImeActionButton());
 
-        ViewInteraction materialButton2 = onView(
-                allOf(withId(R.id.button1), withText("Login"),
-                       childAtPosition(
+       ViewInteraction materialButton2 = onView(
+               allOf(withId(R.id.button1), withText("Login"),
+                      childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
                                 3),
-                        isDisplayed()));
-        materialButton2.perform(click());
+                       isDisplayed()));
+       materialButton2.perform(click());
 
               ViewInteraction materialButton = onView(
-              allOf(withId(R.id.button), withText("Register"),
+             allOf(withId(R.id.button), withText("Register"),
                        childAtPosition(
                               childAtPosition(
                                       withId(android.R.id.content),

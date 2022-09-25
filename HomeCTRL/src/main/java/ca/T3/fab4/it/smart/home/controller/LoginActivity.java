@@ -38,7 +38,7 @@ import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public FirebaseAuth mAuth;
+  public FirebaseAuth mAuth;
     private ImageView googleIcon;
     private static final Pattern PASSWORD_PATTERN = Pattern.compile("^" +
             "(?=.*[0-9])" +
@@ -73,7 +73,6 @@ public class LoginActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String email = null, password = null;
                 Boolean validate = true;
                 email = editTextUserName.getText().toString();
@@ -144,7 +143,6 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString(getString(R.string.u_name), editTextUserName.getText().toString());
                     editor.putString(getString(R.string.pass), editTextPassword.getText().toString());
                     editor.commit();
-
                 }
             }
         });

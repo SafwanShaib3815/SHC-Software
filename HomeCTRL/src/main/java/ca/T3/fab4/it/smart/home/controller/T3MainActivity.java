@@ -76,6 +76,7 @@ public class T3MainActivity extends AppCompatActivity {
 
     public FirebaseAuth mAuth;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
