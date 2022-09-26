@@ -93,7 +93,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="home_screen_clock_format">Home Screen Clock Format</string>
     <string name="_24hrs">24Hrs</string>
     <string name="_12hrs">12Hrs</string>
-    <string name="configure">Configure</string>
+    <string name="configure">Apply</string>
     <string name="btn2">Emergency Call</string>
     <string name="turn_on">Turn On</string>
     <string name="turn_off">Turn Off</string>
@@ -130,7 +130,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="register">Register</string>
     <string name="smokelevel">Current Smoke Level:</string>
     <string name="normallevel">"Normal Smoke Level: 0_30 "</string>
-    <string name="userreview_added_to_db">Submitted successfully</string>
+    <string name="submitting">Submitting...</string>
     <string name="error_submitting_review">Error submitting review</string>
     <string name="user_exists">User Exists</string>
     <string name="db_error">Database error</string>
@@ -169,5 +169,6 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="pref">Please select your preferences</string>
     <string name="welcome_to_the_login_screen">welcome to the login screen</string>
     <string name="read_firebase">Read data from firebase</string>
+    <string name="submitted_successfully">Submitted Successfully</string>
 
 </resources>

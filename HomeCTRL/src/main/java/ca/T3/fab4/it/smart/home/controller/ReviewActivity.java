@@ -157,7 +157,7 @@ public class ReviewActivity extends AppCompatActivity {
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
-                                                Toast toast1 = Toast.makeText(getApplicationContext(), R.string.userreview_added_to_db, Toast.LENGTH_SHORT); // initiate the Toast with context, message and duration for the Toast
+                                                Toast toast1 = Toast.makeText(getApplicationContext(), R.string.submitting, Toast.LENGTH_SHORT); // initiate the Toast with context, message and duration for the Toast
                                                 toast1.show();
 
                                             }
@@ -211,7 +211,7 @@ public class ReviewActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Integer result) {
             super.onPostExecute(result);
-            Toast.makeText(getApplicationContext(), R.string.Submitted_successfully,Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),R.string.submitted_successfully,Toast.LENGTH_LONG).show();
             progressBar.setVisibility(View.INVISIBLE);
 
         }

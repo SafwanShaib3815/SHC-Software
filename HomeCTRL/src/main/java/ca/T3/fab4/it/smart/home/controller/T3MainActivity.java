@@ -32,7 +32,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.text.DateFormat;
 import java.util.Date;
 
-import ca.T3.fab4.it.smart.home.controller.Settings.SettingsFragment;
+import ca.T3.fab4.it.smart.home.controller.SettingsFragment;
 
 public class T3MainActivity extends AppCompatActivity {
 
