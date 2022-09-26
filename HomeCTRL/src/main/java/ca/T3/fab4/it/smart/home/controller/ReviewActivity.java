@@ -108,8 +108,6 @@ public class ReviewActivity extends AppCompatActivity {
                 }
                 else {
                     new AsyncTaskExample().execute();
-                    //writing user info to the database
-                    sendToDb(nameStr, phoneStr, emailStr, commentStr, rating);
                     name.setText("");
                     phone.setText("");
                     email.setText("");
@@ -144,7 +142,7 @@ public class ReviewActivity extends AppCompatActivity {
         //Search database for the user's phone number
         //if found display a toast user exists
         //if not add the new review to the database
-        fbFireStore.collection("Users").whereEqualTo("Phone", phone)
+        fbFireStore.collection("Reviews").whereEqualTo("Phone", phone)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -153,8 +151,8 @@ public class ReviewActivity extends AppCompatActivity {
                             QuerySnapshot query = task.getResult();
                             //When the query result is empty, the phone number doesn't exist in the database
                             if (query.isEmpty()) {
-                                // Add a new document with ID of parameter "name" in the collection "Users"
-                                fbFireStore.collection("Users").document(name)
+                                // Add a new document with ID of parameter "name" in the collection "Reviews"
+                                fbFireStore.collection("Reviews").document(name)
                                         .set(user)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
@@ -188,8 +186,11 @@ public class ReviewActivity extends AppCompatActivity {
 
         @Override
         protected Integer doInBackground(Void... arg0) {
+            //writing user info to the database
+            sendToDb(nameStr, phoneStr, emailStr, commentStr, rating);
 
-            for(int i =0; i<100; i++){
+
+            for(int i =0; i<30; i++){
                 publishProgress(i);
                 try{
                     Thread.sleep(100);
@@ -210,7 +211,7 @@ public class ReviewActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Integer result) {
             super.onPostExecute(result);
-            Toast.makeText(getApplicationContext(),"Submission Finished!!!",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), R.string.Submitted_successfully,Toast.LENGTH_LONG).show();
             progressBar.setVisibility(View.INVISIBLE);
 
         }

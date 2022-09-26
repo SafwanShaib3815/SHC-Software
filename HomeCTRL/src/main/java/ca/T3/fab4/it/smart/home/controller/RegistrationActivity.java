@@ -50,7 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-//        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         fullName = (EditText) findViewById(R.id.name);
         phone = (EditText) findViewById(R.id.phone);
@@ -133,13 +133,26 @@ public class RegistrationActivity extends AppCompatActivity {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()) {
-                                                        Toast.makeText(RegistrationActivity.this, "user has been registered successfully", Toast.LENGTH_LONG).show();
-                                                        Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                                                        startActivity(intent);
-                                                        //finish();
+                                                        // Sign in success, update UI with the signed-in user's information
+                                                        Log.d(TAG, "createUserWithEmail:success");
+                                                        FirebaseUser user = mAuth.getCurrentUser();
+                                                        updateUI(user);
                                                     } else {
-                                                        Toast.makeText(RegistrationActivity.this, "user was not registered", Toast.LENGTH_LONG).show();
+                                                        // If sign in fails, display a message to the user.
+                                                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                                        Toast.makeText(RegistrationActivity.this, "Authentication failed.",
+                                                                Toast.LENGTH_SHORT).show();
+                                                        updateUI(null);
                                                     }
+
+//                                                    if (task.isSuccessful()) {
+//                                                        Toast.makeText(RegistrationActivity.this, "user has been registered successfully", Toast.LENGTH_LONG).show();
+//                                                        Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+//                                                        startActivity(intent);
+//                                                        //finish();
+//                                                    } else {
+//                                                        Toast.makeText(RegistrationActivity.this, "user was not registered", Toast.LENGTH_LONG).show();
+//                                                    }
                                                 }
                                             });
 
@@ -167,6 +180,14 @@ public class RegistrationActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void updateUI(FirebaseUser currentUser){
+
+        Intent profileIntent = new Intent(RegistrationActivity.this, T3MainActivity.class);
+        profileIntent.putExtra("email",currentUser.getEmail());
+        startActivity(profileIntent);
+
     }
 
 }
