@@ -1,6 +1,5 @@
 /*
-Abdulrhman Ragab    n01440938    0NA
-Tanushree Ray    n01440938    0NA
+Jagminder Sembi
 Safwan Shaib    n01343815    0NA
 Nkeiru Johnson-Achilike   n01411707 0NA
 */
@@ -29,21 +28,30 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.stream.Collectors;
 
 public class RFIDFragment extends Fragment {
     View view;
     ImageButton openDoor;
     Button activityLog;
-    TextView openDoorText, activityLogText;
-
+    TextView openDoorText, activityLogText, realtimeText;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference rfid = ref.child("somemail@mail/RFID");//.child("RFID"    );
     public RFIDFragment() {
         // Required empty public constructor
     }
@@ -73,6 +81,7 @@ public class RFIDFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_r_f_i_d, container, false);
         openDoorText = view.findViewById(R.id.open_door_tv);
         activityLogText = view.findViewById(R.id.activity_log_tv);
+        realtimeText = view.findViewById(R.id.real_time_rfid_tv);
         openDoor = view.findViewById(R.id.T3_open_door_button);
         openDoor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +89,21 @@ public class RFIDFragment extends Fragment {
                 Toast.makeText(getContext(), "Door is open", Toast.LENGTH_LONG).show();
                 openDoor.setImageResource(R.mipmap.ic_open_door); //change image button icon when door opened
                 openDoorText.setTextColor(Color.GREEN); //change text color when door opened
+            }
+        });
+
+        //updata real time text view with real time sensor data
+        rfid.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String changedData = snapshot.child("Real_Time").getValue(String.class);
+                realtimeText.setText(changedData);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
 
@@ -102,15 +126,25 @@ public class RFIDFragment extends Fragment {
         return view;
     }
 
+    //do on activity log button click
     public void getDBreadings() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference rfid = ref.child("Dummy Sensors").child("RFID");
+        DatabaseReference rfid = ref.child("somemail@mail/RFID");//.child("RFID"    );
         rfid.addChildEventListener(new ChildEventListener() {
+//            String listString;
+
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                CharSequence readings;
-                readings = snapshot.child("Mr blue").getKey() +"\n"+ snapshot.child("Mr white").getKey();  //concatenate child keys in a single string
-                activityLogText.setText(readings); //set the log activity text view to the resultant string
+//                Iterable<DataSnapshot> recordsChilds = snapshot.child("Records").getChildren();
+//                ArrayList<DataSnapshot> Records = new ArrayList<>();
+//                for(DataSnapshot record : recordsChilds){
+//                    DataSnapshot r = record.getValue(DataSnapshot.class);
+//                    Records.add(r);
+//                    listString = Records.stream().map(Object::toString)
+//                            .collect(Collectors.joining(", "));
+//                    //activityLogText.setText(listString); //set the log activity text view to the resultant string
+//                }
+//                activityLogText.setText(listString); //set the log activity text view to the resultant string
             }
 
             @Override
@@ -132,6 +166,7 @@ public class RFIDFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+
         });
     }
 }

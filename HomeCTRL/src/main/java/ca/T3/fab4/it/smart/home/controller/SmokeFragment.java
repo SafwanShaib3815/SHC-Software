@@ -1,6 +1,5 @@
 /*
-Abdulrhman Ragab    n01440938    0NA
-Tanushree Ray    n01440938    0NA
+
 Safwan Shaib    n01343815    0NA
 Nkeiru Johnson-Achilike   n01411707 0NA
 */
@@ -56,7 +55,8 @@ public class SmokeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference smoke = ref.child("somemail@mail/Smoke");
     public SmokeFragment() {
         // Required empty public constructor
     }
@@ -86,8 +86,7 @@ public class SmokeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_smoke, container, false);
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference smoke = ref.child("Dummy Sensors").child("Smoke").child("smoke2");
+
         TextView txtmessage = (TextView) view.findViewById(R.id.smokeretrive);
         ImageView imageView=view.findViewById(R.id.smokeiv1);
         FloatingActionButton floatingActionButton=view.findViewById(R.id.button2);
@@ -100,7 +99,7 @@ public class SmokeFragment extends Fragment {
         smoke.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                valuee = dataSnapshot.getValue(String.class);
+                valuee = dataSnapshot.child("Real_Time").getValue(String.class);
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(),"aa");
                 builder.setContentTitle(getString(R.string.smokesensed));
                 builder.setContentText("there is a smoke in the house please follow the safety measures and clear the situation");
@@ -111,20 +110,20 @@ public class SmokeFragment extends Fragment {
                 imageView.setImageResource(images[img]);
 
                 txtmessage.setText(" " + valuee);
-                int number = Integer.parseInt(valuee);
-                if(number <= 30) {
-                    mediaPlayer.setLooping(false);
-                    img = 0;
-                }
-                else if (number >=31){
-                    mediaPlayer.start();
-                    mediaPlayer.setLooping(true);
-                    img = 1;
-                    managerCompat.notify(1,builder.build());
+//                int number = Integer.parseInt(valuee);
+//                if(number <= 30) {
+//                    mediaPlayer.setLooping(false);
+//                    img = 0;
+//                }
+//                else if (number >=31){
+//                    mediaPlayer.start();
+//                    mediaPlayer.setLooping(true);
+//                    img = 1;
+//                    managerCompat.notify(1,builder.build());
+//
+//                }
 
-                }
-
-                }
+            }
 
             @Override
             public void onCancelled(DatabaseError error) {
@@ -133,7 +132,7 @@ public class SmokeFragment extends Fragment {
         });
 
 
-       floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -152,39 +151,39 @@ public class SmokeFragment extends Fragment {
 
 
 
-        @Override
-        public void onRequestPermissionsResult ( int requestCode, String[] permissions,
-        int[] grantResults){
-            switch (requestCode) {
-                case REQUEST_CODE_ASK_PERMISSIONS:
-                    if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                        // Permission Granted
-                        Snackbar.make(getActivity().findViewById(android.R.id.content), R.string.snackbar_allow, Snackbar.LENGTH_LONG)
-                                .show();
-                        makePhoneCall();
-                    } else {
-                        // Permission Denied
-                        Snackbar.make(getActivity().findViewById(android.R.id.content), R.string.snackbar_deny, Snackbar.LENGTH_LONG)
-                                .show();
-                    }
-                    break;
-                default:
-                    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-            }
+    @Override
+    public void onRequestPermissionsResult ( int requestCode, String[] permissions,
+                                             int[] grantResults){
+        switch (requestCode) {
+            case REQUEST_CODE_ASK_PERMISSIONS:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // Permission Granted
+                    Snackbar.make(getActivity().findViewById(android.R.id.content), R.string.snackbar_allow, Snackbar.LENGTH_LONG)
+                            .show();
+                    makePhoneCall();
+                } else {
+                    // Permission Denied
+                    Snackbar.make(getActivity().findViewById(android.R.id.content), R.string.snackbar_deny, Snackbar.LENGTH_LONG)
+                            .show();
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
+
+    private void makePhoneCall () {
+        try {
+            Intent intent = new Intent(Intent.ACTION_CALL);
+
+            intent.setData(Uri.parse(getString(R.string.phone_number)));
+
+            startActivity(intent);
+        } catch (Exception e) {
+
+            e.printStackTrace();
         }
 
-        private void makePhoneCall () {
-            try {
-                Intent intent = new Intent(Intent.ACTION_CALL);
-
-                intent.setData(Uri.parse(getString(R.string.phone_number)));
-
-                startActivity(intent);
-            } catch (Exception e) {
-
-                e.printStackTrace();
-            }
-
-        }
+    }
 
 }

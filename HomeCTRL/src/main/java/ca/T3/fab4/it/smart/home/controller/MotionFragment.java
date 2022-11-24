@@ -1,6 +1,5 @@
 /*
-Abdulrhman Ragab    n01440938    0NA
-Tanushree Ray    n01440938    0NA
+
 Safwan Shaib    n01343815    0NA
 Nkeiru Johnson-Achilike   n01411707 0NA
 */
@@ -46,6 +45,8 @@ public class MotionFragment extends Fragment {
         // Required empty public constructor
     }
 
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference motion = ref.child("somemail@mail/Motion");
     public static MotionFragment newInstance(String param1, String param2) {
         MotionFragment fragment = new MotionFragment();
         Bundle args = new Bundle();
@@ -71,10 +72,9 @@ public class MotionFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_motion, container, false);
         Switch readData = view.findViewById(R.id.switch3);
 
-        // Write a message to the database
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference motion = ref.child("Dummy Sensors").child("Motion Sensor").child("Mos");
+
         TextView txtMessage = (TextView) view.findViewById(R.id.textView2);
+        TextView real_time = (TextView) view.findViewById(R.id.real_time_motion_tv);
         imageView = view.findViewById(R.id.imageView);
         Button onButton = view.findViewById(R.id.button8);
         Button offButton = view.findViewById(R.id.button9);
@@ -97,11 +97,15 @@ public class MotionFragment extends Fragment {
         });
 
         motion.addValueEventListener(new ValueEventListener() {
+            String changedData = "";
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                value = dataSnapshot.getValue(String.class);
+
+                changedData = dataSnapshot.child("Real_Time").getValue(String.class);
+                real_time.setText(changedData);
             }
 
             @Override

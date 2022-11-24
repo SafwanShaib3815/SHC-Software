@@ -1,6 +1,5 @@
 /*
-Abdulrhman Ragab    n01440938    0NA
-Tanushree Ray    n01440938    0NA
+Jagminder Sembi
 Safwan Shaib    n01343815    0NA
 Nkeiru Johnson-Achilike   n01411707 0NA
 */
@@ -49,6 +48,8 @@ public class TemperatureFragment extends Fragment implements Animation.Animation
     private String mParam1;
     private String mParam2;
 
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference temp = ref.child("somemail@mail/Temperature");
     public TemperatureFragment() {
         // Required empty public constructor
     }
@@ -89,8 +90,7 @@ public class TemperatureFragment extends Fragment implements Animation.Animation
         SharedPreferences sharedPref = getActivity().getSharedPreferences("SettingsPref", Context.MODE_PRIVATE);
 
         // Write a message to the database
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference temp = ref.child("Dummy Sensors").child("Temp").child("Temp2");
+
         TextView txtMessage = (TextView) view.findViewById(R.id.textView10);
         imageView = view.findViewById(R.id.imageView4);
         Button onButton = view.findViewById(R.id.button4);
@@ -118,7 +118,8 @@ public class TemperatureFragment extends Fragment implements Animation.Animation
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                value = dataSnapshot.getValue(String.class);
+                value = dataSnapshot.child("Real_Time").getValue(String.class);
+                txtMessage.setText("Temp is: " + value);
             }
 
             @Override
