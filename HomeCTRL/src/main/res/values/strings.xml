@@ -170,7 +170,7 @@ Nkeiru Johnson-Achilike         n01411707    0NA
     <string name="read_firebase">Display records</string>
     <string name="submitted_successfully">Submitted Successfully</string>
     <string name="real_time_rfid">RT Last Record:</string>
-    <string name="tempTxt">Temperature is: </string>
-    <string name="humidTxt">Humidity is: </string>
+    <string name="tempTxt">Temperature is:&#160;</string>
+    <string name="humidTxt">Humidity is:&#160;</string>
 
 </resources>

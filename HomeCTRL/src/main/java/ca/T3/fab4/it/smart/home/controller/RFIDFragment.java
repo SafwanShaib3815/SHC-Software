@@ -34,6 +34,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.stream.Collectors;
 
 public class RFIDFragment extends Fragment {
@@ -41,7 +43,8 @@ public class RFIDFragment extends Fragment {
     ImageButton openDoor;
     Button activityLog;
     TextView openDoorText, activityLogText, realtimeText;
-
+    LinkedList<String> logs = new LinkedList<String>();
+    String changedData;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -52,6 +55,7 @@ public class RFIDFragment extends Fragment {
 
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
     DatabaseReference rfid = ref.child("somemail@mail/RFID");//.child("RFID"    );
+    DatabaseReference rfid_records = ref.child("somemail@mail/RFID/Records");//.child("RFID"    );
     public RFIDFragment() {
         // Required empty public constructor
     }
@@ -96,9 +100,8 @@ public class RFIDFragment extends Fragment {
         rfid.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String changedData = snapshot.child("Real_Time").getValue(String.class);
+                changedData = snapshot.child("Real_Time").getValue(String.class);
                 realtimeText.setText(changedData);
-
             }
 
             @Override
@@ -107,11 +110,17 @@ public class RFIDFragment extends Fragment {
             }
         });
 
+        // onclick > iterate through the logs array list and display it
         activityLog = view.findViewById(R.id.activity_log);
         activityLog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getDBreadings();
+                String logslist = "";
+                Iterator<String> iterator = logs.iterator();
+                while (iterator.hasNext()){
+                    logslist = logslist + iterator.next() + "\n";
+                }
+                activityLogText.setText(logslist);
             }
         });
 
@@ -123,50 +132,20 @@ public class RFIDFragment extends Fragment {
                 startActivity(i);
             }
         });
-        return view;
-    }
-
-    //do on activity log button click
-    public void getDBreadings() {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference rfid = ref.child("somemail@mail/RFID");//.child("RFID"    );
-        rfid.addChildEventListener(new ChildEventListener() {
-//            String listString;
-
+        rfid_records.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//                Iterable<DataSnapshot> recordsChilds = snapshot.child("Records").getChildren();
-//                ArrayList<DataSnapshot> Records = new ArrayList<>();
-//                for(DataSnapshot record : recordsChilds){
-//                    DataSnapshot r = record.getValue(DataSnapshot.class);
-//                    Records.add(r);
-//                    listString = Records.stream().map(Object::toString)
-//                            .collect(Collectors.joining(", "));
-//                    //activityLogText.setText(listString); //set the log activity text view to the resultant string
-//                }
-//                activityLogText.setText(listString); //set the log activity text view to the resultant string
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot child: snapshot.getChildren()) {
+                    logs.addFirst(child.getValue(String.class));
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-
         });
+        return view;
     }
+
 }

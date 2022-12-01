@@ -25,16 +25,16 @@
 
     <Button
         android:id="@+id/activity_log"
-        android:layout_width="110dp"
+        android:layout_width="149dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/brown"
         android:text="@string/activity_log"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintVertical_bias="0.304" />
 
     <ImageButton
         android:id="@+id/T3_open_door_button"
@@ -67,17 +67,14 @@
 
     <TextView
         android:id="@+id/activity_log_tv"
-        android:layout_width="282dp"
-        android:layout_height="246dp"
-        android:layout_marginStart="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="241dp"
         android:layout_marginTop="268dp"
-        android:layout_marginEnd="9dp"
         android:layout_marginBottom="217dp"
         android:fontFamily="@font/maiden_orange"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -119,14 +116,14 @@
 
     <TextView
         android:id="@+id/real_time_rfid_tv"
-        android:layout_width="144dp"
-        android:layout_height="110dp"
+        android:layout_width="149dp"
+        android:layout_height="47dp"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.966"
+        app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintVertical_bias="0.206" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
