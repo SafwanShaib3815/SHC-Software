@@ -35,9 +35,9 @@ import com.google.firebase.database.ValueEventListener;
  * Use the {@link TemperatureFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TemperatureFragment extends Fragment implements Animation.AnimationListener{
+public class TemperatureFragment extends Fragment implements Animation.AnimationListener {
 
-    String value = "";
+    String value = "", humid;
     ImageView imageView;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,7 +49,8 @@ public class TemperatureFragment extends Fragment implements Animation.Animation
     private String mParam2;
 
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference temp = ref.child("somemail@mail/Temperature");
+    DatabaseReference temp = ref.child("somemail@mail");
+
     public TemperatureFragment() {
         // Required empty public constructor
     }
@@ -85,13 +86,14 @@ public class TemperatureFragment extends Fragment implements Animation.Animation
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_temperature, container, false);
+        View view = inflater.inflate(R.layout.fragment_temperature, container, false);
         Switch readData = view.findViewById(R.id.switch1);
         SharedPreferences sharedPref = getActivity().getSharedPreferences("SettingsPref", Context.MODE_PRIVATE);
 
         // Write a message to the database
 
-        TextView txtMessage = (TextView) view.findViewById(R.id.textView10);
+        TextView tempText = (TextView) view.findViewById(R.id.textView10);
+        TextView humidText = (TextView) view.findViewById(R.id.textView11);
         imageView = view.findViewById(R.id.imageView4);
         Button onButton = view.findViewById(R.id.button4);
         Button offButton = view.findViewById(R.id.button5);
@@ -113,13 +115,26 @@ public class TemperatureFragment extends Fragment implements Animation.Animation
             }
         });
 
+
         temp.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                value = dataSnapshot.child("Real_Time").getValue(String.class);
-                txtMessage.setText("Temp is: " + value);
+                if (readData.isChecked()) {
+                    // This method is called once with the initial value and again
+                    // whenever data at this location is updated.
+                    value = dataSnapshot.child("Temperature/Real_Time").getValue(String.class);
+                    humid = dataSnapshot.child("Humidity/Real_Time").getValue(String.class);
+                    if (sharedPref.getString("Temperature", "").equalsIgnoreCase("Celsius")) {
+                        tempText.setText(getString(R.string.tempTxt) + value);
+                    } else {
+                        float fahrenheit = (Float.valueOf(value).floatValue() * 9 / 5) + 32;
+                        tempText.setText(getString(R.string.tempTxt) + fahrenheit);
+                    }
+                    humidText.setText(getString(R.string.humidTxt) + humid);
+                } else {
+                    tempText.setText("");
+                    humidText.setText("");
+                }
             }
 
             @Override
@@ -129,34 +144,8 @@ public class TemperatureFragment extends Fragment implements Animation.Animation
             }
         });
 
-        readData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                float fahrenheit;
-                if (readData.isChecked() && sharedPref.getString("Temperature", "").equalsIgnoreCase("Celsius")) {
-
-                    txtMessage.setText("Temp is: " + value);
-                }
-
-                else if (readData.isChecked() && sharedPref.getString("Temperature", "").equalsIgnoreCase("Fahrenheit")) {
-                    fahrenheit = (Float.valueOf(value).floatValue() * 9 / 5 ) + 32 ;
-                    txtMessage.setText("Temp is: " + fahrenheit);
-                }
-                else
-                {
-                    txtMessage.setText(" ");
-                }
-
-            }
-        });
-
-
-
-
         return view;
-
     }
-
 
 
     @Override
