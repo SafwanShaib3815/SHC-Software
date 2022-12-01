@@ -100,14 +100,14 @@ public class SmokeFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 valuee = dataSnapshot.child("Real_Time").getValue(String.class);
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(),"aa");
-                builder.setContentTitle(getString(R.string.smokesensed));
-                builder.setContentText("there is a smoke in the house please follow the safety measures and clear the situation");
-                builder.setAutoCancel(true);
-                builder.setSmallIcon(R.drawable.ic_smoke);
+//                NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(),"aa");
+//                builder.setContentTitle(getString(R.string.smokesensed));
+//                builder.setContentText("there is a smoke in the house please follow the safety measures and clear the situation");
+//                builder.setAutoCancel(true);
+//                builder.setSmallIcon(R.drawable.ic_smoke);
 
-                NotificationManagerCompat managerCompat= NotificationManagerCompat.from(getActivity());
-                imageView.setImageResource(images[img]);
+//                NotificationManagerCompat managerCompat= NotificationManagerCompat.from(getActivity());
+//                imageView.setImageResource(images[img]);
 
                 txtmessage.setText(" " + valuee);
 //                int number = Integer.parseInt(valuee);
