@@ -13,10 +13,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="232dp"
-        android:layout_height="195dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="192dp"
+        android:layout_width="238dp"
+        android:layout_height="178dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="172dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/light_image"
@@ -24,12 +24,13 @@
 
     <TextView
         android:id="@+id/real_time_motion_tv"
-        android:layout_width="383dp"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="276dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="308dp"
         android:gravity="center"
         android:text=""
+        android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +46,7 @@
         android:gravity="center"
         android:minHeight="48dp"
         android:text="@string/read_firebase"
+        android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -54,8 +56,8 @@
         android:id="@+id/button8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="544dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="580dp"
         android:text="@string/on"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,22 +66,23 @@
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="280dp"
-        android:layout_marginTop="544dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="580dp"
         android:text="@string/off"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
-        android:layout_width="222dp"
-        android:layout_height="26dp"
+        android:id="@+id/motion_records_tv"
+        android:layout_width="match_parent"
+        android:layout_height="219dp"
         android:text=""
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.173" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

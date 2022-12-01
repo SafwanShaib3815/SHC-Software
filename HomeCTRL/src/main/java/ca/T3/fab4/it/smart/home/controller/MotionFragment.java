@@ -10,6 +10,7 @@ import static android.content.ContentValues.TAG;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -22,12 +23,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Iterator;
+import java.util.LinkedList;
 
 public class MotionFragment extends Fragment {
 
@@ -47,6 +52,8 @@ public class MotionFragment extends Fragment {
 
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
     DatabaseReference motion = ref.child("somemail@mail/Motion");
+    LinkedList<String> records_list = new LinkedList<String>();
+
     public static MotionFragment newInstance(String param1, String param2) {
         MotionFragment fragment = new MotionFragment();
         Bundle args = new Bundle();
@@ -73,7 +80,7 @@ public class MotionFragment extends Fragment {
         Switch readData = view.findViewById(R.id.switch3);
 
 
-        TextView txtMessage = (TextView) view.findViewById(R.id.textView2);
+        TextView records = (TextView) view.findViewById(R.id.motion_records_tv);
         TextView real_time = (TextView) view.findViewById(R.id.real_time_motion_tv);
         imageView = view.findViewById(R.id.imageView);
         Button onButton = view.findViewById(R.id.button8);
@@ -110,8 +117,7 @@ public class MotionFragment extends Fragment {
 
             @Override
             public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
+                Toast.makeText(getActivity(),error.toException().toString(), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -119,13 +125,30 @@ public class MotionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (readData.isChecked()) {
-
-                    txtMessage.setText(value);
+                    String logslist = "";
+                    Iterator<String> iterator = records_list.iterator();
+                    while (iterator.hasNext()){
+                        logslist = logslist + iterator.next() + "\n";
+                    }
+                    records.setText(logslist);
                 }else
                 {
-                    txtMessage.setText(" ");
+                    records.setText("");
                 }
 
+
+            }
+        });
+        motion.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot child: snapshot.child("Records").getChildren()) {
+                    records_list.addFirst(child.getValue(String.class));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
