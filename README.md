@@ -1,4 +1,4 @@
-# Smart Home Controller README
+# Smart Home Controller
 
 The Smart Home Controller is a versatile solution that combines software and hardware components to create a comprehensive smart home automation system. This README provides an overview of the project and its key features.
 
