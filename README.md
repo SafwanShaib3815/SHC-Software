@@ -7,6 +7,7 @@ The Smart Home Controller is a versatile solution that combines software and har
 The Smart Home Controller utilizes the following sensors:
 
 -Temperature Sensor: Monitors and regulates the room temperature for optimal comfort.
+
 -Motion Sensor: Detects human presence and triggers the activation of external lights.
 -Smoke Sensor: Provides an extra layer of security by detecting the presence of gas or smoke in the air.
 -RFID Sensor: Enables secure door unlocking using RFID key/fob.
