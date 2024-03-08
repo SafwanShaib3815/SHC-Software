@@ -4,7 +4,7 @@ The Smart Home Controller is a versatile solution that combines software and har
 
 ## Hardware Description
 
-The Smart Home Controller utilizes the following sensors:
+The Smart Home utilizes the following sensors:
 
 -Temperature Sensor: Monitors and regulates the room temperature for optimal comfort.
 

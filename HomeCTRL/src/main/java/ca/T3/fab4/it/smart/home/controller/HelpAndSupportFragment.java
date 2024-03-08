@@ -93,6 +93,7 @@ public class HelpAndSupportFragment extends Fragment {
 
         });
 
+
         textMsg.setText(getString(R.string.general_label1)  + getString(R.string.spc5) + getString(R.string.general_label2));
 
         return view;
